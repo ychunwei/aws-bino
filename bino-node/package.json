@@ -1,0 +1,22 @@
+{
+  "name": "binobackend",
+  "version": "1.0.1",
+  "description": "for amazon stuff",
+  "main": "app.js",
+  "dependencies": {
+    "aws-sdk": "^2.740.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "node",
+    "api"
+  ],
+  "author": "YCW",
+  "license": "ISC"
+}
