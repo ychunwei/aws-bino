@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require('cors');
+const bodyParser = require("body-parser");
 const AWS = require('aws-sdk');
 
 AWS.config.update({
@@ -19,22 +20,24 @@ const port = process.env.PORT || 3000;
 
 
 // all middleware or our tasks that the server listens to constantly
-app.use(cors())
-app.get("/", postRoutes);
-
+app.use(cors());
+app.use(bodyParser.json());
+// app.get("/ini", postRoutes);
+// app.post("/checkans", postRoutes); 
+app.use("/", postRoutes);
 
 // DEPRECATED TEST DOMAIN
-app.get('/quiz', async (req, res) => {
-    const params = {
-        TableName: 'BINO_Chemistry',
-    };
+// app.get('/quiz', async (req, res) => {
+//     const params = {
+//         TableName: 'BINO_Chemistry',
+//     };
 
-    const data = await ddb.scan(params).promise();
+//     const data = await ddb.scan(params).promise();
 
-    res.json({
-        data: JSON.stringify(data),
-    });
-});
+//     res.json({
+//         data: JSON.stringify(data),
+//     });
+// });
 
 
 app.listen(port, () => {

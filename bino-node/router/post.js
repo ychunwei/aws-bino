@@ -6,6 +6,8 @@ const router = express.Router();
 // add any alternative routes e.g. router.get("/post", postController.newfx)
 // then add the (req, res) in post.js under controller 
 router.get("/ini", postController.getPosts); // gets initial qns
+router.post("/checkans", postController.getScore); // get answer
 
 module.exports = router; 
 
+    
