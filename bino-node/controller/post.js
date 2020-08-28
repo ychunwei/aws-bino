@@ -8,7 +8,7 @@ const ddb = new AWS.DynamoDB({
     apiVersion: '2012-08-10',
 });
 
-exports.getPosts = (req, res) => {
+exports.getPosts = async (req, res) => {
     // DO API call from DB, then return
     var params = {
         TableName: "BINO_Chemistry",
@@ -26,12 +26,19 @@ exports.getPosts = (req, res) => {
             "Skillset, Difficulty, Topic, Question, Option\sA, Option\sB, Option\sC, Option\sD, Answer",
         ScanIndexForward: false,
     };
+
+    
     ddb.query(params, (err, data) => {
-        if (err) console.log(err, err.stack); 
+        if (err){
+            console.log(err, err.stack);
+            res.json({
+                err: JSON.stringify(err)
+            });
+        }
         else{
             console.log(data);
             res.json({
-                data: JSON.stringify(data),
+                data: JSON.stringify(data)
             });
         }  
     });

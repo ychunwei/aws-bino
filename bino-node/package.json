@@ -5,18 +5,14 @@
   "main": "app.js",
   "dependencies": {
     "aws-sdk": "^2.740.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "morgan": "^1.10.0",
     "nodemon": "^2.0.4"
   },
-  "devDependencies": {},
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
-  "keywords": [
-    "node",
-    "api"
-  ],
   "author": "YCW",
   "license": "ISC"
 }
