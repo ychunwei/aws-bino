@@ -141,9 +141,10 @@ exports.getScore = async (req, res) => {
     // // var ids = obj_db.Qns_ID;
     // console.log(resp);
 
+    // need to append the answer to each question, then pass in the questions
 
-    // takes in 2d array 
-    calculator.checkAnswers(questions) // return 2d array of [Qns_ID, difficulty, skillset, state]
+    // takes in 2d array of [id, difficulty, skillset, user_response, answer]
+    calculator.checkAnswers(questions) // return 2d array of [Qns_ID, difficulty, skillset, state(0 = wrong, 1 = correct)] 
 
     // // takes in array of [Difficulty, State] (2D)
     // calculator.computeHiddenScore(1,4,2.5,[[]]);

@@ -5,20 +5,20 @@ exports.sayHi = () => {
     console.log("HI")
 }
 
-exports.checkAnswers = (question) => {
-  for (i = 0; i < number; i++) {
-      if (question["qns_id"] == obj2.Items[i]['Qns_ID']['S']){
-          if (question["answer"] == obj2.Items[i]['Answer']['S']) {
-              console.log("Answer is correct")
-              return [obj2.Items[i]['Difficulty']['S'], 1]
-          }
-          else if (question["answer"] != obj2.Items[i]['Answer']['S']) {
-              console.log("Answer is wrong")
-              return [obj2.Items[i]['Difficulty']['S'], 0]
-          }
-          break
+exports.checkAnswers = (questions) => {
+  for (iqns in questions){
+      if (questions[iqns][3] == questions[iqns][4]){
+          console.log("correct")
+          questions[iqns].pop() // destroy last element
+          questions[iqns][3] == 1           
+      }
+      else{
+          console.log("wrong")
+          questions[iqns].pop() // destroy last element
+          questions[iqns][3] == 0           
       }
   }
+  return questions
 }
 
 // Requires: current lower, upper window; returns updated
