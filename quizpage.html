@@ -7,6 +7,7 @@
     <title>Quiz</title>
     <link rel="stylesheet" href="quiz.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -53,38 +54,63 @@
             <div id = "quiz_text2">30 Questions | 30 Minutes</div>
             <hr>
             <div id = "quiz_options">
-                <p>Q1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi corporis reprehenderit natus nam consectetur? Porro veniam repellat distinctio accusantium dolor nostrum labore reiciendis adipisci? Tempora animi alias magni ab pariatur?</p>
-                <div>
-                    <input type="radio" id="A" value="A" name="A">
-                    <label for="A">A</label>
+                <p id="demo"></p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1" id="demoo1">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2" id="demoo2">
+                      Second default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                    <label class="form-check-label" for="exampleRadios3" id="demoo3">
+                      Disabled radio
+                    </label>
                 </div>
-                  
-                <div>
-                    <input type="radio" id="B" value="B" name="B">
-                    <label for="B">B</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option4">
+                    <label class="form-check-label" for="exampleRadios4" id="demoo4">
+                      Disabled radio
+                    </label>
                 </div>
-                  
-                <div>
-                    <input type="radio" id="C" value="C" name="C">
-                    <label for="C">C</label>
-                </div>
+                
                 <hr style="width:600px;">
-
-                <p>Q2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi corporis reprehenderit natus nam consectetur? Porro veniam repellat distinctio accusantium dolor nostrum labore reiciendis adipisci? Tempora animi alias magni ab pariatur?</p>
-                <div>
-                    <input type="radio" id="A" value="A" name="A">
-                    <label for="A">A</label>
+            </div>
+            
+            <div id = "quiz_options">
+                <p id="demo2"></p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios11" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios11" id="demoo11">
+                      Default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios21" value="option2">
+                    <label class="form-check-label" for="exampleRadios21" id="demoo21">
+                      Second default radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios31" value="option3">
+                    <label class="form-check-label" for="exampleRadios31" id="demoo31">
+                      Disabled radio
+                    </label>
                 </div>
-                  
-                <div>
-                    <input type="radio" id="B" value="B" name="B">
-                    <label for="B">B</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios41" value="option4">
+                    <label class="form-check-label" for="exampleRadios41" id="demoo41">
+                      Disabled radio
+                    </label>
                 </div>
-                  
-                <div>
-                    <input type="radio" id="C" value="C" name="C">
-                    <label for="C">C</label>
-                </div>
+                
+                
                 <hr style="width:600px;">
             </div>
             
@@ -92,9 +118,6 @@
         
 
     </div>
-
-  
-    
 
     <script>
         window.onscroll = function() {myFunction()};
@@ -109,9 +132,63 @@
             header.classList.remove("sticky");
           }
         }
+
+        var array = []
+        window.onload
+
+        fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/ini')
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            const jsonStr = JSON.stringify(data)
+            const obj = JSON.parse(jsonStr)
+            const obj2 = JSON.parse(obj.data)
+            var array = obj2.Items
+
+            document.getElementById("demo").innerHTML = array[0]['Question']['S'];
+            
+            document.getElementById("demo2").innerHTML = array[1]['Question']['S'];
+            
+            
+            var d1 = array[0]['Option_A']['S']
+            document.getElementById('demoo1').innerHTML = d1
+
+            var d2 = array[0]['Option_B']['S']
+            document.getElementById('demoo2').innerHTML = d2
+
+            var d3 = array[0]['Option_C']['S']
+            document.getElementById('demoo3').innerHTML = d3
+
+            var d4 = array[0]['Option_D']['S']
+            document.getElementById('demoo4').innerHTML = d4
+
+
+            var d11 = array[1]['Option_A']['S']
+            document.getElementById('demoo11').innerHTML = d11
+
+            var d21 = array[1]['Option_B']['S']
+            document.getElementById('demoo21').innerHTML = d21
+
+            var d31 = array[1]['Option_C']['S']
+            document.getElementById('demoo31').innerHTML = d31
+
+            var d41 = array[1]['Option_D']['S']
+            document.getElementById('demoo41').innerHTML = d41
+
+
+            
+        })
+        .catch((err) => {
+            console.error('There has been a problem with your fetch operation:');
+        })
+
+        
+        // document.getElementById("demoo2").outerHTML= obj2.Items[0]['Option B']['S'];
+        // document.getElementById("demoo3").outerHTML = obj2.Items[0]['Option C']['S'];
+        // document.getElementById("demoo4").outerHTML = obj2.Items[0]['Option D']['S'];
     </script>
 
 </body>
-
 
 </html>
