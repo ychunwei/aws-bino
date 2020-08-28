@@ -53,10 +53,6 @@ html, body {
     /* left: calc(50% - 400px); */
 }
 
-#profile {
-
-    
-}
 
 #icon {
     float: left;
@@ -127,8 +123,8 @@ html, body {
 }
 
 #quiz_options {
-    position: absolute;
-    top: 170px;
+    /* position: absolute;
+    top: 170px; */
 }
 
 #quiz_text {
