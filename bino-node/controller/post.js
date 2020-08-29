@@ -21,8 +21,8 @@ exports.getPosts = async (req, res) => {
      
         ExpressionAttributeValues: {
             ":v_skillset":{S: "Recall"},
-            ":v_diff1":{S: "1"},
-            ":v_diff2":{S:"2"},
+            ":v_diff1":{S: "1.5"},
+            ":v_diff2":{S:"3.5"},
         },
          KeyConditionExpression: 
             "Skillset = :v_skillset and Difficulty between :v_diff1 and :v_diff2",
@@ -53,7 +53,6 @@ exports.getScore = async (req, res) => {
     // DO API call from DB, then return
     const post = new Post(req.body);
     console.log("POST:" , req.body);
-    var return_data = "";
 
      // Process request obtained from POST
      const stringed = JSON.stringify(req.body);
@@ -65,7 +64,6 @@ exports.getScore = async (req, res) => {
      var averageScore = obj.currentAverage
      var questions = obj.qnpairs // [id, difficulty, skillset, user_response]
 
-     var i;
      for(i = 0; i < 5; i++){
          qnsarray.push(questions[i][0]); // ID
          question_type_array.push(questions[i][2]); // question_type
@@ -122,39 +120,75 @@ exports.getScore = async (req, res) => {
    };
    
    //TODO:  figure out how to edit specific value in table -> for the updating difficulty
-    
-       ddb.batchGetItem(params, (err, data) => {
-        if (err){
-            console.log(err, err.stack);
-            res.json({
-                err: JSON.stringify(err)
-            });
+   
+
+    ddb.batchGetItem(params, (err, data) => {
+    if (err){
+        console.log(err, err.stack);
+        res.json({
+            err: JSON.stringify(err)
+        });
+    }
+    else{
+        
+        var return_data = JSON.stringify(data);
+        const obj_db = JSON.parse(return_data);
+        
+         // Process answers obtained from DB
+        var qn_ans = {};
+        
+        var responses = obj_db.Responses.BINO_Chemistry;
+        for (x in responses){
+            qn_ans[responses[x].Qns_ID.S] = responses[x].Answer.S
         }
-        else{
-            return_data = JSON.stringify(data);
-            console.log(return_data);
+
+        // takes in 2d array of [id, difficulty, skillset, user_response], dictionary of qn_id & answers
+        var qns_with_state = calculator.checkAnswers(questions, qn_ans) // return 2d array of [Qns_ID, difficulty, skillset, state(0 = wrong, 1 = correct)] 
+        console.log(qns_with_state)
+        // takes in array of [Difficulty, State] (2D)
+        var arr_computation
+        arr_computation = calculator.computeHiddenScore(lowerbound,upperbound,averageScore,qns_with_state);
+        lowerbound = arr_computation[0]
+        upperbound = arr_computation[1]
+        averageScore = arr_computation[2]
+
+        console.log(lowerbound, upperbound, averageScore)
+
+        // another DB query for the range
+        var params = {
+            TableName: "BINO_Chemistry",
+            IndexName: "Skillset-Difficulty-index",
+         
+            ExpressionAttributeValues: {
+                ":v_skillset":{S: "Recall"},
+                ":v_diff1":{S: String(lowerbound)},
+                ":v_diff2":{S: String(upperbound)},
+            },
+             KeyConditionExpression: 
+                "Skillset = :v_skillset and Difficulty between :v_diff1 and :v_diff2",
+              
+            ProjectionExpression: 
+                "Skillset, Difficulty, Topic, Question, Option_A, Option_B, Option_C, Option_D, Qns_ID",
+            ScanIndexForward: false,
+        };
+    
+        
+        ddb.query(params, (err, data2) => {
+            if (err){
+                console.log(err, err.stack);
+                res.json({
+                    err: JSON.stringify(err)
+                });
+            }
             res.json({
-                data: return_data
+                currentLower: lowerbound, 
+                currentUpper: upperbound,
+                currentAverage: averageScore,
+                data: JSON.stringify(data2)
             });
-            
-        }  
+        });
+        
+        
+    }  
     });
-
-    // Process answers obtained from DB
-    var qn_ans = {};
-    // qn_ans[qn_id] = ans -> put for all obtained
-    const obj_db = JSON.parse(return_data); // <- this does not work as of now
-
-    // var resp = obj_db.Responses;
-    // // var ids = obj_db.Qns_ID;
-    // console.log(resp);
-
-    // need to append the answer to each question, then pass in the questions
-
-    // takes in 2d array of [id, difficulty, skillset, user_response], dictionary of qn_id & answers
-    calculator.checkAnswers(questions, qn_ans) // return 2d array of [Qns_ID, difficulty, skillset, state(0 = wrong, 1 = correct)] 
-
-    // // takes in array of [Difficulty, State] (2D)
-    // calculator.computeHiddenScore(1,4,2.5,[[]]);
-
 }; 
