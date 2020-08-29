@@ -5,16 +5,14 @@ exports.sayHi = () => {
     console.log("HI")
 }
 
-exports.checkAnswers = (questions) => {
+exports.checkAnswers = (questions, qn_ans) => {
   for (iqns in questions){
-      if (questions[iqns][3] == questions[iqns][4]){
+      if (questions[iqns][3] == qn_ans[iqns]){
           console.log("correct")
-          questions[iqns].pop() // destroy last element
           questions[iqns][3] == 1           
       }
       else{
           console.log("wrong")
-          questions[iqns].pop() // destroy last element
           questions[iqns][3] == 0           
       }
   }

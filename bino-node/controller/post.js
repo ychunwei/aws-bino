@@ -1,8 +1,8 @@
 const AWS = require('aws-sdk');
 const Post = require('../models/post');
 const calculator = require('../scripts/hiddenScore');
-var qnsarray = ['001','002', '003', '004', '005']
-var user_ans_array = []
+var qnsarray = []
+// var user_ans_array = []
 var question_type_array = []
 
 AWS.config.update({
@@ -54,6 +54,22 @@ exports.getScore = async (req, res) => {
     const post = new Post(req.body);
     console.log("POST:" , req.body);
     var return_data = "";
+
+     // Process request obtained from POST
+     const stringed = JSON.stringify(req.body);
+     console.log(stringed);
+     const obj = JSON.parse(stringed); 
+ 
+     var lowerbound = obj.currentLower
+     var upperbound = obj.currentUpper
+     var averageScore = obj.currentAverage
+     var questions = obj.qnpairs // [id, difficulty, skillset, user_response]
+
+     var i;
+     for(i = 0; i < 5; i++){
+         qnsarray.push(questions[i][0]); // ID
+         question_type_array.push(questions[i][2]); // question_type
+     }
     
     var params = {
         RequestItems: {
@@ -64,7 +80,7 @@ exports.getScore = async (req, res) => {
                S: qnsarray[0],
               }, 
              "Skillset": {
-               S: "Recall",
+               S: question_type_array[0],
               }
             }, 
               {
@@ -72,7 +88,7 @@ exports.getScore = async (req, res) => {
                S: qnsarray[1],
               }, 
              "Skillset": {
-               S: "Evaluation",
+               S: question_type_array[1],
               }
             }, 
               {
@@ -80,7 +96,7 @@ exports.getScore = async (req, res) => {
                S: qnsarray[2],
               }, 
              "Skillset": {
-               S: "Recall",
+               S: question_type_array[2],
               }
             },
             {
@@ -88,7 +104,7 @@ exports.getScore = async (req, res) => {
                 S: qnsarray[3],
                 }, 
             "Skillset": {
-                S: "Recall",
+                S: question_type_array[3],
                 }
             },
             {
@@ -96,7 +112,7 @@ exports.getScore = async (req, res) => {
                 S: qnsarray[4],
                 }, 
             "Skillset": {
-                S: "Recall",
+                S: question_type_array[4],
                 }
             },
            ],
@@ -124,17 +140,9 @@ exports.getScore = async (req, res) => {
         }  
     });
 
-    // Process request obtained from POST
-    const stringed = JSON.stringify(req.body);
-    console.log(stringed);
-    const obj = JSON.parse(stringed); 
-
-    var lowerbound = obj.currentLower
-    var upperbound = obj.currentUpper
-    var averageScore = obj.currentAverage
-    var questions = obj.qnpairs // [id, difficulty, skillset, user_response]
-
     // Process answers obtained from DB
+    var qn_ans = {};
+    // qn_ans[qn_id] = ans -> put for all obtained
     const obj_db = JSON.parse(return_data); // <- this does not work as of now
 
     // var resp = obj_db.Responses;
@@ -143,8 +151,8 @@ exports.getScore = async (req, res) => {
 
     // need to append the answer to each question, then pass in the questions
 
-    // takes in 2d array of [id, difficulty, skillset, user_response, answer]
-    calculator.checkAnswers(questions) // return 2d array of [Qns_ID, difficulty, skillset, state(0 = wrong, 1 = correct)] 
+    // takes in 2d array of [id, difficulty, skillset, user_response], dictionary of qn_id & answers
+    calculator.checkAnswers(questions, qn_ans) // return 2d array of [Qns_ID, difficulty, skillset, state(0 = wrong, 1 = correct)] 
 
     // // takes in array of [Difficulty, State] (2D)
     // calculator.computeHiddenScore(1,4,2.5,[[]]);
