@@ -9,10 +9,12 @@ exports.checkAnswers = (questions, qn_ans) => {
   for (iqns in questions){
       if (questions[iqns][3] == qn_ans[questions[iqns][0]]){
           console.log("correct")
+          questions[iqns].push(questions[iqns][3])
           questions[iqns][3] = 1           
       }
       else{
           console.log("wrong" + iqns)
+          questions[iqns].push(questions[iqns][3])
           questions[iqns][3] = 0           
       }
   }
@@ -24,7 +26,7 @@ exports.computeHiddenScore = (currentLower, currentUpper, currentAvg, difficulty
   
   console.log("CURRENT" + " " + currentLower + " " + currentUpper + " " + currentAvg)
   // local var decl
-  // difficulty_state_pair = [id, difficulty, skillset, user_response] * n = 5
+  // difficulty_state_pair = [id, difficulty, skillset, state, user_response] * n = 5
   var index;
   var difference, swap_temp;
   var add_factor = 0.25; // 0.25
@@ -71,11 +73,13 @@ exports.computeHiddenScore = (currentLower, currentUpper, currentAvg, difficulty
 
 function updateQnScores(){
   // send to DB based on values in qn_tracker
-  // after sending, just clear
-  qn_tracker.clear();
 }
 
+// return statement
+exports.returnQnTracker = () => {
+    return qn_tracker
+}
 
-// computeHiddenScore(1,5,2.5);
-// computeHiddenScore(1,5,2.5);
-// console.log(qn_tracker)
+exports.clearQnTracker = () => {
+    qn_tracker.clear();
+}

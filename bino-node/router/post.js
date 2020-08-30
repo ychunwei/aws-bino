@@ -7,7 +7,7 @@ const router = express.Router();
 // then add the (req, res) in post.js under controller 
 router.get("/ini", postController.getPosts); // gets initial qns
 router.post("/checkans", postController.getScore); // get answer
+router.get("/report", postController.getResponseAndState); // get array of qns, state, and user_response
 
 module.exports = router; 
 
-    

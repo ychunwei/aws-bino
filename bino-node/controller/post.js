@@ -49,6 +49,15 @@ exports.getPosts = async (req, res) => {
     });
 } 
 
+exports.getResponseAndState = async (req, res) => {
+    var qn_tracker = calculator.returnQnTracker();
+    calculator.clearQnTracker();
+    // current lower, upper and avg will be passed over from the final quiz section
+    res.json({
+        data: qn_tracker
+    });
+}
+
 exports.getScore = async (req, res) => {
     // DO API call from DB, then return
     const post = new Post(req.body);
@@ -180,15 +189,20 @@ exports.getScore = async (req, res) => {
                     err: JSON.stringify(err)
                 });
             }
-            res.json({
-                currentLower: lowerbound, 
-                currentUpper: upperbound,
-                currentAverage: averageScore,
-                data: JSON.stringify(data2)
-            });
+
+            else{
+                
+                res.json({
+                    currentLower: lowerbound, 
+                    currentUpper: upperbound,
+                    currentAverage: averageScore,
+                    data: JSON.stringify(data2)
+                });
+            }
         });
         
         
     }  
     });
 }; 
+
