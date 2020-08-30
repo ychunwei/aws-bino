@@ -67,13 +67,37 @@ exports.computeHiddenScore = (currentLower, currentUpper, currentAvg, difficulty
   currentAvg = (currentUpper + currentLower) / 2;
   
   return [currentLower, currentUpper, currentAvg];
-}
-
-function updateQnScores(){
-  // send to DB based on values in qn_tracker
-  // after sending, just clear
   qn_tracker.clear();
 }
+
+exports.updatetally = (student_state, correct, wrong, total) => {
+  var tally = []; //array of [qns_id, num correct, num wrong, num total, new difficulty rating] * n = 5
+
+  for (iqns in student_state){
+
+      if (student_state[iqns][3] == 1){ //if student answer the qns correct
+          var kvalue // the new diff value
+          correct[student_state[iqns][0]] += 1;
+          wrong[student_state[iqns][0]] = wrong[student_state[iqns][0]];
+          total[student_state[iqns][0]] +=1;
+          kvalue = (wrong[student_state[iqns][0]] - correct[student_state[iqns][0]]) / (0.5 * total[student_state[iqns][0]]) + 3; // calculates (total wrong - total correct / total) * 2 + 3
+          tally.push([student_state[iqns][0], correct[student_state[iqns][0]], wrong[student_state[iqns][0]], total[student_state[iqns][0]], kvalue]);        
+      }
+      else{
+          var pvalue
+          correct[student_state[iqns][0]] = correct[student_state[iqns][0]];
+          wrong[student_state[iqns][0]] += 1;
+          total[student_state[iqns][0]] +=1;
+          pvalue = (wrong[student_state[iqns][0]] - correct[student_state[iqns][0]]) / (0.5 * total[student_state[iqns][0]]) + 3; // calculates (total wrong - total correct / total) * 2 + 3
+          tally.push([student_state[iqns][0], correct[student_state[iqns][0]], wrong[student_state[iqns][0]], total[student_state[iqns][0]], pvalue]);        
+      }
+  }
+
+  return tally;
+}
+
+ 
+ 
 
 
 // computeHiddenScore(1,5,2.5);
