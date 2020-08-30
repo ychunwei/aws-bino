@@ -74,7 +74,7 @@
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option4">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4">
                     <label class="form-check-label" for="exampleRadios4" id="demoo4">
                       Disabled radio
                     </label>
@@ -84,7 +84,7 @@
             </div>
             
             <div id = "quiz_options">
-                <p id="demo2"></p>
+                <p id="demo1"></p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios11" value="option1" checked>
                     <label class="form-check-label" for="exampleRadios11" id="demoo11">
@@ -109,15 +109,110 @@
                       Disabled radio
                     </label>
                 </div>
-                
-                
+        
                 <hr style="width:600px;">
             </div>
-            
+
+            <div id = "quiz_options">
+              <p id="demo2"></p>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios12" value="option1" checked>
+                  <label class="form-check-label" for="exampleRadios12" id="demoo12">
+                    Default radio
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios22" value="option2">
+                  <label class="form-check-label" for="exampleRadios22" id="demoo22">
+                    Second default radio
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios32" value="option3">
+                  <label class="form-check-label" for="exampleRadios32" id="demoo32">
+                    Disabled radio
+                  </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios42" value="option4">
+                    <label class="form-check-label" for="exampleRadios42" id="demoo42">
+                      Disabled radio
+                    </label>
+                </div>
+      
+                <hr style="width:600px;">
+            </div>
+
+            <div id = "quiz_options">
+              <p id="demo3"></p>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios13" value="option1" checked>
+                  <label class="form-check-label" for="exampleRadios13" id="demoo13">
+                    Default radio
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios23" value="option2">
+                  <label class="form-check-label" for="exampleRadios23" id="demoo23">
+                    Second default radio
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios33" value="option3">
+                  <label class="form-check-label" for="exampleRadios33" id="demoo33">
+                    Disabled radio
+                  </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios43" value="option4">
+                  <label class="form-check-label" for="exampleRadios43" id="demoo43">
+                    Disabled radio
+                  </label>
+              </div>
+      
+              <hr style="width:600px;">
+            </div>
+
+            <div id = "quiz_options">
+              <p id="demo4"></p>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios14" value="option1" checked>
+                  <label class="form-check-label" for="exampleRadios14" id="demoo14">
+                    Default radio
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios24" value="option2">
+                  <label class="form-check-label" for="exampleRadios24" id="demoo24">
+                    Second default radio
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios34" value="option3">
+                  <label class="form-check-label" for="exampleRadios34" id="demoo34">
+                    Disabled radio
+                  </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios44" value="option4">
+                  <label class="form-check-label" for="exampleRadios44" id="demoo44">
+                    Disabled radio
+                  </label>
+              </div>  
+    
+
+              
+            </div>
+            <button id="nextbutton" type="button" class="btn btn-primary">Next</button>
         </div>
         
-
     </div>
+
+    <div>
+
+    
+    
+<!-- JAVASCRIPT STUFF -->
 
     <script>
         window.onscroll = function() {myFunction()};
@@ -136,7 +231,7 @@
         var array = []
         window.onload
 
-        fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/ini')
+        fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/quiz')
         .then((response) => {
             return response.json()
         })
@@ -146,35 +241,57 @@
             const obj2 = JSON.parse(obj.data)
             var array = obj2.Items
 
-            document.getElementById("demo").innerHTML = array[0]['Question']['S'];
+            document.getElementById("demo").innerHTML = array[0]['Question']['S'];    
+            document.getElementById("demo1").innerHTML = array[1]['Question']['S'];
+            document.getElementById("demo2").innerHTML = array[2]['Question']['S'];
+            document.getElementById("demo3").innerHTML = array[3]['Question']['S'];
+            document.getElementById("demo4").innerHTML = array[4]['Question']['S'];
+
+
             
-            document.getElementById("demo2").innerHTML = array[1]['Question']['S'];
+            document.getElementById('demoo1').innerHTML = array[0]['Option_A']['S']
+
+            document.getElementById('demoo2').innerHTML = array[0]['Option_B']['S']
+
+            document.getElementById('demoo3').innerHTML = array[0]['Option_C']['S']
+
+            document.getElementById('demoo4').innerHTML = array[0]['Option_D']['S']
+
             
-            
-            var d1 = array[0]['Option_A']['S']
-            document.getElementById('demoo1').innerHTML = d1
+            document.getElementById('demoo11').innerHTML = array[1]['Option_A']['S']
 
-            var d2 = array[0]['Option_B']['S']
-            document.getElementById('demoo2').innerHTML = d2
+            document.getElementById('demoo21').innerHTML = array[1]['Option_B']['S']
 
-            var d3 = array[0]['Option_C']['S']
-            document.getElementById('demoo3').innerHTML = d3
+            document.getElementById('demoo31').innerHTML = array[1]['Option_C']['S']
 
-            var d4 = array[0]['Option_D']['S']
-            document.getElementById('demoo4').innerHTML = d4
+            document.getElementById('demoo41').innerHTML = array[1]['Option_D']['S']
 
 
-            var d11 = array[1]['Option_A']['S']
-            document.getElementById('demoo11').innerHTML = d11
+            document.getElementById('demoo12').innerHTML = array[2]['Option_A']['S']
 
-            var d21 = array[1]['Option_B']['S']
-            document.getElementById('demoo21').innerHTML = d21
+            document.getElementById('demoo22').innerHTML = array[2]['Option_B']['S']
 
-            var d31 = array[1]['Option_C']['S']
-            document.getElementById('demoo31').innerHTML = d31
+            document.getElementById('demoo32').innerHTML = array[2]['Option_C']['S']
 
-            var d41 = array[1]['Option_D']['S']
-            document.getElementById('demoo41').innerHTML = d41
+            document.getElementById('demoo42').innerHTML = array[2]['Option_D']['S']
+
+
+            document.getElementById('demoo13').innerHTML = array[3]['Option_A']['S']
+
+            document.getElementById('demoo23').innerHTML = array[3]['Option_B']['S']
+
+            document.getElementById('demoo33').innerHTML = array[3]['Option_C']['S']
+
+            document.getElementById('demoo43').innerHTML = array[3]['Option_D']['S']
+
+
+            document.getElementById('demoo14').innerHTML = array[4]['Option_A']['S']
+
+            document.getElementById('demoo24').innerHTML = array[4]['Option_B']['S']
+
+            document.getElementById('demoo34').innerHTML = array[4]['Option_C']['S']
+
+            document.getElementById('demoo44').innerHTML = array[4]['Option_D']['S']
 
 
             
@@ -183,10 +300,6 @@
             console.error('There has been a problem with your fetch operation:');
         })
 
-        
-        // document.getElementById("demoo2").outerHTML= obj2.Items[0]['Option B']['S'];
-        // document.getElementById("demoo3").outerHTML = obj2.Items[0]['Option C']['S'];
-        // document.getElementById("demoo4").outerHTML = obj2.Items[0]['Option D']['S'];
     </script>
 
 </body>

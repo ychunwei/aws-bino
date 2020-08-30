@@ -45,14 +45,14 @@ html, body {
 
 #main_section{
     position: absolute;
-    height: 1000px;
-    top: 120px;
     width: 800px;
+    top: 120px;
+    height: auto;
     background-color: white;
     border-radius: 25px;
+    margin-bottom: 30px;
     /* left: calc(50% - 400px); */
 }
-
 
 #icon {
     float: left;
@@ -117,14 +117,14 @@ html, body {
 }
 
 #quiz_content {
-    position: absolute;
+    position: relative;
     width: 600px;
     left: calc(50% - 300px);
 }
 
 #quiz_options {
-    /* position: absolute;
-    top: 170px; */
+    position: relative;
+    display: block;
 }
 
 #quiz_text {
@@ -132,8 +132,8 @@ html, body {
     font-family: Helvetica Neue;
     font-style: normal;
     font-weight: bold;
-    margin-top: 30px;
-    font-size: 40px;
+    margin-top: 20px;
+    font-size: 35px;
     color: orange;
 }
 
@@ -143,8 +143,15 @@ html, body {
     font-family: Helvetica Neue;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     color: rgba(0,0,0,1);
+}
+
+#nextbutton {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    float: right;
 }
 
 .sticky {
