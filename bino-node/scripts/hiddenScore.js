@@ -81,5 +81,5 @@ exports.returnQnTracker = () => {
 }
 
 exports.clearQnTracker = () => {
-    qn_tracker.clear();
+    qn_tracker = [];
 }
