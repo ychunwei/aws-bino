@@ -17,8 +17,6 @@ const ddb = new AWS.DynamoDB({
 const postRoutes = require("./router/post");
 const port = process.env.PORT || 3000;
 
-
-
 // all middleware or our tasks that the server listens to constantly
 app.use(cors());
 app.use(bodyParser.json());
