@@ -163,9 +163,9 @@ exports.getScore = async (req, res) => {
         // takes in array of [Difficulty, State] (2D)
         var arr_computation
         arr_computation = calculator.computeHiddenScore(lowerbound,upperbound,averageScore,qns_with_state);
-        lowerbound = arr_computation[0]
-        upperbound = arr_computation[1]
-        averageScore = arr_computation[2]
+        lowerbound = parseFloat(arr_computation[0].toFixed(3)) //parseFloat(num.toFixed(3))
+        upperbound = parseFloat(arr_computation[1].toFixed(3))
+        averageScore = parseFloat(arr_computation[2].toFixed(3))
 
         console.log(lowerbound, upperbound, averageScore)
 
