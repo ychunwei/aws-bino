@@ -51,6 +51,7 @@ html, body {
     background-color: white;
     border-radius: 25px;
     margin-bottom: 30px;
+
     /* left: calc(50% - 400px); */
 }
 
@@ -123,14 +124,13 @@ html, body {
     overflow: visible;
     top: 0;
     width: 100%;
-    /* left: calc(50% - 300px); */
     white-space: nowrap;
 }
 
 #quiz_content {
     position: relative;
-    width: 600px;
-    left: calc(50% - 300px);
+    width: auto;
+    /* left: calc(50% - 300px); */
 }
 
 #quiz_options {
@@ -160,8 +160,8 @@ html, body {
 
 #nextbutton {
     position: relative;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 20px;
     float: right;
 }
 

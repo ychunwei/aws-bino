@@ -332,7 +332,7 @@
 
             if (isFinalCalc == 5) {
               jsonObj.isFinal = true
-              document.getElementById('nextbutton').innerHTML = 'Submit'
+              document.getElementById('nextbutton').outerHTML = "<button onclick='document.location=\'performance_report.html\'' type='button' class='btn btn-primary'>Submit</button>";
 
             }
 
