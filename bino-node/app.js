@@ -21,6 +21,17 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/", postRoutes);
+app.get('/quiz', async (req, res) => {
+    const params = {
+        TableName: 'BINO_Chemistry',
+    };
+
+    const data = await ddb.scan(params).promise();
+
+    res.json({
+        data: JSON.stringify(data),
+    });
+}); //debug to get 5 qns
 
 app.listen(port, () => {
     console.log(`Server is running at port ${port}!`);

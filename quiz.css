@@ -70,6 +70,17 @@ html, body {
     color: rgba(0,0,0,1);
 }
 
+#avatar_text{
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    float: right;
+    margin-right: 15px;
+    margin-top: -20px;
+    color: rgba(0,0,0,1);
+}
+
 #overview_button {
     width: 300px;
     height: 40px;
@@ -154,8 +165,10 @@ html, body {
     float: right;
 }
 
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
+#avatar {
+    border-radius: 50%;
+    float: right;
+    position: relative;
+    right: 200px;
+    bottom: 20px;
+  }

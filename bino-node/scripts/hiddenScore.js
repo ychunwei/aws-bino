@@ -9,10 +9,12 @@ exports.checkAnswers = (questions, qn_ans) => {
   for (iqns in questions){
       if (questions[iqns][3] == qn_ans[questions[iqns][0]]){
           console.log("correct")
+          questions[iqns].push(questions[iqns][3])
           questions[iqns][3] = 1           
       }
       else{
           console.log("wrong" + iqns)
+          questions[iqns].push(questions[iqns][3])
           questions[iqns][3] = 0           
       }
   }
@@ -24,7 +26,7 @@ exports.computeHiddenScore = (currentLower, currentUpper, currentAvg, difficulty
   
   console.log("CURRENT" + " " + currentLower + " " + currentUpper + " " + currentAvg)
   // local var decl
-  // difficulty_state_pair = [id, difficulty, skillset, user_response] * n = 5
+  // difficulty_state_pair = [id, difficulty, skillset, state, user_response] * n = 5
   var index;
   var difference, swap_temp;
   var add_factor = 0.25; // 0.25
@@ -69,13 +71,39 @@ exports.computeHiddenScore = (currentLower, currentUpper, currentAvg, difficulty
   return [currentLower, currentUpper, currentAvg];
 }
 
-function updateQnScores(){
-  // send to DB based on values in qn_tracker
-  // after sending, just clear
-  qn_tracker.clear();
+exports.updatetally = (student_state, correct, wrong, total) => {
+  var tally = []; //array of [qns_id, num correct, num wrong, num total, new difficulty rating] * n = 5
+
+  for (iqns in student_state){
+
+      if (student_state[iqns][3] == 1){ //if student answer the qns correct
+          var kvalue // the new diff value
+          correct[student_state[iqns][0]] += 1;
+          total[student_state[iqns][0]] += 1;
+          //parseFloat(num.toFixed(3))
+          kvalue = (wrong[student_state[iqns][0]] - correct[student_state[iqns][0]]) / (0.5 * total[student_state[iqns][0]]) + 3; // calculates (total wrong - total correct / total) * 2 + 3
+          kvalue = parseFloat(kvalue.toFixed(3))
+          tally.push([student_state[iqns][0], correct[student_state[iqns][0]], wrong[student_state[iqns][0]], total[student_state[iqns][0]], kvalue]);        
+      }
+      else{
+          var pvalue
+          wrong[student_state[iqns][0]] += 1;
+          total[student_state[iqns][0]] +=1;
+          pvalue = (wrong[student_state[iqns][0]] - correct[student_state[iqns][0]]) / (0.5 * total[student_state[iqns][0]]) + 3; // calculates (total wrong - total correct / total) * 2 + 3
+          pvalue = parseFloat(pvalue.toFixed(3))
+          tally.push([student_state[iqns][0], correct[student_state[iqns][0]], wrong[student_state[iqns][0]], total[student_state[iqns][0]], pvalue]);        
+      }
+  }
+
+  return tally;
 }
 
+// return statement
+exports.returnQnTracker = () => {
+    return qn_tracker
+}
 
-// computeHiddenScore(1,5,2.5);
-// computeHiddenScore(1,5,2.5);
-// console.log(qn_tracker)
+exports.clearQnTracker = () => {
+    qn_tracker = [];
+}
+
