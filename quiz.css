@@ -1,6 +1,5 @@
 html, body {
     width: 100%;
-    margin: 0;
     background: rgba(247,247,247,1);
 }
 
@@ -45,12 +44,9 @@ html, body {
 
 #main_section{
     position: absolute;
-    width: 800px;
-    top: 120px;
-    height: auto;
-    background-color: white;
-    border-radius: 25px;
-    margin-bottom: 30px;
+    width: 100%;
+    
+    height: 100%;
     /* left: calc(50% - 400px); */
 }
 
@@ -95,7 +91,7 @@ html, body {
 #sidenav {
     height: 40px;
     position: absolute;
-    margin-top: 70px;
+    margin-top: 100px;
     left: 50px;
 
 }
@@ -123,14 +119,21 @@ html, body {
     overflow: visible;
     top: 0;
     width: 100%;
-    /* left: calc(50% - 300px); */
     white-space: nowrap;
 }
 
 #quiz_content {
-    position: relative;
-    width: 600px;
-    left: calc(50% - 300px);
+    position: absolute;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    top: 150px;
+    padding-right: 30px;
+    padding-left: 30px;
+    /* left: calc(50% - 300px); */
 }
 
 #quiz_options {
@@ -160,8 +163,8 @@ html, body {
 
 #nextbutton {
     position: relative;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 20px;
     float: right;
 }
 
