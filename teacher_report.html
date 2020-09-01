@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Teacher's Report</title>
+    <link rel="stylesheet" href="teacher_report.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <div id="topBar">
+        <div id="Search" class="container"></div>
+
+        <div id="BINO" class="page-header">BINO</div>
+
+        <!-- <svg id="profile" height="140" width="1000">
+            <ellipse cx="1000" cy="80" rx="40" ry="40">
+        </svg> -->
+
+         <div id = "sidenav">
+             <div id="overview_button">
+                <svg id="icon" width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+                <div id = "overview_text" x="50" y="35" fill="black">Overview</div>
+             </div>
+            
+            <svg width = "300" height = "600">
+                <g>
+                    <rect rx="25" ry="25" width = "250" height = "260" fill="white"></rect>
+                    <text class="sidenavweek" x="40" y="35" fill="Orange">Week 0</text>
+                    <line x1="50" y1="50" x2="50" y2="240" stroke-linecap="round" d="M5 40 l215 0" style="stroke:rgba(249, 220, 215, 1); stroke-width:3" />
+                    <line x1="50" y1="50" x2="50" y2="200" stroke-linecap="round" d="M5 40 l215 0" style="stroke:orange; stroke-width:3" />
+                    <text class="sidenavweek2" x="70" y="85">Lecture 1</text>
+                    <text class="sidenavweek2" x="70" y="135">Lecture 2</text>
+                    <text class="sidenavweek2" x="70" y="185">Lecture 3</text>
+                    <text class="sidenavweek2" x="70" y="235">Quiz</text>
+                    <text class="sidenavweek" x="40" y="300" fill = "Grey">Week 1</text>
+                    <text class="sidenavweek" x="40" y="350" fill = "Grey">Week 2</text>
+                    <text class="sidenavweek" x="40" y="400" fill = "Grey">Week 3</text>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    
+
+    <div id="main_section" class="col-md-6 offset-md-3">
+        <div id="quiz_content">
+            <div id = "quiz_text">Chemistry (C1003)</div>
+            <div id = "quiz_text2">Summary Report</div>
+            <div id = "quiz_options">
+                <h4>General Overview</h4>
+                <h4>Number of Students who attempted Quiz: 20/24</h4>
+                <h4 id = "score">Average Score: 6.3/10</h4>
+                <h4 id = "skillrating">Average Skill Rating: 3.05/5</h4>
+                <hr>
+                <h3>Breakdown of Questions Attempted by Skillset</h3>
+                <div id="skillsetpiechart"></div>
+                <div id="skillset_table_div"></div>
+                <hr>
+                <h3>Top Performers</h3>
+                <div id="difficulty_table_div"></div>
+                <hr>
+                <h3>Review of Individual Questions</h3>
+                <p id = "demo" class = "question">Q1</p>
+                <p id = "skillset1" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty1" class = "difficultystyle">Difficulty</p>
+                <div id = 'q1o1'>Option A</div>
+                <div id = 'q1o2'>Option B</div>
+                <div id = 'q1o3'>Option C</div>
+                <div id = 'q1o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo11" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan1">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo2" class = "question">Q2</p>
+                <p id = "skillset2" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty2" class = "difficultystyle">Difficulty</p>
+                <div id = "q2o1">Option A</div>
+                <div id = 'q2o2'>Option B</div>
+                <div id = 'q2o3'>Option C</div>
+                <div id = 'q2o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo21" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan2">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo3" class = "question">Q3</p>
+                <p id = "skillset3" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty3" class = "difficultystyle">Difficulty</p>
+                <div id = 'q3o1'>Option A</div>
+                <div id = 'q3o2'>Option B</div>
+                <div id = 'q3o3'>Option C</div>
+                <div id = 'q3o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo31" class="alert-heading">Incorrect</h4>
+                    <p>_ students chose option A</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan3">Explanation</p>
+                  </div>
+                <hr>
+                <p id = "demo4" class = "question">Q4</p>
+                <p id = "skillset4" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty4" class = "difficultystyle">Difficulty</p>
+                <div id = 'q4o1'>Option A</div>
+                <div id = 'q4o2'>Option B</div>
+                <div id = 'q4o3'>Option C</div>
+                <div id = 'q4o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo41" class="alert-heading">Correct</h4>
+                    <p>_ students chose option A</p>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <hr>
+                    <p class="mb-0" id = "explan4">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo5" class = "question">Q5</p>
+                <p id = "skillset5" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty5" class = "difficultystyle">Difficulty</p>
+                <div id = 'q5o1'>Option A</div>
+                <div id = 'q5o2'>Option B</div>
+                <div id = 'q5o3'>Option C</div>
+                <div id = 'q5o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo51" class="alert-heading">Correct</h4>
+                    <p>_ students chose option A</p>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan5">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo6" class = "question">Q6</p>
+                <p id = "skillset6" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty6" class = "difficultystyle">Difficulty</p>
+                <div id = 'q6o1'>Option A</div>
+                <div id = 'q6o2'>Option B</div>
+                <div id = 'q6o3'>Option C</div>
+                <div id = 'q6o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo61" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan6">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo7" class = "question">Q7</p>
+                <p id = "skillset7" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty7" class = "difficultystyle">Difficulty</p>
+                <div id = 'q7o1'>Option A</div>
+                <div id = 'q7o2'>Option B</div>
+                <div id = 'q7o3'>Option C</div>
+                <div id = 'q7o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo71" class="alert-heading">Correct</h4>
+                    <p>_ students chose option A</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan7">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo8" class = "question">Q8</p>
+                <p id = "skillset8" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty8" class = "difficultystyle">Difficulty</p>
+                <div id = 'q8o1'>Option A</div>
+                <div id = 'q8o2'>Option B</div>
+                <div id = 'q8o3'>Option C</div>
+                <div id = 'q8o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo81" class="alert-heading">Correct</h4>
+                    <p>_ students chose option A</p>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <hr>
+                    <p class="mb-0" id = "explan8">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo9" class = "question">Q9</p>
+                <p id = "skillset9" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty9" class = "difficultystyle">Difficulty</p>
+                <div id = 'q9o1'>Option A</div>
+                <div id = 'q9o2'>Option B</div>
+                <div id = 'q9o3'>Option C</div>
+                <div id = 'q9o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo91" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan9">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo10" class = "question">Q10</p>
+                <p id = "skillset10" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty10" class = "difficultystyle">Difficulty</p>
+                <div id = 'q10o1'>Option A</div>
+                <div id = 'q10o2'>Option B</div>
+                <div id = 'q10o3'>Option C</div>
+                <div id = 'q10o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo101" class="alert-heading">Correct</h4>
+                    <p>_ students chose option A</p>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan10">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo011" class = "question">Q11</p>
+                <p id = "skillset11" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty11" class = "difficultystyle">Difficulty</p>
+                <div id = 'q11o1'>Option A</div>
+                <div id = 'q11o2'>Option B</div>
+                <div id = 'q11o3'>Option C</div>
+                <div id = 'q11o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo111" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan11">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo12" class = "question">Q12</p>
+                <p id = "skillset12" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty12" class = "difficultystyle">Difficulty</p>
+                <div id = 'q12o1'>Option A</div>
+                <div id = 'q12o2'>Option B</div>
+                <div id = 'q12o3'>Option C</div>
+                <div id = 'q12o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo121" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan12">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo13" class = "question">Q13</p>
+                <p id = "skillset13" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty13" class = "difficultystyle">Difficulty</p>
+                <div id = 'q13o1'>Option A</div>
+                <div id = 'q13o2'>Option B</div>
+                <div id = 'q13o3'>Option C</div>
+                <div id = 'q13o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo131" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan13">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo14" class = "question">Q14</p>
+                <p id = "skillset14" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty14" class = "difficultystyle">Difficulty</p>
+                <div id = 'q14o1'>Option A</div>
+                <div id = 'q14o2'>Option B</div>
+                <div id = 'q14o3'>Option C</div>
+                <div id = 'q14o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo141" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan14">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo15" class = "question">Q15</p>
+                <p id = "skillset15" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty15" class = "difficultystyle">Difficulty</p>
+                <div id = 'q15o1'>Option A</div>
+                <div id = 'q15o2'>Option B</div>
+                <div id = 'q15o3'>Option C</div>
+                <div id = 'q15o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo151" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan15">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo16" class = "question">Q16</p>
+                <p id = "skillset16" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty16" class = "difficultystyle">Difficulty</p>
+                <div id = 'q16o1'>Option A</div>
+                <div id = 'q16o2'>Option B</div>
+                <div id = 'q16o3'>Option C</div>
+                <div id = 'q16o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo161" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan16">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo17" class = "question">Q17</p>
+                <p id = "skillset17" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty17" class = "difficultystyle">Difficulty</p>
+                <div id = 'q17o1'>Option A</div>
+                <div id = 'q17o2'>Option B</div>
+                <div id = 'q17o3'>Option C</div>
+                <div id = 'q17o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo171" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan17">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo18" class = "question">Q18</p>
+                <p id = "skillset18" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty18" class = "difficultystyle">Difficulty</p>
+                <div id = 'q18o1'>Option A</div>
+                <div id = 'q18o2'>Option B</div>
+                <div id = 'q18o3'>Option C</div>
+                <div id = 'q18o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo181" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan18">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo19" class = "question">Q19</p>
+                <p id = "skillset19" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty19" class = "difficultystyle">Difficulty</p>
+                <div id = 'q19o1'>Option A</div>
+                <div id = 'q19o2'>Option B</div>
+                <div id = 'q19o3'>Option C</div>
+                <div id = 'q19o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo191" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan19">Explanation</p>
+                </div>
+                <hr>
+                <p id = "demo20" class = "question">Q20</p>
+                <p id = "skillset20" class = "skillsetstyle">Skillset</p>
+                <p id = "difficulty20" class = "difficultystyle">Difficulty</p>
+                <div id = 'q20o1'>Option A</div>
+                <div id = 'q20o2'>Option B</div>
+                <div id = 'q20o3'>Option C</div>
+                <div id = 'q20o4' class = "lastoption">Option D</div>
+                <div class="alert alert-primary" role="alert">
+                    <h4 id = "demoo201" class="alert-heading">Correct</h4>
+                    <p>_ students chose option B</p>
+                    <p>_ students chose option C</p>
+                    <p>_ students chose option D</p>
+                    <hr>
+                    <p class="mb-0" id = "explan20">Explanation</p>
+                </div>
+                <hr style="width:600px;">
+            </div>
+                <hr style="width:600px;">
+            </div>
+            
+        </div>
+        
+
+    </div>
+
+    <script type="text/javascript">
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("topBar");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        }
+
+        // Load google charts
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Draw the chart and set the chart values
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Skillset', 'Number of Questions'],
+            ['Recall', 4],
+            ['Evaluation', 1],
+            ['Inference', 3],
+            ['Application', 2]
+        ]);
+            var difficultydata = google.visualization.arrayToDataTable([
+            ['Difficulty Level', 'Number of Questions'],
+            ['Level 1', 2],
+            ['Level 2', 3],
+            ['Level 3', 3],
+            ['Level 4', 1],
+            ['Level 5', 1]
+        ]);
+
+        // Optional; add a title and set the width and height of the chart
+        var options = {title: 'Question Distribution', 'width':550, 'height':400, is3D: true,};
+
+        var options2 = {title: 'Question Distribution', 'width':550, 'height':400, is3D: true,};
+
+        // Display the chart inside the <div> element with id="skillsetpiechart"
+        var skillsetchart = new google.visualization.PieChart(document.getElementById('skillsetpiechart'));
+        skillsetchart.draw(data, options);
+
+        // Display the chart inside the <div> element with id="difficultypiechart"
+        var difficultychart = new google.visualization.PieChart(document.getElementById('difficultypiechart'));
+        difficultychart.draw(difficultydata, options2);
+        }
+
+        google.charts.load('current', {'packages':['table']});
+        google.charts.setOnLoadCallback(drawTable);
+
+        function drawTable() {
+            var skillset_table_data = new google.visualization.DataTable();
+            skillset_table_data.addColumn('string', 'Skillset');
+            skillset_table_data.addColumn('number', 'No. of Questions Asked');
+            skillset_table_data.addColumn('number', 'Average No. of Questions Correct');
+            skillset_table_data.addRows([
+            ['Recall',  {v: 4, f: '4'}, {v: 3.20, f: '3.20'}],
+            ['Evaluation',   {v:1,   f: '1'},  {v: 0.45, f: '0.45'}],
+            ['Inference', {v: 3, f: '3'}, {v: 1.78, f: '1.78'}],
+            ['Application',   {v: 2,  f: '2'},  {v: 0.87,  f: '0.87'}],
+            ['Total',   {v: 10,  f: '10'},  {v: 6.30,  f: '6.30'}]
+            ]);
+
+            var difficulty_table_data = new google.visualization.DataTable();
+            difficulty_table_data.addColumn('string', 'Name');
+            difficulty_table_data.addColumn('number', 'No. of Questions Correct');
+            difficulty_table_data.addColumn('number', '% of Questions Correct');
+            difficulty_table_data.addRows([
+            ['Mark', {v: 8, f: '8'}, {v: 80, f: '80%'}],
+            ['May', {v:7, f: '7'}, {v: 70, f: '70%'}],
+            ['Sherie', {v: 8, f: '8'}, {v: 80, f: '80%'}],
+            ['Tom', {v: 10,  f: '10'}, {v: 100, f: '100%'}],
+            ['Nathaniel', {v: 10,  f: '10'}, {v: 100, f: '100%'}],
+            ['Luke', {v: 10,  f: '10'}, {v: 100, f: '100%'}],
+            ['Benjamin', {v: 10,  f: '10'}, {v: 100, f: '100%'}],
+            ['Bryan', {v: 10,  f: '10'}, {v: 100, f: '100%'}],
+            ['Joshua', {v: 9,  f: '9'}, {v: 90, f: '90%'}],
+            ['Jonathan', {v: 8,  f: '8'}, {v: 80, f: '80%'}],
+            ['Jane', {v: 5,  f: '5'}, {v: 50, f: '50%'}],
+            ]);
+
+        var skillset_table = new google.visualization.Table(document.getElementById('skillset_table_div'));
+
+        skillset_table.draw(skillset_table_data, {showRowNumber: false, width: '100%', height: '100%'});
+
+        var difficulty_table = new google.visualization.Table(document.getElementById('difficulty_table_div'));
+
+        difficulty_table.draw(difficulty_table_data, {showRowNumber: false, sortColumn: 2, sortAscending: false, width: '100%', height: '100%'});
+      }
+
+        var array = []
+        window.onload
+
+        fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/quiz')
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            const jsonStr = JSON.stringify(data)
+            const obj = JSON.parse(jsonStr)
+            const obj2 = JSON.parse(obj.data)
+            var array = obj2.Items
+            //Questions
+            document.getElementById("demo").innerHTML = "Q1. " + array[0]['Question']['S'];
+            
+            document.getElementById("demo2").innerHTML = "Q2. " + array[1]['Question']['S'];
+
+            document.getElementById("demo3").innerHTML = "Q3. " + array[2]['Question']['S'];
+
+            document.getElementById("demo4").innerHTML = "Q4. " + array[3]['Question']['S'];
+
+            document.getElementById("demo5").innerHTML = "Q5. " + array[4]['Question']['S'];
+
+            document.getElementById("demo6").innerHTML = "Q6. " + array[5]['Question']['S'];
+
+            document.getElementById("demo7").innerHTML = "Q7. " + array[6]['Question']['S'];
+
+            document.getElementById("demo8").innerHTML = "Q8. " + array[7]['Question']['S'];
+
+            document.getElementById("demo9").innerHTML = "Q9. " + array[8]['Question']['S'];
+
+            document.getElementById("demo10").innerHTML = "Q10. " + array[9]['Question']['S'];
+
+            document.getElementById("demo011").innerHTML = "Q11. " + array[10]['Question']['S'];
+            
+            document.getElementById("demo12").innerHTML = "Q12. " + array[11]['Question']['S'];
+
+            document.getElementById("demo13").innerHTML = "Q13. " + array[12]['Question']['S'];
+
+            document.getElementById("demo14").innerHTML = "Q14. " + array[13]['Question']['S'];
+
+            document.getElementById("demo15").innerHTML = "Q15. " + array[14]['Question']['S'];
+
+            document.getElementById("demo16").innerHTML = "Q16. " + array[15]['Question']['S'];
+
+            document.getElementById("demo17").innerHTML = "Q17. " + array[16]['Question']['S'];
+
+            document.getElementById("demo18").innerHTML = "Q18. " + array[17]['Question']['S'];
+
+            document.getElementById("demo19").innerHTML = "Q19. " + array[18]['Question']['S'];
+
+            document.getElementById("demo20").innerHTML = "Q20. " + array[19]['Question']['S'];
+            
+            //Number of students who got the question correct
+            document.getElementById('demoo11').innerHTML = array[0]['Students_Correct']['S'] + " / " + array[0]['Students_Attempted']['S'] + " students chose the correct answer, " + array[0]['Answer']['S']
+
+            document.getElementById('demoo21').innerHTML = array[1]['Students_Correct']['S'] + " / " + array[1]['Students_Attempted']['S'] + " students chose the correct answer, " + array[1]['Answer']['S']
+
+            document.getElementById('demoo31').innerHTML = array[2]['Students_Correct']['S'] + " / " + array[2]['Students_Attempted']['S'] + " students chose the correct answer, " + array[2]['Answer']['S']
+
+            document.getElementById('demoo41').innerHTML = array[3]['Students_Correct']['S'] + " / " + array[3]['Students_Attempted']['S'] + " students chose the correct answer, " + array[3]['Answer']['S']
+
+            document.getElementById('demoo51').innerHTML = array[4]['Students_Correct']['S'] + " / " + array[4]['Students_Attempted']['S'] + " students chose the correct answer, " + array[4]['Answer']['S']
+
+            document.getElementById('demoo61').innerHTML = array[5]['Students_Correct']['S'] + " / " + array[5]['Students_Attempted']['S'] + " students chose the correct answer, " + array[5]['Answer']['S']
+
+            document.getElementById('demoo71').innerHTML = array[6]['Students_Correct']['S'] + " / " + array[6]['Students_Attempted']['S'] + " students chose the correct answer, " + array[6]['Answer']['S']
+
+            document.getElementById('demoo81').innerHTML = array[7]['Students_Correct']['S'] + " / " + array[7]['Students_Attempted']['S'] + " students chose the correct answer, " + array[7]['Answer']['S']
+
+            document.getElementById('demoo91').innerHTML = array[8]['Students_Correct']['S'] + " / " + array[8]['Students_Attempted']['S'] + " students chose the correct answer, " + array[8]['Answer']['S']
+
+            document.getElementById('demoo101').innerHTML = array[9]['Students_Correct']['S'] + " / " + array[9]['Students_Attempted']['S'] + " students chose the correct answer, " + array[9]['Answer']['S']
+
+            document.getElementById('demoo111').innerHTML = array[10]['Students_Correct']['S'] + " / " + array[10]['Students_Attempted']['S'] + " students chose the correct answer, " + array[10]['Answer']['S']
+
+            document.getElementById('demoo121').innerHTML = array[11]['Students_Correct']['S'] + " / " + array[11]['Students_Attempted']['S'] + " students chose the correct answer, " + array[11]['Answer']['S']
+
+            document.getElementById('demoo131').innerHTML = array[12]['Students_Correct']['S'] + " / " + array[12]['Students_Attempted']['S'] + " students chose the correct answer, " + array[12]['Answer']['S']
+
+            document.getElementById('demoo141').innerHTML = array[13]['Students_Correct']['S'] + " / " + array[13]['Students_Attempted']['S'] + " students chose the correct answer, " + array[13]['Answer']['S']
+
+            document.getElementById('demoo151').innerHTML = array[14]['Students_Correct']['S'] + " / " + array[14]['Students_Attempted']['S'] + " students chose the correct answer, " + array[14]['Answer']['S']
+
+            document.getElementById('demoo161').innerHTML = array[15]['Students_Correct']['S'] + " / " + array[15]['Students_Attempted']['S'] + " students chose the correct answer, " + array[15]['Answer']['S']
+
+            document.getElementById('demoo171').innerHTML = array[16]['Students_Correct']['S'] + " / " + array[16]['Students_Attempted']['S'] + " students chose the correct answer, " + array[16]['Answer']['S']
+
+            document.getElementById('demoo181').innerHTML = array[17]['Students_Correct']['S'] + " / " + array[17]['Students_Attempted']['S'] + " students chose the correct answer, " + array[17]['Answer']['S']
+
+            document.getElementById('demoo191').innerHTML = array[18]['Students_Correct']['S'] + " / " + array[18]['Students_Attempted']['S'] + " students chose the correct answer, " + array[18]['Answer']['S']
+
+            document.getElementById('demoo201').innerHTML = array[19]['Students_Correct']['S'] + " / " + array[19]['Students_Attempted']['S'] + " students chose the correct answer, " + array[19]['Answer']['S']
+
+            //Question Skillset
+            document.getElementById("skillset1").innerHTML = array[0]['Skillset']['S'];
+            
+            document.getElementById("skillset2").innerHTML = array[1]['Skillset']['S'];
+
+            document.getElementById("skillset3").innerHTML = array[2]['Skillset']['S'];
+
+            document.getElementById("skillset4").innerHTML = array[3]['Skillset']['S'];
+
+            document.getElementById("skillset5").innerHTML = array[4]['Skillset']['S'];
+
+            document.getElementById("skillset6").innerHTML = array[5]['Skillset']['S'];
+
+            document.getElementById("skillset7").innerHTML = array[6]['Skillset']['S'];
+
+            document.getElementById("skillset8").innerHTML = array[7]['Skillset']['S'];
+
+            document.getElementById("skillset9").innerHTML = array[8]['Skillset']['S'];
+
+            document.getElementById("skillset10").innerHTML = array[9]['Skillset']['S'];
+
+            document.getElementById("skillset11").innerHTML = array[10]['Skillset']['S'];
+            
+            document.getElementById("skillset12").innerHTML = array[11]['Skillset']['S'];
+
+            document.getElementById("skillset13").innerHTML = array[12]['Skillset']['S'];
+
+            document.getElementById("skillset14").innerHTML = array[13]['Skillset']['S'];
+
+            document.getElementById("skillset15").innerHTML = array[14]['Skillset']['S'];
+
+            document.getElementById("skillset16").innerHTML = array[15]['Skillset']['S'];
+
+            document.getElementById("skillset17").innerHTML = array[16]['Skillset']['S'];
+
+            document.getElementById("skillset18").innerHTML = array[17]['Skillset']['S'];
+
+            document.getElementById("skillset19").innerHTML = array[18]['Skillset']['S'];
+
+            document.getElementById("skillset20").innerHTML = array[19]['Skillset']['S'];
+
+            //Question Difficulty Level
+            document.getElementById("difficulty1").innerHTML = "Difficulty Rating: " + array[0]['Difficulty']['S'];
+            
+            document.getElementById("difficulty2").innerHTML = "Difficulty Rating: " + array[1]['Difficulty']['S'];
+
+            document.getElementById("difficulty3").innerHTML = "Difficulty Rating: " + array[2]['Difficulty']['S'];
+
+            document.getElementById("difficulty4").innerHTML = "Difficulty Rating: " + array[3]['Difficulty']['S'];
+
+            document.getElementById("difficulty5").innerHTML = "Difficulty Rating: " + array[4]['Difficulty']['S'];
+
+            document.getElementById("difficulty6").innerHTML = "Difficulty Rating: " + array[5]['Difficulty']['S'];
+
+            document.getElementById("difficulty7").innerHTML = "Difficulty Rating: " + array[6]['Difficulty']['S'];
+
+            document.getElementById("difficulty8").innerHTML = "Difficulty Rating: " + array[7]['Difficulty']['S'];
+
+            document.getElementById("difficulty9").innerHTML = "Difficulty Rating: " + array[8]['Difficulty']['S'];
+
+            document.getElementById("difficulty10").innerHTML = "Difficulty Rating: " + array[9]['Difficulty']['S'];
+
+            document.getElementById("difficulty11").innerHTML = "Difficulty Rating: " + array[10]['Difficulty']['S'];
+            
+            document.getElementById("difficulty12").innerHTML = "Difficulty Rating: " + array[11]['Difficulty']['S'];
+
+            document.getElementById("difficulty13").innerHTML = "Difficulty Rating: " + array[12]['Difficulty']['S'];
+
+            document.getElementById("difficulty14").innerHTML = "Difficulty Rating: " + array[13]['Difficulty']['S'];
+
+            document.getElementById("difficulty15").innerHTML = "Difficulty Rating: " + array[14]['Difficulty']['S'];
+
+            document.getElementById("difficulty16").innerHTML = "Difficulty Rating: " + array[15]['Difficulty']['S'];
+
+            document.getElementById("difficulty17").innerHTML = "Difficulty Rating: " + array[16]['Difficulty']['S'];
+
+            document.getElementById("difficulty18").innerHTML = "Difficulty Rating: " + array[17]['Difficulty']['S'];
+
+            document.getElementById("difficulty19").innerHTML = "Difficulty Rating: " + array[18]['Difficulty']['S'];
+
+            document.getElementById("difficulty20").innerHTML = "Difficulty Rating: " + array[19]['Difficulty']['S'];
+
+            //Question Explanations
+            var e01 = array[0]['Explanation']['S']
+            document.getElementById('explan1').innerHTML = "Explanation: " + e01
+
+            var e02 = array[1]['Explanation']['S']
+            document.getElementById('explan2').innerHTML = "Explanation: " + e02
+
+            var e03 = array[2]['Explanation']['S']
+            document.getElementById('explan3').innerHTML = "Explanation: " + e03
+
+            var e04 = array[3]['Explanation']['S']
+            document.getElementById('explan4').innerHTML = "Explanation: " + e04
+
+            var e05 = array[4]['Explanation']['S']
+            document.getElementById('explan5').innerHTML = "Explanation: " + e05
+
+            var e06 = array[5]['Explanation']['S']
+            document.getElementById('explan6').innerHTML = "Explanation: " + e06
+
+            var e07 = array[6]['Explanation']['S']
+            document.getElementById('explan7').innerHTML = "Explanation: " + e07
+
+            var e08 = array[7]['Explanation']['S']
+            document.getElementById('explan8').innerHTML = "Explanation: " + e08
+
+            var e09 = array[8]['Explanation']['S']
+            document.getElementById('explan9').innerHTML = "Explanation: " + e09
+
+            var e10 = array[9]['Explanation']['S']
+            document.getElementById('explan10').innerHTML = "Explanation: " + e10
+
+            var e11 = array[10]['Explanation']['S']
+            document.getElementById('explan11').innerHTML = "Explanation: " + e11
+
+            var e12 = array[11]['Explanation']['S']
+            document.getElementById('explan12').innerHTML = "Explanation: " + e12
+
+            var e13 = array[12]['Explanation']['S']
+            document.getElementById('explan13').innerHTML = "Explanation: " + e13
+
+            var e14 = array[13]['Explanation']['S']
+            document.getElementById('explan14').innerHTML = "Explanation: " + e14
+
+            var e15 = array[14]['Explanation']['S']
+            document.getElementById('explan15').innerHTML = "Explanation: " + e15
+
+            var e16 = array[15]['Explanation']['S']
+            document.getElementById('explan16').innerHTML = "Explanation: " + e16
+
+            var e17 = array[16]['Explanation']['S']
+            document.getElementById('explan17').innerHTML = "Explanation: " + e17
+
+            var e18 = array[17]['Explanation']['S']
+            document.getElementById('explan18').innerHTML = "Explanation: " + e18
+
+            var e19 = array[18]['Explanation']['S']
+            document.getElementById('explan19').innerHTML = "Explanation: " + e19
+
+            var e20 = array[19]['Explanation']['S']
+            document.getElementById('explan20').innerHTML = "Explanation: " + e20
+
+            //Question 1 Options
+            document.getElementById('q1o1').innerHTML = "A. " + array[0]['Option_A']['S'];
+
+            document.getElementById('q1o2').innerHTML = "B. " + array[0]['Option_B']['S'];
+
+            document.getElementById('q1o3').innerHTML = "C. " + array[0]['Option_C']['S'];
+
+            document.getElementById('q1o4').innerHTML = "D. " + array[0]['Option_D']['S'];
+
+            //Question 2 Options
+            document.getElementById('q2o1').innerHTML = "A. " + array[1]['Option_A']['S'];
+
+            document.getElementById('q2o2').innerHTML = "B. " + array[1]['Option_B']['S'];
+
+            document.getElementById('q2o3').innerHTML = "C. " + array[1]['Option_C']['S'];
+
+            document.getElementById('q2o4').innerHTML = "D. " + array[1]['Option_D']['S'];
+
+            //Question 3 Options
+            document.getElementById('q3o1').innerHTML = "A. " + array[2]['Option_A']['S'];
+
+            document.getElementById('q3o2').innerHTML = "B. " + array[2]['Option_B']['S'];
+
+            document.getElementById('q3o3').innerHTML = "C. " + array[2]['Option_C']['S'];
+
+            document.getElementById('q3o4').innerHTML = "D. " + array[2]['Option_D']['S'];
+
+            //Question 4 Options
+            document.getElementById('q4o1').innerHTML = "A. " + array[3]['Option_A']['S'];
+
+            document.getElementById('q4o2').innerHTML = "B. " + array[3]['Option_B']['S'];
+
+            document.getElementById('q4o3').innerHTML = "C. " + array[3]['Option_C']['S'];
+
+            document.getElementById('q4o4').innerHTML = "D. " + array[3]['Option_D']['S'];
+
+            //Question 5 Options
+            document.getElementById('q5o1').innerHTML = "A. " + array[4]['Option_A']['S'];
+
+            document.getElementById('q5o2').innerHTML = "B. " + array[4]['Option_B']['S'];
+
+            document.getElementById('q5o3').innerHTML = "C. " + array[4]['Option_C']['S'];
+
+            document.getElementById('q5o4').innerHTML = "D. " + array[4]['Option_D']['S'];
+
+            //Question 6 Options
+            document.getElementById('q6o1').innerHTML = "A. " + array[5]['Option_A']['S'];
+
+            document.getElementById('q6o2').innerHTML = "B. " + array[5]['Option_B']['S'];
+
+            document.getElementById('q6o3').innerHTML = "C. " + array[5]['Option_C']['S'];
+
+            document.getElementById('q6o4').innerHTML = "D. " + array[5]['Option_D']['S'];
+
+             //Question 7 Options
+            document.getElementById('q7o1').innerHTML = "A. " + array[6]['Option_A']['S'];
+
+            document.getElementById('q7o2').innerHTML = "B. " + array[6]['Option_B']['S'];
+
+            document.getElementById('q7o3').innerHTML = "C. " + array[6]['Option_C']['S'];
+
+            document.getElementById('q7o4').innerHTML = "D. " + array[6]['Option_D']['S'];
+            
+            //Question 8 Options
+            document.getElementById('q8o1').innerHTML = "A. " + array[7]['Option_A']['S'];
+
+            document.getElementById('q8o2').innerHTML = "B. " + array[7]['Option_B']['S'];
+
+            document.getElementById('q8o3').innerHTML = "C. " + array[7]['Option_C']['S'];
+
+            document.getElementById('q8o4').innerHTML = "D. " + array[7]['Option_D']['S'];
+
+            //Question 9 Options
+            document.getElementById('q9o1').innerHTML = "A. " + array[8]['Option_A']['S'];
+
+            document.getElementById('q9o2').innerHTML = "B. " + array[8]['Option_B']['S'];
+
+            document.getElementById('q9o3').innerHTML = "C. " + array[8]['Option_C']['S'];
+
+            document.getElementById('q9o4').innerHTML = "D. " + array[8]['Option_D']['S'];
+
+            //Question 10 Options
+            document.getElementById('q10o1').innerHTML = "A. " + array[9]['Option_A']['S'];
+
+            document.getElementById('q10o2').innerHTML = "B. " + array[9]['Option_B']['S'];
+
+            document.getElementById('q10o3').innerHTML = "C. " + array[9]['Option_C']['S'];
+
+            document.getElementById('q10o4').innerHTML = "D. " + array[9]['Option_D']['S'];
+
+            //Question 11 Options
+            document.getElementById('q11o1').innerHTML = "A. " + array[10]['Option_A']['S'];
+
+            document.getElementById('q11o2').innerHTML = "B. " + array[10]['Option_B']['S'];
+
+            document.getElementById('q11o3').innerHTML = "C. " + array[10]['Option_C']['S'];
+
+            document.getElementById('q11o4').innerHTML = "D. " + array[10]['Option_D']['S'];
+
+            //Question 12 Options
+            document.getElementById('q12o1').innerHTML = "A. " + array[11]['Option_A']['S'];
+
+            document.getElementById('q12o2').innerHTML = "B. " + array[11]['Option_B']['S'];
+
+            document.getElementById('q12o3').innerHTML = "C. " + array[11]['Option_C']['S'];
+
+            document.getElementById('q12o4').innerHTML = "D. " + array[11]['Option_D']['S'];
+
+            //Question 13 Options
+            document.getElementById('q13o1').innerHTML = "A. " + array[12]['Option_A']['S'];
+
+            document.getElementById('q13o2').innerHTML = "B. " + array[12]['Option_B']['S'];
+
+            document.getElementById('q13o3').innerHTML = "C. " + array[12]['Option_C']['S'];
+
+            document.getElementById('q13o4').innerHTML = "D. " + array[12]['Option_D']['S'];
+
+            //Question 14 Options
+            document.getElementById('q14o1').innerHTML = "A. " + array[13]['Option_A']['S'];
+
+            document.getElementById('q14o2').innerHTML = "B. " + array[13]['Option_B']['S'];
+
+            document.getElementById('q14o3').innerHTML = "C. " + array[13]['Option_C']['S'];
+
+            document.getElementById('q14o4').innerHTML = "D. " + array[13]['Option_D']['S'];
+
+            //Question 15 Options
+            document.getElementById('q15o1').innerHTML = "A. " + array[14]['Option_A']['S'];
+
+            document.getElementById('q15o2').innerHTML = "B. " + array[14]['Option_B']['S'];
+
+            document.getElementById('q15o3').innerHTML = "C. " + array[14]['Option_C']['S'];
+
+            document.getElementById('q15o4').innerHTML = "D. " + array[14]['Option_D']['S'];
+
+            //Question 16 Options
+            document.getElementById('q16o1').innerHTML = "A. " + array[15]['Option_A']['S'];
+
+            document.getElementById('q16o2').innerHTML = "B. " + array[15]['Option_B']['S'];
+
+            document.getElementById('q16o3').innerHTML = "C. " + array[15]['Option_C']['S'];
+
+            document.getElementById('q16o4').innerHTML = "D. " + array[15]['Option_D']['S'];
+
+             //Question 17 Options
+            document.getElementById('q17o1').innerHTML = "A. " + array[16]['Option_A']['S'];
+
+            document.getElementById('q17o2').innerHTML = "B. " + array[16]['Option_B']['S'];
+
+            document.getElementById('q17o3').innerHTML = "C. " + array[16]['Option_C']['S'];
+
+            document.getElementById('q17o4').innerHTML = "D. " + array[16]['Option_D']['S'];
+            
+            //Question 18 Options
+            document.getElementById('q18o1').innerHTML = "A. " + array[17]['Option_A']['S'];
+
+            document.getElementById('q18o2').innerHTML = "B. " + array[17]['Option_B']['S'];
+
+            document.getElementById('q18o3').innerHTML = "C. " + array[17]['Option_C']['S'];
+
+            document.getElementById('q18o4').innerHTML = "D. " + array[17]['Option_D']['S'];
+
+            //Question 19 Options
+            document.getElementById('q19o1').innerHTML = "A. " + array[18]['Option_A']['S'];
+
+            document.getElementById('q19o2').innerHTML = "B. " + array[18]['Option_B']['S'];
+
+            document.getElementById('q19o3').innerHTML = "C. " + array[18]['Option_C']['S'];
+
+            document.getElementById('q19o4').innerHTML = "D. " + array[18]['Option_D']['S'];
+
+            //Question 20 Options
+            document.getElementById('q20o1').innerHTML = "A. " + array[19]['Option_A']['S'];
+
+            document.getElementById('q20o2').innerHTML = "B. " + array[19]['Option_B']['S'];
+
+            document.getElementById('q20o3').innerHTML = "C. " + array[19]['Option_C']['S'];
+
+            document.getElementById('q20o4').innerHTML = "D. " + array[19]['Option_D']['S'];
+
+        })
+        .catch((err) => {
+            console.error('There has been a problem with your fetch operation:');
+        })
+
+        
+        // document.getElementById("demoo2").outerHTML= obj2.Items[0]['Option B']['S'];
+        // document.getElementById("demoo3").outerHTML = obj2.Items[0]['Option C']['S'];
+        // document.getElementById("demoo4").outerHTML = obj2.Items[0]['Option D']['S'];
+    </script>
+
+</body>
+
+</html>
