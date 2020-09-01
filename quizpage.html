@@ -17,7 +17,7 @@
         <div id="BINO" class="page-header">BINO</div>
 
         <img src="img_avatar.png" alt="Avatar" id="avatar" style="width:60px">
-        <p id="avatar_text">Timothy Lim<br>Student</p>
+        <p id="avatar_text">Raphael Low<br>Student</p>
 
          <div id = "sidenav">
              <div id="overview_button">
@@ -46,9 +46,10 @@
     </div>
 
     
-
-    <div id="main_section" class="col-md-6 offset-md-3">
-        <div id="quiz_content">
+    
+    <div id="main_section" class="col-6 offset-3">
+        <div id="quiz_content" class="container">
+          
             <div id = "quiz_text">Alkanes (C1003)</div>
             <div id = "quiz_text2">30 Questions | 30 Minutes</div>
             <hr>
@@ -283,8 +284,8 @@
 
         document.getElementById("nextbutton").addEventListener("click", storeAns, false);
         
-        
         function storeAns() {
+          scroll(0,0)
           var val1,
           element = document.querySelector('input[name="exampleRadios"]:checked');
           if (element != null) {
@@ -330,16 +331,18 @@
               val5 = [array[4]['Qns_ID']['S'], Number(array[4]['Difficulty']['S']), array[4]['Skillset']['S'], null];
           }
 
+            jsonObj.isFinal = false
+
             if (isFinalCalc == 5) {
               jsonObj.isFinal = true
-              document.getElementById('nextbutton').outerHTML = "<button onclick='document.location=\'performance_report.html\'' type='button' class='btn btn-primary'>Submit</button>";
+            }
+
+            if (isFinalCalc == 4) {
+              document.getElementById('nextbutton').outerHTML = "<button id='nextbutton' onclick='document.location=\'performance_report.html\'' type='button' class='btn btn-primary'>Submit</button>";
 
             }
 
-            else if (isFinalCalc < 5) {
-              jsonObj.isFinal = false
-            }
-            
+            jsonObj.isFinal = false
             jsonObj.currentLower  = currentLower
             jsonObj.currentUpper = currentUpper
             jsonObj.currentAverage = currentAverage
@@ -386,6 +389,7 @@
             .catch(err => {
               console.log(err)
             })
+            
             document.getElementById("nextbutton").removeEventListener("click",storeAns)
         }
       }
