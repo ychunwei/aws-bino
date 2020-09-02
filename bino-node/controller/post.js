@@ -244,13 +244,12 @@ exports.getScore = async (req, res) => {
                 });
             }
             else{
-                var qn_ids = calculator.returnQnIDTracker();
+                // var qn_ids = calculator.returnQnIDTracker();
                 calculator.clearQnIDTracker();
                 res.json({
                     currentLower: lowerbound, 
                     currentUpper: upperbound,
                     currentAverage: averageScore,
-                    id_of_qn: qn_ids
                 });
             }
         });
