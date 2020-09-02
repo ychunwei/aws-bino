@@ -1,6 +1,5 @@
 html, body {
     width: 100%;
-    margin: 0;
     background: rgba(247,247,247,1);
 }
 
@@ -45,17 +44,9 @@ html, body {
 
 #main_section{
     position: absolute;
-    height: 5790px;
-    top: 120px;
-    width: 800px;
-    background-color: white;
-    border-radius: 25px;
+    width: 100%;
+    height: 100%;
     /* left: calc(50% - 400px); */
-}
-
-#profile {
-
-    
 }
 
 #icon {
@@ -74,6 +65,17 @@ html, body {
     color: rgba(0,0,0,1);
 }
 
+#avatar_text{
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    float: right;
+    margin-right: 15px;
+    margin-top: -20px;
+    color: rgba(0,0,0,1);
+}
+
 #overview_button {
     width: 300px;
     height: 40px;
@@ -88,7 +90,7 @@ html, body {
 #sidenav {
     height: 40px;
     position: absolute;
-    margin-top: 70px;
+    margin-top: 100px;
     left: 50px;
 
 }
@@ -112,23 +114,30 @@ html, body {
 
 #quiz_card {
     fill: rgba(255,255,255,1);
-    position: relative;
+    position: absolute;
     overflow: visible;
     top: 0;
     width: 100%;
-    /* left: calc(50% - 300px); */
     white-space: nowrap;
 }
 
 #quiz_content {
     position: absolute;
-    width: 600px;
-    left: calc(50% - 300px);
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    top: 150px;
+    padding-right: 30px;
+    padding-left: 30px;
+    /* left: calc(50% - 300px); */
 }
 
 #quiz_options {
-    position: absolute;
-    top: 170px;
+    position: relative;
+    display: block;
 }
 
 #quiz_text {
@@ -136,8 +145,8 @@ html, body {
     font-family: Helvetica Neue;
     font-style: normal;
     font-weight: bold;
-    margin-top: 30px;
-    font-size: 40px;
+    margin-top: 20px;
+    font-size: 35px;
     color: orange;
 }
 
@@ -147,9 +156,17 @@ html, body {
     font-family: Helvetica Neue;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     color: rgba(0,0,0,1);
 }
+
+#avatar {
+    border-radius: 50%;
+    float: right;
+    position: relative;
+    right: 200px;
+    bottom: 20px;
+  }
 
 .sticky {
     position: fixed;
