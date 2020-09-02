@@ -55,7 +55,7 @@
             <div id = "quiz_options">
                 <h3>General Overview</h3>
                 <h4 id = "score">Score</h4>
-                <h4 id = "skillrating">Skill Rating INSERT HERE</h4>
+                <h4 id = "skillrating">Skill Rating</h4>
                 <h5 id = "goodjob">Great Job!</h5>
                 <hr>
                 <h3>Breakdown of Questions Attempted by Skillset</h3>
@@ -309,7 +309,9 @@
             var totalcorrect = recallcorrect + inferencecorrect + evaluationcorrect + applicationcorrect;
             var percentagecorrect = totalcorrect/total;
 
-            document.getElementById("score").innerHTML = "Your score is: " + totalcorrect + "/" + total;
+            document.getElementById("score").innerHTML = "Score: " + totalcorrect + "/" + total;
+
+            document.getElementById("skillrating").innerHTML = "Skill Rating: " + String(localStorage.getItem("currentAverage")) + "/5";
 
             if (percentagecorrect >= 0.8) {
                 document.getElementById("goodjob").innerHTML = "Great Job!"
