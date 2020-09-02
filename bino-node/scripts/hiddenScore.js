@@ -1,5 +1,6 @@
 // var question_dic = {}
 var qn_tracker = []; // global variable to store the qns
+var qn_id_tracker = [];
 
 exports.sayHi = () => {
     console.log("HI")
@@ -36,6 +37,7 @@ exports.computeHiddenScore = (currentLower, currentUpper, currentAvg, difficulty
     difference = Math.abs(difficulty_state_pair[index][1] - currentAvg)
     sqr_diff = difference ** 2
     qn_tracker.push(difficulty_state_pair[index]) // append to global var for the updateQnScores
+    qn_id_tracker.push(difficulty_state_pair[index][0]) // push qnIDs
     // swap jic
     if (currentUpper < currentLower) {
       currentUpper = swap_temp;
@@ -67,6 +69,11 @@ exports.computeHiddenScore = (currentLower, currentUpper, currentAvg, difficulty
 
   // Update the average only at the end 
   currentAvg = (currentUpper + currentLower) / 2;
+
+  if ((currentUpper - currentLower) < 0.5){
+    currentUpper = currentAvg + 0.25
+    currentLower = currentAvg - 0.25
+  }
   
   return [currentLower, currentUpper, currentAvg];
 }
@@ -107,3 +114,10 @@ exports.clearQnTracker = () => {
     qn_tracker = [];
 }
 
+exports.returnQnIDTracker = () => {
+  return qn_id_tracker
+}
+
+exports.clearQnIDTracker = () => {
+  qn_id_tracker = [];
+}
