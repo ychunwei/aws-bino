@@ -208,7 +208,7 @@ exports.getScore = async (req, res) => {
 
         // another DB query for the range
         var qid_track = calculator.filter();
-            
+                       
         var params = {
             TableName: "BINO_Chemistry",
             
@@ -218,7 +218,7 @@ exports.getScore = async (req, res) => {
                 ":v_diff2":{S: String(upperbound)},
             },
              FilterExpression: 
-                "Difficulty between :v_diff1 and :v_diff2",
+                "Qns_ID != (qid_track.toString()) and Difficulty between :v_diff1 and :v_diff2",
               
             ProjectionExpression: 
                 "Skillset, Difficulty, Topic, Question, Option_A, Option_B, Option_C, Option_D, Qns_ID",
