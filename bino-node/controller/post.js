@@ -207,6 +207,8 @@ exports.getScore = async (req, res) => {
         }
 
         // another DB query for the range
+        var qid_track = calculator.filter();
+            
         var params = {
             TableName: "BINO_Chemistry",
             
