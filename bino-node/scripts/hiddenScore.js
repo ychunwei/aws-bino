@@ -98,6 +98,14 @@ exports.updatetally = (student_state, correct, wrong, total) => {
   return tally;
 }
 
+exports.filter = () => {
+    var qid_tracker =[]; // tracker of qns_ids attempted
+    for (index in qn_tracker){
+        qid_tracker.push(qn_tracker[0])
+    }
+    return qid_tracker
+}
+
 // return statement
 exports.returnQnTracker = () => {
     return qn_tracker
