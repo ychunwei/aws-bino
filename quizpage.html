@@ -51,7 +51,7 @@
         <div id="quiz_content" class="container">
           
             <div id = "quiz_text">Alkanes (C1003)</div>
-            <div id = "quiz_text2">30 Questions | 30 Minutes</div>
+            <div id = "quiz_text2">15 Questions | 30 Minutes</div>
             <hr>
             <div id = "quiz_options">
               <p id="demo"></p>
@@ -222,9 +222,6 @@
         .then((data) => {
           isFinalCalc = isFinalCalc + 1
           displayQuestion(data)
-
-            // POST TO CHECKANS
-            
           })
 
         .catch((err) => {
@@ -235,17 +232,29 @@
       function displayQuestion(questionsToBe) {
         const jsonStr = JSON.stringify(questionsToBe)
         const obj = JSON.parse(jsonStr)
-        if (isFinalCalc > 1) {
-          currentAverage = obj.currentAverage
-          currentLower = obj.currentLower
-          currentUpper = obj.currentUpper
-        }
-        
+        var list = [obj.id_of_qn]
+        console.log(list)
+
+        if (isFinalCalc <= 3) {
         const obj2 = JSON.parse(obj.data)
         var array = obj2.Items
 
-        //console.log(array[0]['Option_A']['S'])
+        if (isFinalCalc > 1) {
+            currentAverage = obj.currentAverage
+            currentLower = obj.currentLower
+            currentUpper = obj.currentUpper 
+        }
 
+        for (let i=0; i < array.length; i++) {
+              if (list.includes(String(array[i]['Qns_ID']['S']))) {
+                console.log(array)
+                array = array.splice(i,1)
+                console.log(array)
+              }
+            }
+
+        //console.log(array[0]['Option_A']['S'])
+        
         document.getElementById("demo").innerHTML = array[0]['Question']['S']    
         document.getElementById("demo1").innerHTML = array[1]['Question']['S']
         document.getElementById("demo2").innerHTML = array[2]['Question']['S']
@@ -282,9 +291,19 @@
         document.getElementById('demoo34').innerHTML = array[4]['Option_C']['S']
         document.getElementById('demoo44').innerHTML = array[4]['Option_D']['S']
 
+        }
+
         document.getElementById("nextbutton").addEventListener("click", storeAns, false);
         
         function storeAns() {
+
+          if (isFinalCalc == 3) {
+          localStorage.setItem("currentAverage", currentAverage);
+
+          window.location.replace('./performance_report.html')
+          return
+        }
+
           scroll(0,0)
           var val1,
           element = document.querySelector('input[name="exampleRadios"]:checked');
@@ -333,16 +352,14 @@
 
             jsonObj.isFinal = false
 
-            if (isFinalCalc == 5) {
+            if (isFinalCalc == 2) {
+              document.getElementById('nextbutton').outerHTML = "<button id='nextbutton' onclick='document.location=\'performance_report.html\'' type='button' class='btn btn-primary'>Submit</button>";
+            }
+
+            if (isFinalCalc == 3) {
               jsonObj.isFinal = true
             }
 
-            if (isFinalCalc == 4) {
-              document.getElementById('nextbutton').outerHTML = "<button id='nextbutton' onclick='document.location=\'performance_report.html\'' type='button' class='btn btn-primary'>Submit</button>";
-
-            }
-
-            jsonObj.isFinal = false
             jsonObj.currentLower  = currentLower
             jsonObj.currentUpper = currentUpper
             jsonObj.currentAverage = currentAverage
@@ -364,7 +381,6 @@
               isFinalCalc++
               console.log(isFinalCalc)
               console.log(data)
-              displayQuestion(data)
 
               var ele = document.getElementsByName("exampleRadios");
               for(var i=0;i<ele.length;i++)
@@ -385,6 +401,9 @@
               var ele4 = document.getElementsByName("exampleRadios4");
               for(var i=0;i<ele4.length;i++)
                   ele4[i].checked = false;
+
+              displayQuestion(data)
+
             })
             .catch(err => {
               console.log(err)
