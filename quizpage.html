@@ -214,6 +214,9 @@
         var currentLower = 1.5
         var currentUpper = 3.5
         var currentAverage = (currentLower+currentUpper)/2
+        var snowballCounterDecrease = 0
+        var snowballCounterIncrease = 0
+        var previous
 
         fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/ini')
         .then((response) => {
@@ -228,10 +231,16 @@
             console.error('There has been a problem with your fetch operation: ' + err);
         })
 
-        var previous
+        
       function displayQuestion(questionsToBe) {
         const jsonStr = JSON.stringify(questionsToBe)
         const obj = JSON.parse(jsonStr)
+        if (isFinalCalc == 4) {
+            localStorage.setItem("currentAverage", obj.currentAverage);
+            window.location.replace('./performance_report.html')
+            return
+          }
+
         var list = [JSON.stringify(obj.id_of_qn)]
 
         if (isFinalCalc <= 3) {
@@ -251,6 +260,8 @@
             //SNOWBALL EFFECT
             snowball(previous,current)
 
+            
+
             filteredArray = []
             
             for (let i=0; i < array.length; i++) {
@@ -260,11 +271,11 @@
               }
             }
         }
-            console.log(filteredArray[0]['Qns_ID']['S'])
-            console.log(filteredArray[1]['Qns_ID']['S'])
-            console.log(filteredArray[2]['Qns_ID']['S'])
-            console.log(filteredArray[3]['Qns_ID']['S'])
-            console.log(filteredArray[4]['Qns_ID']['S'])
+        console.log(filteredArray[0]['Qns_ID']['S'])
+        console.log(filteredArray[1]['Qns_ID']['S'])
+        console.log(filteredArray[2]['Qns_ID']['S'])
+        console.log(filteredArray[3]['Qns_ID']['S'])
+        console.log(filteredArray[4]['Qns_ID']['S'])
         
         document.getElementById("demo").innerHTML = filteredArray[0]['Question']['S']    
         document.getElementById("demo1").innerHTML = filteredArray[1]['Question']['S']
@@ -310,14 +321,7 @@
           previous = currentAverage
           console.log("previous is recorded with" + currentAverage)
 
-          if (isFinalCalc == 3) {
-          localStorage.setItem("currentAverage", currentAverage);
-          list = []
-
-          window.location.replace('./performance_report.html')
-          return
-        }
-
+        
           scroll(0,0)
           var val1,
           element = document.querySelector('input[name="exampleRadios"]:checked');
@@ -428,8 +432,9 @@
       }
 
       function snowball(previous,current) {
-        if (current - previous > 0.45) {
+        if (current - previous > 0.45 && current > previous) {
           console.log("WOW")
+          
           snowballCounterIncrease++
           if (snowballCounterIncrease > 1) {
             currentAverage = currentAverage + 0.5
@@ -437,14 +442,14 @@
           }
         }
 
-        else if (current - previous > -0.45) {
+        else if (current - previous < -0.45 && current < previous ) {
           console.log("BOO")
           
-        snowballCounterDecrease++
-        if (snowballCounterDecrease > 1) {
-          window.location.replace('./performance_report.html')
-          //ask to redo the quiz when youre better
-        }
+          snowballCounterDecrease++
+          if (snowballCounterDecrease > 1) {
+            window.location.replace('./performance_report.html')
+            //ask to redo the quiz when youre better
+          }
         }
       
       }
