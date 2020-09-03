@@ -214,6 +214,9 @@
         var currentLower = 1.5
         var currentUpper = 3.5
         var currentAverage = (currentLower+currentUpper)/2
+        var snowballCounterDecrease = 0
+        var snowballCounterIncrease = 0
+        var previous
 
         fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/ini')
         .then((response) => {
@@ -228,7 +231,7 @@
             console.error('There has been a problem with your fetch operation: ' + err);
         })
 
-        var previous
+        
       function displayQuestion(questionsToBe) {
         const jsonStr = JSON.stringify(questionsToBe)
         const obj = JSON.parse(jsonStr)
@@ -428,8 +431,9 @@
       }
 
       function snowball(previous,current) {
-        if (current - previous > 0.45) {
+        if (current - previous > 0.45 && current > previous) {
           console.log("WOW")
+          
           snowballCounterIncrease++
           if (snowballCounterIncrease > 1) {
             currentAverage = currentAverage + 0.5
@@ -437,14 +441,14 @@
           }
         }
 
-        else if (current - previous > -0.45) {
+        else if (current - previous < -0.45 && current < previous ) {
           console.log("BOO")
           
-        snowballCounterDecrease++
-        if (snowballCounterDecrease > 1) {
-          window.location.replace('./performance_report.html')
-          //ask to redo the quiz when youre better
-        }
+          snowballCounterDecrease++
+          if (snowballCounterDecrease > 1) {
+            window.location.replace('./performance_report.html')
+            //ask to redo the quiz when youre better
+          }
         }
       
       }
