@@ -8,6 +8,7 @@ const router = express.Router();
 router.get("/ini", postController.getPosts); // gets initial qns
 router.post("/checkans", postController.getScore); // get answer
 router.get("/report", postController.getResponseAndState); // get array of qns, state, and user_response
+router.get("/clear", postController.getClear); // clear cache
 
 module.exports = router; 
 
