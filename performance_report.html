@@ -76,23 +76,20 @@
 <!-- JAVASCRIPT CODE -->
 
     <script type="text/javascript">
-        window.onscroll = function() {myFunction()};
-        
-        var header = document.getElementById("topBar");
-        var sticky = header.offsetTop;
-        
-        function myFunction() {
-          if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-          } else {
-            header.classList.remove("sticky");
-          }
-        }
-
         var array = [];
         var input = [];
-        var n = 15;
-        window.onload
+
+        var skillrating = Number(localStorage.getItem("currentAverage"));
+
+        if (skillrating >= 4.0) {
+            document.getElementById("goodjob").innerHTML = "Great Job!"
+        } else if (skillrating >= 3.0 && skillrating < 4.0) {
+            document.getElementById("goodjob").innerHTML = "You did well!"
+        } else if (skillrating >= 2.25 && skillrating < 3.0) {
+            document.getElementById("goodjob").innerHTML = "You need to buck up!"
+        } else {
+            document.getElementById("goodjob").innerHTML = "Revise your fundamentals and try again!"
+        }
 
         fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/report')
         .then((response) => {
@@ -102,6 +99,7 @@
             const jsonStr = JSON.stringify(data)
             const obj = JSON.parse(jsonStr)
             input = obj.data
+            console.log(input.length);
             
         })
         .catch(err => {
@@ -117,6 +115,8 @@
             const obj = JSON.parse(jsonStr)
             const obj2 = JSON.parse(obj.data)
             var array = obj2.Items
+
+            var n = input.length;
 
             for (a = 1; a < (n + 1); a++) {
                 //Question
@@ -203,10 +203,8 @@
             for (i = 0; i < n; i++) {
                 for (j = 0; j < obj2.Items.length; j++) {
                     if (array[j]['Qns_ID']['S'] == input[i][0]) {
-                        var a = i + 1;
 
-                        console.log("Q" + a);
-                        console.log(input[i][2])
+                        var a = i + 1;
 
                         var question = String("demo" + a);
                         var skillset = String("skillset" + a);
@@ -237,7 +235,6 @@
 
                         if (input[i][2] == "Recall") {
                             recall += 1;
-                            console.log(recall);
                             if (input[i][3] == 1) {
                                 recallcorrect += 1;
                                 document.getElementById(heading).innerHTML = "Correct";
@@ -252,7 +249,6 @@
                             }
                         } else if (input[i][2] == "Inference") {
                             inference += 1;
-                            console.log(inference);
                             if (input[i][3] == 1) {
                                 inferencecorrect += 1;
                                 document.getElementById(heading).innerHTML = "Correct";
@@ -308,20 +304,10 @@
             var total = recall + inference + evaluation + application;
             var totalcorrect = recallcorrect + inferencecorrect + evaluationcorrect + applicationcorrect;
             var percentagecorrect = totalcorrect/total;
-
+            
             document.getElementById("score").innerHTML = "Score: " + totalcorrect + "/" + total;
 
-            document.getElementById("skillrating").innerHTML = "Skill Rating: " + String(localStorage.getItem("currentAverage")) + "/5";
-
-            if (percentagecorrect >= 0.8) {
-                document.getElementById("goodjob").innerHTML = "Great Job!"
-            } else if (percentagecorrect >= 0.6 && percentagecorrect < 0.8) {
-                document.getElementById("goodjob").innerHTML = "You did well!"
-            } else if (percentagecorrect >= 0.4 && percentagecorrect < 0.6) {
-                document.getElementById("goodjob").innerHTML = "You need to buck up!"
-            } else {
-                document.getElementById("goodjob").innerHTML = "Revise your fundamentals and try again!"
-            }
+            document.getElementById("skillrating").innerHTML = "Skill Rating: " + localStorage.getItem("currentAverage") + "/5";
 
             // Load google charts
             google.charts.load('current', {'packages':['corechart']});
@@ -342,7 +328,7 @@
                 ['Level 2+', level2],
                 ['Level 3+', level3],
                 ['Level 4+', level4],
-                ['Level 5+', level5]
+                ['Level 5', level5]
             ]);
 
             // Optional; add a title and set the width and height of the chart
@@ -368,11 +354,36 @@
                 skillset_table_data.addColumn('number', 'No. of Questions Asked');
                 skillset_table_data.addColumn('number', 'No. of Questions Correct');
                 skillset_table_data.addColumn('number', '% of Questions Correct');
+
+                if (recall == 0) {
+                    var recallcorrectstr = "-";
+                } else {
+                    var recallcorrectstr = String((Math.round(((recallcorrect/recall) + Number.EPSILON) * 100)) + '%');
+                }
+
+                if (inference == 0) {
+                    var inferencecorrectstr = "-";
+                } else {
+                    var inferencecorrectstr = String((Math.round(((inferencecorrect/inference) + Number.EPSILON) * 100)) + '%');
+                }
+
+                if (evaluation == 0) {
+                    var evaluationcorrectstr = "-";
+                } else {
+                    var evaluationcorrectstr = String((Math.round(((evaluationcorrect/evaluation) + Number.EPSILON) * 100)) + '%');
+                }
+
+                if (application == 0) {
+                    var applicationcorrectstr = "-";
+                } else {
+                    var applicationcorrectstr = String((Math.round(((applicationcorrect/application) + Number.EPSILON) * 100)) + '%');
+                }
+
                 skillset_table_data.addRows([
-                ['Recall',  {v: recall, f: String(recall)}, {v: recallcorrect, f: String(recallcorrect)}, {v: (Math.round(((recallcorrect/recall) + Number.EPSILON) * 100)), f: String((Math.round(((recallcorrect/recall) + Number.EPSILON) * 100)) + '%')}],
-                ['Evaluation',   {v: evaluation,   f: String(evaluation)},  {v: evaluationcorrect, f: String(evaluationcorrect)}, {v: (Math.round(((evaluationcorrect/evaluation) + Number.EPSILON) * 100)), f: String((Math.round(((evaluationcorrect/evaluation) + Number.EPSILON) * 100)) + '%')}],
-                ['Inference', {v: inference, f: String(inference)}, {v: inferencecorrect, f: String(inferencecorrect)}, {v: (Math.round(((inferencecorrect/inference) + Number.EPSILON) * 100)), f: String((Math.round(((inferencecorrect/inference) + Number.EPSILON) * 100)) + '%')}],
-                ['Application',   {v: application,  f: String(application)},  {v: applicationcorrect,  f: String(applicationcorrect)}, {v: (Math.round(((applicationcorrect/application) + Number.EPSILON) * 100)), f: String((Math.round(((applicationcorrect/application) + Number.EPSILON) * 100)) + '%')}],
+                ['Recall',  {v: recall, f: String(recall)}, {v: recallcorrect, f: String(recallcorrect)}, {v: (Math.round(((recallcorrect/recall) + Number.EPSILON) * 100)), f: recallcorrectstr}],
+                ['Evaluation',   {v: evaluation,   f: String(evaluation)},  {v: evaluationcorrect, f: String(evaluationcorrect)}, {v: (Math.round(((evaluationcorrect/evaluation) + Number.EPSILON) * 100)), f: evaluationcorrectstr}],
+                ['Inference', {v: inference, f: String(inference)}, {v: inferencecorrect, f: String(inferencecorrect)}, {v: (Math.round(((inferencecorrect/inference) + Number.EPSILON) * 100)), f: inferencecorrectstr}],
+                ['Application',   {v: application,  f: String(application)},  {v: applicationcorrect,  f: String(applicationcorrect)}, {v: (Math.round(((applicationcorrect/application) + Number.EPSILON) * 100)), f: applicationcorrectstr}],
                 ['Total',   {v: total,  f: String(total)},  {v: totalcorrect,  f: String(totalcorrect)}, {v: (Math.round(((totalcorrect/total) + Number.EPSILON) * 100)), f: String((Math.round(((totalcorrect/total) + Number.EPSILON) * 100)) + '%')}]
                 ]);
 
@@ -381,12 +392,43 @@
                 difficulty_table_data.addColumn('number', 'No. of Questions Asked');
                 difficulty_table_data.addColumn('number', 'No. of Questions Correct');
                 difficulty_table_data.addColumn('number', '% of Questions Correct');
+
+                if (level1 == 0) {
+                var level1correctstr = "-";
+                } else {
+                var level1correctstr = String((Math.round(((level1correct/level1) + Number.EPSILON) * 100)) + '%');
+                }
+
+                if (level2 == 0) {
+                    var level2correctstr = "-";
+                } else {
+                    var level2correctstr = String((Math.round(((level2correct/level2) + Number.EPSILON) * 100)) + '%');
+                }
+
+                if (level3 == 0) {
+                    var level3correctstr = "-";
+                } else {
+                    var level3correctstr = String((Math.round(((level3correct/level3) + Number.EPSILON) * 100)) + '%');
+                }
+
+                if (level4 == 0) {
+                    var level4correctstr = "-";
+                } else {
+                    var level4correctstr = String((Math.round(((level4correct/level4) + Number.EPSILON) * 100)) + '%');
+                }
+
+                if (level5 == 0) {
+                    var level5correctstr = "-";
+                } else {
+                    var level5correctstr = String((Math.round(((level5correct/level5) + Number.EPSILON) * 100)) + '%');
+                }
+
                 difficulty_table_data.addRows([
-                ['Level 1+',  {v: level1, f: String(level1)}, {v: level1correct, f: String(level1correct)}, {v: (Math.round(((level1correct/level1) + Number.EPSILON) * 100)), f: String((Math.round(((level1correct/level1) + Number.EPSILON) * 100)) + '%')}],
-                ['Level 2+',   {v: level2,   f: String(level2)},  {v: level2correct, f: String(level2correct)}, {v: (Math.round(((level2correct/level2) + Number.EPSILON) * 100)), f: String((Math.round(((level2correct/level2) + Number.EPSILON) * 100)) + '%')}],
-                ['Level 3+', {v: level3, f: String(level3)}, {v: level3correct, f: String(level3correct)}, {v: (Math.round(((level3correct/level3) + Number.EPSILON) * 100)), f: String((Math.round(((level3correct/level3) + Number.EPSILON) * 100)) + '%')}],
-                ['Level 4+',   {v: level4,  f: String(level4)},  {v: level4correct,  f: String(level4correct)}, {v: (Math.round(((level4correct/level4) + Number.EPSILON) * 100)), f: String((Math.round(((level4correct/level4) + Number.EPSILON) * 100)) + '%')}],
-                ['Level 5+',   {v: level5,  f: String(level5)},  {v: level5correct,  f: String(level5correct)}, {v: (Math.round(((level5correct/level5) + Number.EPSILON) * 100)), f: String((Math.round(((level5correct/level5) + Number.EPSILON) * 100)) + '%')}],
+                ['Level 1+',  {v: level1, f: String(level1)}, {v: level1correct, f: String(level1correct)}, {v: (Math.round(((level1correct/level1) + Number.EPSILON) * 100)), f: level1correctstr}],
+                ['Level 2+',   {v: level2,   f: String(level2)},  {v: level2correct, f: String(level2correct)}, {v: (Math.round(((level2correct/level2) + Number.EPSILON) * 100)), f: level2correctstr}],
+                ['Level 3+', {v: level3, f: String(level3)}, {v: level3correct, f: String(level3correct)}, {v: (Math.round(((level3correct/level3) + Number.EPSILON) * 100)), f: level3correctstr}],
+                ['Level 4+',   {v: level4,  f: String(level4)},  {v: level4correct,  f: String(level4correct)}, {v: (Math.round(((level4correct/level4) + Number.EPSILON) * 100)), f: level4correctstr}],
+                ['Level 5+',   {v: level5,  f: String(level5)},  {v: level5correct,  f: String(level5correct)}, {v: (Math.round(((level5correct/level5) + Number.EPSILON) * 100)), f: level5correctstr}],
                 ['Total',   {v: total,  f: String(total)},  {v: totalcorrect,  f: String(totalcorrect)}, {v: (Math.round(((totalcorrect/total) + Number.EPSILON) * 100)), f: String((Math.round(((totalcorrect/total) + Number.EPSILON) * 100)) + '%')}],
                 ]);
 
@@ -401,10 +443,9 @@
         })
         .catch((err) => {
             console.error('There has been a problem with your fetch operation:' + err);
-        })
-        // document.getElementById("demoo2").outerHTML= obj2.Items[0]['Option B']['S'];
-        // document.getElementById("demoo3").outerHTML = obj2.Items[0]['Option C']['S'];
-        // document.getElementById("demoo4").outerHTML = obj2.Items[0]['Option D']['S'];
+    })
+
+    fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/clear');
     </script>
 
 </body>
