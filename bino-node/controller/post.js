@@ -38,8 +38,9 @@ exports.getPosts = async (req, res) => {
         }
         else{
             console.log(data);
+            
             res.json({
-                data: JSON.stringify(data)
+                data: JSON.stringify(data),
             });
         }  
     });
@@ -47,7 +48,7 @@ exports.getPosts = async (req, res) => {
 
 exports.getResponseAndState = async (req, res) => {
     var qn_tracker = calculator.returnQnTracker();
-    calculator.clearQnTracker();
+    // calculator.clearQnTracker();
     // current lower, upper and avg will be passed over from the final quiz section
     res.json({
         data: qn_tracker
@@ -233,14 +234,18 @@ exports.getScore = async (req, res) => {
             }
 
             else if(!isFinal){
+                var qn_ids = calculator.returnQnIDTracker();
                 res.json({
                     currentLower: lowerbound, 
                     currentUpper: upperbound,
                     currentAverage: averageScore,
-                    data: JSON.stringify(data2)
+                    data: JSON.stringify(data2),
+                    id_of_qn: qn_ids
                 });
             }
             else{
+                // var qn_ids = calculator.returnQnIDTracker();
+                calculator.clearQnIDTracker();
                 res.json({
                     currentLower: lowerbound, 
                     currentUpper: upperbound,
