@@ -235,6 +235,12 @@
       function displayQuestion(questionsToBe) {
         const jsonStr = JSON.stringify(questionsToBe)
         const obj = JSON.parse(jsonStr)
+        if (isFinalCalc == 4) {
+            localStorage.setItem("currentAverage", obj.currentAverage);
+            window.location.replace('./performance_report.html')
+            return
+          }
+
         var list = [JSON.stringify(obj.id_of_qn)]
 
         if (isFinalCalc <= 3) {
@@ -254,6 +260,8 @@
             //SNOWBALL EFFECT
             snowball(previous,current)
 
+            
+
             filteredArray = []
             
             for (let i=0; i < array.length; i++) {
@@ -263,11 +271,11 @@
               }
             }
         }
-            console.log(filteredArray[0]['Qns_ID']['S'])
-            console.log(filteredArray[1]['Qns_ID']['S'])
-            console.log(filteredArray[2]['Qns_ID']['S'])
-            console.log(filteredArray[3]['Qns_ID']['S'])
-            console.log(filteredArray[4]['Qns_ID']['S'])
+        console.log(filteredArray[0]['Qns_ID']['S'])
+        console.log(filteredArray[1]['Qns_ID']['S'])
+        console.log(filteredArray[2]['Qns_ID']['S'])
+        console.log(filteredArray[3]['Qns_ID']['S'])
+        console.log(filteredArray[4]['Qns_ID']['S'])
         
         document.getElementById("demo").innerHTML = filteredArray[0]['Question']['S']    
         document.getElementById("demo1").innerHTML = filteredArray[1]['Question']['S']
@@ -313,14 +321,7 @@
           previous = currentAverage
           console.log("previous is recorded with" + currentAverage)
 
-          if (isFinalCalc == 3) {
-          localStorage.setItem("currentAverage", currentAverage);
-          list = []
-
-          window.location.replace('./performance_report.html')
-          return
-        }
-
+        
           scroll(0,0)
           var val1,
           element = document.querySelector('input[name="exampleRadios"]:checked');
