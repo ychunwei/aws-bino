@@ -228,77 +228,91 @@
             console.error('There has been a problem with your fetch operation: ' + err);
         })
 
-
+        var previous
       function displayQuestion(questionsToBe) {
         const jsonStr = JSON.stringify(questionsToBe)
         const obj = JSON.parse(jsonStr)
-        var list = [obj.id_of_qn]
-        console.log(list)
+        var list = [JSON.stringify(obj.id_of_qn)]
 
         if (isFinalCalc <= 3) {
         const obj2 = JSON.parse(obj.data)
         var array = obj2.Items
-
+        var filteredArray = array
+        
+        var current
         if (isFinalCalc > 1) {
             currentAverage = obj.currentAverage
             currentLower = obj.currentLower
-            currentUpper = obj.currentUpper 
-        }
+            currentUpper = obj.currentUpper
 
-        for (let i=0; i < array.length; i++) {
-              if (list.includes(String(array[i]['Qns_ID']['S']))) {
-                console.log(array)
-                array = array.splice(i,1)
-                console.log(array)
+            current = currentAverage
+            console.log(previous)
+            console.log(current)
+            //SNOWBALL EFFECT
+            snowball(previous,current)
+
+            filteredArray = []
+            
+            for (let i=0; i < array.length; i++) {
+              if (!list[0].includes(array[i]['Qns_ID']['S'])) {
+                // console.log("you doing good")
+                filteredArray.push(array[i])
               }
             }
-
-        //console.log(array[0]['Option_A']['S'])
+        }
+            console.log(filteredArray[0]['Qns_ID']['S'])
+            console.log(filteredArray[1]['Qns_ID']['S'])
+            console.log(filteredArray[2]['Qns_ID']['S'])
+            console.log(filteredArray[3]['Qns_ID']['S'])
+            console.log(filteredArray[4]['Qns_ID']['S'])
         
-        document.getElementById("demo").innerHTML = array[0]['Question']['S']    
-        document.getElementById("demo1").innerHTML = array[1]['Question']['S']
-        document.getElementById("demo2").innerHTML = array[2]['Question']['S']
-        document.getElementById("demo3").innerHTML = array[3]['Question']['S']
-        document.getElementById("demo4").innerHTML = array[4]['Question']['S']
-
-        
-        document.getElementById('demoo1').innerHTML = array[0]['Option_A']['S']
-        document.getElementById('demoo2').innerHTML = array[0]['Option_B']['S']
-        document.getElementById('demoo3').innerHTML = array[0]['Option_C']['S']
-        document.getElementById('demoo4').innerHTML = array[0]['Option_D']['S']
+        document.getElementById("demo").innerHTML = filteredArray[0]['Question']['S']    
+        document.getElementById("demo1").innerHTML = filteredArray[1]['Question']['S']
+        document.getElementById("demo2").innerHTML = filteredArray[2]['Question']['S']
+        document.getElementById("demo3").innerHTML = filteredArray[3]['Question']['S']
+        document.getElementById("demo4").innerHTML = filteredArray[4]['Question']['S']
 
         
-        document.getElementById('demoo11').innerHTML = array[1]['Option_A']['S']
-        document.getElementById('demoo21').innerHTML = array[1]['Option_B']['S']
-        document.getElementById('demoo31').innerHTML = array[1]['Option_C']['S']
-        document.getElementById('demoo41').innerHTML = array[1]['Option_D']['S']
+        document.getElementById('demoo1').innerHTML = filteredArray[0]['Option_A']['S']
+        document.getElementById('demoo2').innerHTML = filteredArray[0]['Option_B']['S']
+        document.getElementById('demoo3').innerHTML = filteredArray[0]['Option_C']['S']
+        document.getElementById('demoo4').innerHTML = filteredArray[0]['Option_D']['S']
+
+        
+        document.getElementById('demoo11').innerHTML = filteredArray[1]['Option_A']['S']
+        document.getElementById('demoo21').innerHTML = filteredArray[1]['Option_B']['S']
+        document.getElementById('demoo31').innerHTML = filteredArray[1]['Option_C']['S']
+        document.getElementById('demoo41').innerHTML = filteredArray[1]['Option_D']['S']
 
 
-        document.getElementById('demoo12').innerHTML = array[2]['Option_A']['S']
-        document.getElementById('demoo22').innerHTML = array[2]['Option_B']['S']
-        document.getElementById('demoo32').innerHTML = array[2]['Option_C']['S']
-        document.getElementById('demoo42').innerHTML = array[2]['Option_D']['S']
+        document.getElementById('demoo12').innerHTML = filteredArray[2]['Option_A']['S']
+        document.getElementById('demoo22').innerHTML = filteredArray[2]['Option_B']['S']
+        document.getElementById('demoo32').innerHTML = filteredArray[2]['Option_C']['S']
+        document.getElementById('demoo42').innerHTML = filteredArray[2]['Option_D']['S']
 
 
-        document.getElementById('demoo13').innerHTML = array[3]['Option_A']['S']
-        document.getElementById('demoo23').innerHTML = array[3]['Option_B']['S']
-        document.getElementById('demoo33').innerHTML = array[3]['Option_C']['S']
-        document.getElementById('demoo43').innerHTML = array[3]['Option_D']['S']
+        document.getElementById('demoo13').innerHTML = filteredArray[3]['Option_A']['S']
+        document.getElementById('demoo23').innerHTML = filteredArray[3]['Option_B']['S']
+        document.getElementById('demoo33').innerHTML = filteredArray[3]['Option_C']['S']
+        document.getElementById('demoo43').innerHTML = filteredArray[3]['Option_D']['S']
 
 
-        document.getElementById('demoo14').innerHTML = array[4]['Option_A']['S']
-        document.getElementById('demoo24').innerHTML = array[4]['Option_B']['S']
-        document.getElementById('demoo34').innerHTML = array[4]['Option_C']['S']
-        document.getElementById('demoo44').innerHTML = array[4]['Option_D']['S']
+        document.getElementById('demoo14').innerHTML = filteredArray[4]['Option_A']['S']
+        document.getElementById('demoo24').innerHTML = filteredArray[4]['Option_B']['S']
+        document.getElementById('demoo34').innerHTML = filteredArray[4]['Option_C']['S']
+        document.getElementById('demoo44').innerHTML = filteredArray[4]['Option_D']['S']
 
         }
 
         document.getElementById("nextbutton").addEventListener("click", storeAns, false);
         
         function storeAns() {
+          previous = currentAverage
+          console.log("previous is recorded with" + currentAverage)
 
           if (isFinalCalc == 3) {
           localStorage.setItem("currentAverage", currentAverage);
+          list = []
 
           window.location.replace('./performance_report.html')
           return
@@ -308,46 +322,46 @@
           var val1,
           element = document.querySelector('input[name="exampleRadios"]:checked');
           if (element != null) {
-              val1 = [array[0]['Qns_ID']['S'], Number(array[0]['Difficulty']['S']), array[0]['Skillset']['S'], element.value];
+              val1 = [filteredArray[0]['Qns_ID']['S'], Number(filteredArray[0]['Difficulty']['S']), filteredArray[0]['Skillset']['S'], element.value];
           }
           else {
-              val1 = [array[0]['Qns_ID']['S'], Number(array[0]['Difficulty']['S']), array[0]['Skillset']['S'], null];
+              val1 = [filteredArray[0]['Qns_ID']['S'], Number(filteredArray[0]['Difficulty']['S']), filteredArray[0]['Skillset']['S'], null];
           }
 
           var val2,
           element = document.querySelector('input[name="exampleRadios1"]:checked');
           if (element != null) {
-              val2 = [array[1]['Qns_ID']['S'], Number(array[1]['Difficulty']['S']), array[1]['Skillset']['S'], element.value];
+              val2 = [filteredArray[1]['Qns_ID']['S'], Number(filteredArray[1]['Difficulty']['S']), filteredArray[1]['Skillset']['S'], element.value];
           }
           else {
-              val2 = [array[1]['Qns_ID']['S'], Number(array[1]['Difficulty']['S']), array[1]['Skillset']['S'], null];
+              val2 = [filteredArray[1]['Qns_ID']['S'], Number(filteredArray[1]['Difficulty']['S']), filteredArray[1]['Skillset']['S'], null];
           }
 
           var val3,
           element = document.querySelector('input[name="exampleRadios2"]:checked');
           if (element != null) {
-              val3 = [array[2]['Qns_ID']['S'], Number(array[2]['Difficulty']['S']), array[2]['Skillset']['S'], element.value];
+              val3 = [filteredArray[2]['Qns_ID']['S'], Number(filteredArray[2]['Difficulty']['S']), filteredArray[2]['Skillset']['S'], element.value];
           }
           else {
-              val3 = [array[2]['Qns_ID']['S'], Number(array[2]['Difficulty']['S']), array[2]['Skillset']['S'], null];
+              val3 = [filteredArray[2]['Qns_ID']['S'], Number(filteredArray[2]['Difficulty']['S']), filteredArray[2]['Skillset']['S'], null];
           }
 
           var val4,
           element = document.querySelector('input[name="exampleRadios3"]:checked');
           if (element != null) {
-              val4 = [array[3]['Qns_ID']['S'], Number(array[3]['Difficulty']['S']), array[3]['Skillset']['S'], element.value];
+              val4 = [filteredArray[3]['Qns_ID']['S'], Number(filteredArray[3]['Difficulty']['S']), filteredArray[3]['Skillset']['S'], element.value];
           }
           else {
-              val4 = [array[3]['Qns_ID']['S'], Number(array[3]['Difficulty']['S']), array[3]['Skillset']['S'], null];
+              val4 = [filteredArray[3]['Qns_ID']['S'], Number(filteredArray[3]['Difficulty']['S']), filteredArray[3]['Skillset']['S'], null];
           }
 
           var val5,
           element = document.querySelector('input[name="exampleRadios4"]:checked');
           if (element != null) {
-              val5 = [array[4]['Qns_ID']['S'], Number(array[4]['Difficulty']['S']), array[4]['Skillset']['S'], element.value];
+              val5 = [filteredArray[4]['Qns_ID']['S'], Number(filteredArray[4]['Difficulty']['S']), filteredArray[4]['Skillset']['S'], element.value];
           }
           else {
-              val5 = [array[4]['Qns_ID']['S'], Number(array[4]['Difficulty']['S']), array[4]['Skillset']['S'], null];
+              val5 = [filteredArray[4]['Qns_ID']['S'], Number(filteredArray[4]['Difficulty']['S']), filteredArray[4]['Skillset']['S'], null];
           }
 
             jsonObj.isFinal = false
@@ -411,6 +425,28 @@
             
             document.getElementById("nextbutton").removeEventListener("click",storeAns)
         }
+      }
+
+      function snowball(previous,current) {
+        if (current - previous > 0.45) {
+          console.log("WOW")
+          snowballCounterIncrease++
+          if (snowballCounterIncrease > 1) {
+            currentAverage = currentAverage + 0.5
+            //gives you bonus marks
+          }
+        }
+
+        else if (current - previous > -0.45) {
+          console.log("BOO")
+          
+        snowballCounterDecrease++
+        if (snowballCounterDecrease > 1) {
+          window.location.replace('./performance_report.html')
+          //ask to redo the quiz when youre better
+        }
+        }
+      
       }
 
     </script>
