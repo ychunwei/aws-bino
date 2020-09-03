@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Performance Report</title>
-    <link rel="stylesheet" href="quiz.css">
+    <title>Report</title>
+    <link rel="stylesheet" href="performance_report.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 </head>
@@ -17,16 +17,16 @@
 
         <div id="BINO" class="page-header">BINO</div>
 
-        <!-- <svg id="profile" height="140" width="1000">
-            <ellipse cx="1000" cy="80" rx="40" ry="40">
-        </svg> -->
+        <img src="img_avatar.png" alt="Avatar" id="avatar" style="width:60px">
+
+        <p id="avatar_text">Raphael Low<br>Student</p>
 
          <div id = "sidenav">
              <div id="overview_button">
                 <svg id="icon" width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                 </svg>
-                <div id = "overview_text" x="50" y="35" fill="black">Overview</div>
+                <div id="overview_text" x="50" y="35" fill="black">Overview</div>
              </div>
             
             <svg width = "300" height = "600">
@@ -47,16 +47,15 @@
         </div>
     </div>
 
-    
-
     <div id="main_section" class="col-md-6 offset-md-3">
         <div id="quiz_content">
             <div id = "quiz_text">Alkanes (C1003)</div>
             <div id = "quiz_text2">Performance Report</div>
+            <hr>
             <div id = "quiz_options">
-                <h4>General Overview</h4>
-                <h4>Final score: 9/10</h4>
-                <h4 id = "skillrating">Skill rating: 4.26/5</h4>
+                <h3>General Overview</h3>
+                <h4 id = "score">Score</h4>
+                <h4 id = "skillrating">Skill Rating</h4>
                 <h5 id = "goodjob">Great Job!</h5>
                 <hr>
                 <h3>Breakdown of Questions Attempted by Skillset</h3>
@@ -68,245 +67,46 @@
                 <div id="difficulty_table_div"></div>
                 <hr>
                 <h3>Breakdown of Individual Questions</h3>
-                <p id = "demo" class = "question">Q1</p>
-                <p id = "skillset1" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty1" class = "difficultystyle">Difficulty</p>
-                <div id = 'q1o1'>Option A</div>
-                <div id = 'q1o2'>Option B</div>
-                <div id = 'q1o3'>Option C</div>
-                <div id = 'q1o4' class = "lastoption">Option D</div>
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">Correct</h4>
-                    <p>Your answer is: A</p>
-                    <p id = "demoo11">Correct Ans</p>
-                    <hr>
-                    <p class="mb-0" id = "explan1">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo2" class = "question">Q2</p>
-                <p id = "skillset2" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty2" class = "difficultystyle">Difficulty</p>
-                <div id = "q2o1">Option A</div>
-                <div id = 'q2o2'>Option B</div>
-                <div id = 'q2o3'>Option C</div>
-                <div id = 'q2o4' class = "lastoption">Option D</div>
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">Correct</h4>
-                    <p>Your answer is: A</p>
-                    <p id = "demoo21">Correct Ans</p>
-                    <hr>
-                    <p class="mb-0" id = "explan2">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo3" class = "question">Q3</p>
-                <p id = "skillset3" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty3" class = "difficultystyle">Difficulty</p>
-                <div id = 'q3o1'>Option A</div>
-                <div id = 'q3o2'>Option B</div>
-                <div id = 'q3o3'>Option C</div>
-                <div id = 'q3o4' class = "lastoption">Option D</div>
-                <div class="alert alert-danger" role="alert">
-                    <h4 class="alert-heading">Incorrect</h4>
-                    <p>Your answer is D</p>
-                    <p id = "demoo31">Answer: </p>
-                    <hr>
-                    <p class="mb-0" id = "explan3">Explanation</p>
-                  </div>
-                <hr>
-                <p id = "demo4" class = "question">Q4</p>
-                <p id = "skillset4" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty4" class = "difficultystyle">Difficulty</p>
-                <div id = 'q4o1'>Option A</div>
-                <div id = 'q4o2'>Option B</div>
-                <div id = 'q4o3'>Option C</div>
-                <div id = 'q4o4' class = "lastoption">Option D</div>
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">Correct</h4>
-                    <p>Your answer is: D</p>
-                    <p id = "demoo41">Correct Ans</p>
-                    <hr>
-                    <p class="mb-0" id = "explan4">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo5" class = "question">Q5</p>
-                <p id = "skillset5" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty5" class = "difficultystyle">Difficulty</p>
-                <div id = 'q5o1'>Option A</div>
-                <div id = 'q5o2'>Option B</div>
-                <div id = 'q5o3'>Option C</div>
-                <div id = 'q5o4' class = "lastoption">Option D</div>
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">Correct</h4>
-                    <p>Your answer is: C</p>
-                    <p id = "demoo51">Correct Ans</p>
-                    <hr>
-                    <p class="mb-0" id = "explan5">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo6" class = "question">Q6</p>
-                <p id = "skillset6" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty6" class = "difficultystyle">Difficulty</p>
-                <div id = 'q6o1'>Option A</div>
-                <div id = 'q6o2'>Option B</div>
-                <div id = 'q6o3'>Option C</div>
-                <div id = 'q6o4' class = "lastoption">Option D</div>
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">Correct</h4>
-                    <p>Your answer is: A</p>
-                    <p id = "demoo61">Correct Ans</p>
-                    <hr>
-                    <p class="mb-0" id = "explan6">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo7" class = "question">Q7</p>
-                <p id = "skillset7" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty7" class = "difficultystyle">Difficulty</p>
-                <div id = 'q7o1'>Option A</div>
-                <div id = 'q7o2'>Option B</div>
-                <div id = 'q7o3'>Option C</div>
-                <div id = 'q7o4' class = "lastoption">Option D</div>
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">Correct</h4>
-                    <p>Your answer is: B</p>
-                    <p id = "demoo71">Correct Ans</p>
-                    <hr>
-                    <p class="mb-0" id = "explan7">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo8" class = "question">Q8</p>
-                <p id = "skillset8" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty8" class = "difficultystyle">Difficulty</p>
-                <div id = 'q8o1'>Option A</div>
-                <div id = 'q8o2'>Option B</div>
-                <div id = 'q8o3'>Option C</div>
-                <div id = 'q8o4' class = "lastoption">Option D</div>
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">Correct</h4>
-                    <p>Your answer is: D</p>
-                    <p id = "demoo81">Correct Ans</p>
-                    <hr>
-                    <p class="mb-0" id = "explan8">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo9" class = "question">Q9</p>
-                <p id = "skillset9" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty9" class = "difficultystyle">Difficulty</p>
-                <div id = 'q9o1'>Option A</div>
-                <div id = 'q9o2'>Option B</div>
-                <div id = 'q9o3'>Option C</div>
-                <div id = 'q9o4' class = "lastoption">Option D</div>
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">Correct</h4>
-                    <p>Your answer is: A</p>
-                    <p id = "demoo91">Correct Ans</p>
-                    <hr>
-                    <p class="mb-0" id = "explan9">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo10" class = "question">Q10</p>
-                <p id = "skillset10" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty10" class = "difficultystyle">Difficulty</p>
-                <div id = 'q10o1'>Option A</div>
-                <div id = 'q10o2'>Option B</div>
-                <div id = 'q10o3'>Option C</div>
-                <div id = 'q10o4' class = "lastoption">Option D</div>
-                <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">Correct</h4>
-                    <p>Your answer is: C</p>
-                    <p id = "demoo101">Correct Ans</p>
-                    <hr>
-                    <p class="mb-0" id = "explan10">Explanation</p>
-                </div>
-                <hr style="width:600px;">
+                <div id = "individual_questions"></div>
             </div>
-                <hr style="width:600px;">
-            </div>
-            
         </div>
-        
-
+            
     </div>
 
+<!-- JAVASCRIPT CODE -->
+
     <script type="text/javascript">
-
-        // Load google charts
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        // Draw the chart and set the chart values
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-            ['Skillset', 'Number of Questions'],
-            ['Recall', 4],
-            ['Evaluation', 1],
-            ['Inference', 3],
-            ['Application', 2]
-        ]);
-            var difficultydata = google.visualization.arrayToDataTable([
-            ['Difficulty Level', 'Number of Questions'],
-            ['Level 1', 2],
-            ['Level 2', 3],
-            ['Level 3', 3],
-            ['Level 4', 1],
-            ['Level 5', 1]
-        ]);
-
-        // Optional; add a title and set the width and height of the chart
-        var options = {title: 'Question Distribution', 'width':550, 'height':400, is3D: true,};
-
-        var options2 = {title: 'Question Distribution', 'width':550, 'height':400, is3D: true,};
-
-        // Display the chart inside the <div> element with id="skillsetpiechart"
-        var skillsetchart = new google.visualization.PieChart(document.getElementById('skillsetpiechart'));
-        skillsetchart.draw(data, options);
-
-        // Display the chart inside the <div> element with id="difficultypiechart"
-        var difficultychart = new google.visualization.PieChart(document.getElementById('difficultypiechart'));
-        difficultychart.draw(difficultydata, options2);
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("topBar");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
         }
 
-        google.charts.load('current', {'packages':['table']});
-        google.charts.setOnLoadCallback(drawTable);
-
-        function drawTable() {
-            var skillset_table_data = new google.visualization.DataTable();
-            skillset_table_data.addColumn('string', 'Skillset');
-            skillset_table_data.addColumn('number', 'No. of Questions Asked');
-            skillset_table_data.addColumn('number', 'No. of Questions Correct');
-            skillset_table_data.addColumn('number', '% of Questions Correct');
-            skillset_table_data.addRows([
-            ['Recall',  {v: 4, f: '4'}, {v: 4, f: '4'}, {v: 100, f: '100%'}],
-            ['Evaluation',   {v:1,   f: '1'},  {v:1, f: '1'}, {v: 100, f: '100%'}],
-            ['Inference', {v: 3, f: '3'}, {v: 3, f: '3'}, {v: 100, f: '100%'}],
-            ['Application',   {v: 2,  f: '2'},  {v: 1,  f: '1'}, {v: 50, f: '50%'}],
-            ['Total',   {v: 10,  f: '10'},  {v: 9,  f: '9'}, {v: 90, f: '90%'}]
-            ]);
-
-            var difficulty_table_data = new google.visualization.DataTable();
-            difficulty_table_data.addColumn('string', 'Difficulty');
-            difficulty_table_data.addColumn('number', 'No. of Questions Asked');
-            difficulty_table_data.addColumn('number', 'No. of Questions Correct');
-            difficulty_table_data.addColumn('number', '% of Questions Correct');
-            difficulty_table_data.addRows([
-            ['Level 1',  {v: 2, f: '2'}, {v: 2, f: '2'}, {v: 100, f: '100%'}],
-            ['Level 2',   {v:3,   f: '3'},  {v:3, f: '3'}, {v: 100, f: '100%'}],
-            ['Level 3', {v: 3, f: '3'}, {v: 3, f: '3'}, {v: 100, f: '100%'}],
-            ['Level 4',   {v: 1,  f: '1'},  {v: 0,  f: '0'}, {v: 0, f: '0%'}],
-            ['Level 5',   {v: 1,  f: '1'},  {v: 1,  f: '1'}, {v: 100, f: '100%'}],
-            ['Total',   {v: 10,  f: '10'},  {v: 9,  f: '9'}, {v: 90, f: '90%'}],
-            ]);
-
-        var skillset_table = new google.visualization.Table(document.getElementById('skillset_table_div'));
-
-        skillset_table.draw(skillset_table_data, {showRowNumber: false, width: '100%', height: '100%'});
-
-        var difficulty_table = new google.visualization.Table(document.getElementById('difficulty_table_div'));
-
-        difficulty_table.draw(difficulty_table_data, {showRowNumber: false, width: '100%', height: '100%'});
-      }
-
-        var array = []
+        var array = [];
+        var input = [];
+        var n = 15;
         window.onload
+
+        fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/report')
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            const jsonStr = JSON.stringify(data)
+            const obj = JSON.parse(jsonStr)
+            input = obj.data
+            
+        })
+        .catch(err => {
+            console.log('Fetch error:' + err);
+        });
 
         fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/quiz')
         .then((response) => {
@@ -317,231 +117,291 @@
             const obj = JSON.parse(jsonStr)
             const obj2 = JSON.parse(obj.data)
             var array = obj2.Items
-            //Questions
-            document.getElementById("demo").innerHTML = "Q1. " + array[0]['Question']['S'];
+
+            for (a = 1; a < (n + 1); a++) {
+                //Question
+                var qn = document.createElement("p");
+                qn.setAttribute("id", String("demo" + a));
+                qn.setAttribute("class", "question");
+                qn.innerHTML = "Question";
+
+                //Skillset
+                var skill = document.createElement("p");
+                skill.setAttribute("id", String("skillset" + a));
+                skill.setAttribute("class", "skillsetstyle");
+                skill.innerHTML = "Skillset";
+
+                //Difficulty
+                var difficultyrating = document.createElement("p");
+                difficultyrating.setAttribute("id", String("difficulty" + a));
+                difficultyrating.setAttribute("class", "difficultystyle");
+                difficultyrating.innerHTML = "Difficulty Rating";
+
+                //Option A
+                var option_A = document.createElement("div");
+                option_A.setAttribute("id", String("q" + a + "o1"));
+                option_A.innerHTML = "A";
+
+                //Option B
+                var option_B = document.createElement("div");
+                option_B.setAttribute("id", String("q" + a + "o2"));
+                option_B.innerHTML = "B";
+
+                //Option C
+                var option_C = document.createElement("div");
+                option_C.setAttribute("id", String("q" + a + "o3"));
+                option_C.innerHTML = "C";
+
+                //Option D
+                var option_D = document.createElement("div");
+                option_D.setAttribute("id", String("q" + a + "o4"));
+                option_D.setAttribute("class", "lastoption");
+                option_D.innerHTML = "D";
+
+                //Bootstrap div
+                var div = document.createElement("div");
+                div.setAttribute("class", "alert alert-danger");
+                div.setAttribute("role", "alert");
+                div.setAttribute("id", String("div" + a));
+                var heading = document.createElement("h4");
+                heading.setAttribute("class", "alert-heading");
+                heading.setAttribute("id", String("heading" + a));
+                heading.innerHTML = "Incorrect";
+                var answer = document.createElement("p");
+                answer.setAttribute("id", String("ans" + a));
+                answer.innerHTML = "Your Ans";
+                var correctanswer = document.createElement("p");
+                correctanswer.setAttribute("id", String("demoo" + a + "1"));
+                correctanswer.innerHTML = "Correct Ans";
+                var hr = document.createElement('hr');
+                var explanation = document.createElement("p");
+                explanation.setAttribute("id", String("explan" + a));
+                explanation.setAttribute("class", "mb-0");
+                explanation.innerHTML = "Explanation";
+
+                //Line Break
+                var hr_end = document.createElement('hr');
+
+                document.getElementById("individual_questions").appendChild(qn);
+                document.getElementById("individual_questions").appendChild(skill);
+                document.getElementById("individual_questions").appendChild(difficultyrating);
+                document.getElementById("individual_questions").appendChild(option_A);
+                document.getElementById("individual_questions").appendChild(option_B);
+                document.getElementById("individual_questions").appendChild(option_C);
+                document.getElementById("individual_questions").appendChild(option_D);
+                document.getElementById("individual_questions").appendChild(div);
+                div.appendChild(heading);
+                div.appendChild(answer);
+                div.appendChild(correctanswer);
+                div.appendChild(hr);
+                div.appendChild(explanation);
+                document.getElementById("individual_questions").appendChild(hr_end);
+            }
             
-            document.getElementById("demo2").innerHTML = "Q2. " + array[1]['Question']['S'];
-
-            document.getElementById("demo3").innerHTML = "Q3. " + array[2]['Question']['S'];
-
-            document.getElementById("demo4").innerHTML = "Q4. " + array[3]['Question']['S'];
-
-            document.getElementById("demo5").innerHTML = "Q5. " + array[4]['Question']['S'];
-
-            document.getElementById("demo6").innerHTML = "Q6. " + array[5]['Question']['S'];
-
-            document.getElementById("demo7").innerHTML = "Q7. " + array[6]['Question']['S'];
-
-            document.getElementById("demo8").innerHTML = "Q8. " + array[7]['Question']['S'];
-
-            document.getElementById("demo9").innerHTML = "Q9. " + array[8]['Question']['S'];
-
-            document.getElementById("demo10").innerHTML = "Q10. " + array[9]['Question']['S'];
-            
-            //Question Answers
-            var d01 = array[0]['Answer']['S']
-            document.getElementById('demoo11').innerHTML = "Correct answer is: " + d01
-
-            var d02 = array[1]['Answer']['S']
-            document.getElementById('demoo21').innerHTML = "Correct answer is: " + d02
-
-            var d03 = array[2]['Answer']['S']
-            document.getElementById('demoo31').innerHTML = "Correct answer is: " + d03
-
-            document.getElementById('demoo41').innerHTML = "Correct answer is: " + array[3]['Answer']['S']
-
-            document.getElementById('demoo51').innerHTML = "Correct answer is: " + array[4]['Answer']['S']
-
-            document.getElementById('demoo61').innerHTML = "Correct answer is: " + array[5]['Answer']['S']
-
-            document.getElementById('demoo71').innerHTML = "Correct answer is: " + array[6]['Answer']['S']
-
-            document.getElementById('demoo81').innerHTML = "Correct answer is: " + array[7]['Answer']['S']
-
-            document.getElementById('demoo91').innerHTML = "Correct answer is: " + array[8]['Answer']['S']
-
-            document.getElementById('demoo101').innerHTML = "Correct answer is: " + array[9]['Answer']['S']
-
-            //Question Skillset
-            document.getElementById("skillset1").innerHTML = array[0]['Skillset']['S'];
-            
-            document.getElementById("skillset2").innerHTML = array[1]['Skillset']['S'];
-
-            document.getElementById("skillset3").innerHTML = array[2]['Skillset']['S'];
-
-            document.getElementById("skillset4").innerHTML = array[3]['Skillset']['S'];
-
-            document.getElementById("skillset5").innerHTML = array[4]['Skillset']['S'];
-
-            document.getElementById("skillset6").innerHTML = array[5]['Skillset']['S'];
-
-            document.getElementById("skillset7").innerHTML = array[6]['Skillset']['S'];
-
-            document.getElementById("skillset8").innerHTML = array[7]['Skillset']['S'];
-
-            document.getElementById("skillset9").innerHTML = array[8]['Skillset']['S'];
-
-            document.getElementById("skillset10").innerHTML = array[9]['Skillset']['S'];
-
-            //Question Difficulty Level
-            document.getElementById("difficulty1").innerHTML = "Difficulty Rating: " + array[0]['Difficulty']['S'];
-            
-            document.getElementById("difficulty2").innerHTML = "Difficulty Rating: " + array[1]['Difficulty']['S'];
-
-            document.getElementById("difficulty3").innerHTML = "Difficulty Rating: " + array[2]['Difficulty']['S'];
-
-            document.getElementById("difficulty4").innerHTML = "Difficulty Rating: " + array[3]['Difficulty']['S'];
-
-            document.getElementById("difficulty5").innerHTML = "Difficulty Rating: " + array[4]['Difficulty']['S'];
-
-            document.getElementById("difficulty6").innerHTML = "Difficulty Rating: " + array[5]['Difficulty']['S'];
-
-            document.getElementById("difficulty7").innerHTML = "Difficulty Rating: " + array[6]['Difficulty']['S'];
-
-            document.getElementById("difficulty8").innerHTML = "Difficulty Rating: " + array[7]['Difficulty']['S'];
-
-            document.getElementById("difficulty9").innerHTML = "Difficulty Rating: " + array[8]['Difficulty']['S'];
-
-            document.getElementById("difficulty10").innerHTML = "Difficulty Rating: " + array[9]['Difficulty']['S'];
-
-            //Question Explanations
-            var e01 = array[0]['Explanation']['S']
-            document.getElementById('explan1').innerHTML = "Explanation: " + e01
-
-            var e02 = array[1]['Explanation']['S']
-            document.getElementById('explan2').innerHTML = "Explanation: " + e02
-
-            var e03 = array[2]['Explanation']['S']
-            document.getElementById('explan3').innerHTML = "Explanation: " + e03
-
-            var e04 = array[3]['Explanation']['S']
-            document.getElementById('explan4').innerHTML = "Explanation: " + e04
-
-            var e05 = array[4]['Explanation']['S']
-            document.getElementById('explan5').innerHTML = "Explanation: " + e05
-
-            var e06 = array[5]['Explanation']['S']
-            document.getElementById('explan6').innerHTML = "Explanation: " + e06
-
-            var e07 = array[6]['Explanation']['S']
-            document.getElementById('explan7').innerHTML = "Explanation: " + e07
-
-            var e08 = array[7]['Explanation']['S']
-            document.getElementById('explan8').innerHTML = "Explanation: " + e08
-
-            var e09 = array[8]['Explanation']['S']
-            document.getElementById('explan9').innerHTML = "Explanation: " + e09
-
-            var e10 = array[9]['Explanation']['S']
-            document.getElementById('explan10').innerHTML = "Explanation: " + e10
-
-            //Question 1 Options
-            document.getElementById('q1o1').innerHTML = "A. " + array[0]['Option_A']['S'];
-
-            var d12 = array[0]['Option_B']['S']
-            document.getElementById('q1o2').innerHTML = "B. " + d12;
-
-            var d13 = array[0]['Option_C']['S']
-            document.getElementById('q1o3').innerHTML = "C. " + d13;
-
-            var d14 = array[0]['Option_D']['S']
-            document.getElementById('q1o4').innerHTML = "D. " + d14;
-
-            //Question 2 Options
-            var d21 = array[1]['Option_A']['S']
-            document.getElementById('q2o1').innerHTML = "A. " + d21;
-
-            var d22 = array[1]['Option_B']['S']
-            document.getElementById('q2o2').innerHTML = "B. " + d22;
-
-            var d23 = array[1]['Option_C']['S']
-            document.getElementById('q2o3').innerHTML = "C. " + d23;
-
-            var d24 = array[1]['Option_D']['S']
-            document.getElementById('q2o4').innerHTML = "D. " + d24;
-
-            //Question 3 Options
-            var d31 = array[2]['Option_A']['S']
-            document.getElementById('q3o1').innerHTML = "A. " + d31;
-
-            var d32 = array[2]['Option_B']['S']
-            document.getElementById('q3o2').innerHTML = "B. " + d32;
-
-            var d33 = array[2]['Option_C']['S']
-            document.getElementById('q3o3').innerHTML = "C. " + d33;
-
-            var d34 = array[2]['Option_D']['S']
-            document.getElementById('q3o4').innerHTML = "D. " + d34;
-
-            //Question 4 Options
-            document.getElementById('q4o1').innerHTML = "A. " + array[3]['Option_A']['S'];
-
-            document.getElementById('q4o2').innerHTML = "B. " + array[3]['Option_B']['S'];
-
-            document.getElementById('q4o3').innerHTML = "C. " + array[3]['Option_C']['S'];
-
-            document.getElementById('q4o4').innerHTML = "D. " + array[3]['Option_D']['S'];
-
-            //Question 5 Options
-            document.getElementById('q5o1').innerHTML = "A. " + array[4]['Option_A']['S'];
-
-            document.getElementById('q5o2').innerHTML = "B. " + array[4]['Option_B']['S'];
-
-            document.getElementById('q5o3').innerHTML = "C. " + array[4]['Option_C']['S'];
-
-            document.getElementById('q5o4').innerHTML = "D. " + array[4]['Option_D']['S'];
-
-            //Question 6 Options
-            document.getElementById('q6o1').innerHTML = "A. " + array[5]['Option_A']['S'];
-
-            document.getElementById('q6o2').innerHTML = "B. " + array[5]['Option_B']['S'];
-
-            document.getElementById('q6o3').innerHTML = "C. " + array[5]['Option_C']['S'];
-
-            document.getElementById('q6o4').innerHTML = "D. " + array[5]['Option_D']['S'];
-
-             //Question 7 Options
-            document.getElementById('q7o1').innerHTML = "A. " + array[6]['Option_A']['S'];
-
-            document.getElementById('q7o2').innerHTML = "B. " + array[6]['Option_B']['S'];
-
-            document.getElementById('q7o3').innerHTML = "C. " + array[6]['Option_C']['S'];
-
-            document.getElementById('q7o4').innerHTML = "D. " + array[6]['Option_D']['S'];
-            
-            //Question 8 Options
-            document.getElementById('q8o1').innerHTML = "A. " + array[7]['Option_A']['S'];
-
-            document.getElementById('q8o2').innerHTML = "B. " + array[7]['Option_B']['S'];
-
-            document.getElementById('q8o3').innerHTML = "C. " + array[7]['Option_C']['S'];
-
-            document.getElementById('q8o4').innerHTML = "D. " + array[7]['Option_D']['S'];
-
-            //Question 9 Options
-            document.getElementById('q9o1').innerHTML = "A. " + array[8]['Option_A']['S'];
-
-            document.getElementById('q9o2').innerHTML = "B. " + array[8]['Option_B']['S'];
-
-            document.getElementById('q9o3').innerHTML = "C. " + array[8]['Option_C']['S'];
-
-            document.getElementById('q9o4').innerHTML = "D. " + array[8]['Option_D']['S'];
-
-            //Question 10 Options
-            document.getElementById('q10o1').innerHTML = "A. " + array[3]['Option_A']['S'];
-
-            document.getElementById('q10o2').innerHTML = "B. " + array[3]['Option_B']['S'];
-
-            document.getElementById('q10o3').innerHTML = "C. " + array[3]['Option_C']['S'];
-
-            document.getElementById('q10o4').innerHTML = "D. " + array[3]['Option_D']['S'];
-
+            var recall, inference, evaluation, application, level1, level2, level3, level4, level5, recallcorrect, inferencecorrect, evaluationcorrect, applicationcorrect, level1correct, level2correct, level3correct, level4correct, level5correct;
+            recall = inference = evaluation = application = level1 = level2 = level3 = level4 = level5 = recallcorrect = inferencecorrect = evaluationcorrect = applicationcorrect = level1correct = level2correct = level3correct = level4correct = level5correct = 0;
+            for (i = 0; i < n; i++) {
+                for (j = 0; j < obj2.Items.length; j++) {
+                    if (array[j]['Qns_ID']['S'] == input[i][0]) {
+                        var a = i + 1;
+
+                        console.log("Q" + a);
+                        console.log(input[i][2])
+
+                        var question = String("demo" + a);
+                        var skillset = String("skillset" + a);
+                        var difficulty = String("difficulty" + a);
+                        var optionA = String("q" + a + "o1");
+                        var optionB = String("q" + a + "o2");
+                        var optionC = String("q" + a + "o3");
+                        var optionD = String("q" + a + "o4");
+                        var div = String("div" + a);
+                        var heading = String("heading" + a);
+                        var ans = String("ans" + a);
+                        var correctans = String("demoo" + a + "1");
+                        var explanation = String("explan" + a);
+
+                        //Skillset, Difficulty, and Student's ans from /report
+                        document.getElementById(difficulty).innerHTML = "Difficulty rating: " + String(input[i][1]);
+                        document.getElementById(skillset).innerHTML = String(input[i][2]);
+                        document.getElementById(ans).innerHTML = "You chose: " + input[i][4];
+                        
+                        //Question, Ans Key, Options, Explanation from /quiz
+                        document.getElementById(question).innerHTML = "Q" + a + ". " + array[j]['Question']['S'];
+                        document.getElementById(correctans).innerHTML = "Correct answer is: " + array[j]['Answer']['S'];
+                        document.getElementById(optionA).innerHTML = "A. " + array[j]['Option_A']['S'];
+                        document.getElementById(optionB).innerHTML = "B. " + array[j]['Option_B']['S'];
+                        document.getElementById(optionC).innerHTML = "C. " + array[j]['Option_C']['S'];
+                        document.getElementById(optionD).innerHTML = "D. " + array[j]['Option_D']['S'];
+                        document.getElementById(explanation).innerHTML = "Explanation: " + array[j]['Explanation']['S'];
+
+                        if (input[i][2] == "Recall") {
+                            recall += 1;
+                            console.log(recall);
+                            if (input[i][3] == 1) {
+                                recallcorrect += 1;
+                                document.getElementById(heading).innerHTML = "Correct";
+                                document.getElementById(div).className = "alert alert-success";
+                            }
+                        } else if (input[i][2] == "Evaluation") {
+                            evaluation += 1;
+                            if (input[i][3] == 1) {
+                                evaluationcorrect += 1;
+                                document.getElementById(heading).innerHTML = "Correct";
+                                document.getElementById(div).className = "alert alert-success";
+                            }
+                        } else if (input[i][2] == "Inference") {
+                            inference += 1;
+                            console.log(inference);
+                            if (input[i][3] == 1) {
+                                inferencecorrect += 1;
+                                document.getElementById(heading).innerHTML = "Correct";
+                                document.getElementById(div).className = "alert alert-success";
+                            }
+                        } else if (input[i][2] == "Application") {
+                            application += 1;
+                            if (input[i][3] == 1) {
+                                applicationcorrect += 1;
+                                document.getElementById(heading).innerHTML = "Correct";
+                                document.getElementById(div).className = "alert alert-success";
+                            }
+                        }
+
+                        if (input[i][1] >= 1 && input[i][1] < 2) {
+                            level1 += 1;
+                            if (input[i][3] == 1) {
+                                score += 1;
+                                level1correct += 1;
+                            }
+                        } else if (input[i][1] >= 2 && input[i][1] < 3) {
+                            level2 += 1;
+                            if (input[i][3] == 1) {
+                                score += 1;
+                                level2correct += 1;
+                            }
+                        } else if (input[i][1] >= 3 && input[i][1] < 4) {
+                            level3 += 1;
+                            if (input[i][3] == 1) {
+                                score += 1;
+                                level3correct += 1;
+                            }
+                        } else if (input[i][1] >= 4 && input[i][1] < 5) {
+                            level4 += 1;
+                            if (input[i][3] == 1) {
+                                score += 1;
+                                level4correct += 1;
+                            }
+                        } else if (input[i][1] == 5) {
+                            level5 += 1;
+                            if (input[i][3] == 1) {
+                                score += 1;
+                                level5correct += 1;
+                            }
+                        }
+                    }
+                    else {
+                        continue;
+                    }
+                }
+            }
+
+            var total = recall + inference + evaluation + application;
+            var totalcorrect = recallcorrect + inferencecorrect + evaluationcorrect + applicationcorrect;
+            var percentagecorrect = totalcorrect/total;
+
+            document.getElementById("score").innerHTML = "Score: " + totalcorrect + "/" + total;
+
+            document.getElementById("skillrating").innerHTML = "Skill Rating: " + String(localStorage.getItem("currentAverage")) + "/5";
+
+            if (percentagecorrect >= 0.8) {
+                document.getElementById("goodjob").innerHTML = "Great Job!"
+            } else if (percentagecorrect >= 0.6 && percentagecorrect < 0.8) {
+                document.getElementById("goodjob").innerHTML = "You did well!"
+            } else if (percentagecorrect >= 0.4 && percentagecorrect < 0.6) {
+                document.getElementById("goodjob").innerHTML = "You need to buck up!"
+            } else {
+                document.getElementById("goodjob").innerHTML = "Revise your fundamentals and try again!"
+            }
+
+            // Load google charts
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            // Draw the chart and set the chart values
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                ['Skillset', 'Number of Questions'],
+                ['Recall', recall],
+                ['Evaluation', evaluation],
+                ['Inference', inference],
+                ['Application', application]
+            ]);
+            var difficultydata = google.visualization.arrayToDataTable([
+                ['Difficulty Level', 'Number of Questions'],
+                ['Level 1+', level1],
+                ['Level 2+', level2],
+                ['Level 3+', level3],
+                ['Level 4+', level4],
+                ['Level 5+', level5]
+            ]);
+
+            // Optional; add a title and set the width and height of the chart
+            var options = {title: 'Question Distribution', 'width':550, 'height':400, is3D: true,};
+
+            var options2 = {title: 'Question Distribution', 'width':550, 'height':400, is3D: true,};
+
+            // Display the chart inside the <div> element with id="skillsetpiechart"
+            var skillsetchart = new google.visualization.PieChart(document.getElementById('skillsetpiechart'));
+            skillsetchart.draw(data, options);
+
+            // Display the chart inside the <div> element with id="difficultypiechart"
+            var difficultychart = new google.visualization.PieChart(document.getElementById('difficultypiechart'));
+            difficultychart.draw(difficultydata, options2);
+            }
+
+            google.charts.load('current', {'packages':['table']});
+            google.charts.setOnLoadCallback(drawTable);
+
+            function drawTable() {
+                var skillset_table_data = new google.visualization.DataTable();
+                skillset_table_data.addColumn('string', 'Skillset');
+                skillset_table_data.addColumn('number', 'No. of Questions Asked');
+                skillset_table_data.addColumn('number', 'No. of Questions Correct');
+                skillset_table_data.addColumn('number', '% of Questions Correct');
+                skillset_table_data.addRows([
+                ['Recall',  {v: recall, f: String(recall)}, {v: recallcorrect, f: String(recallcorrect)}, {v: (Math.round(((recallcorrect/recall) + Number.EPSILON) * 100)), f: String((Math.round(((recallcorrect/recall) + Number.EPSILON) * 100)) + '%')}],
+                ['Evaluation',   {v: evaluation,   f: String(evaluation)},  {v: evaluationcorrect, f: String(evaluationcorrect)}, {v: (Math.round(((evaluationcorrect/evaluation) + Number.EPSILON) * 100)), f: String((Math.round(((evaluationcorrect/evaluation) + Number.EPSILON) * 100)) + '%')}],
+                ['Inference', {v: inference, f: String(inference)}, {v: inferencecorrect, f: String(inferencecorrect)}, {v: (Math.round(((inferencecorrect/inference) + Number.EPSILON) * 100)), f: String((Math.round(((inferencecorrect/inference) + Number.EPSILON) * 100)) + '%')}],
+                ['Application',   {v: application,  f: String(application)},  {v: applicationcorrect,  f: String(applicationcorrect)}, {v: (Math.round(((applicationcorrect/application) + Number.EPSILON) * 100)), f: String((Math.round(((applicationcorrect/application) + Number.EPSILON) * 100)) + '%')}],
+                ['Total',   {v: total,  f: String(total)},  {v: totalcorrect,  f: String(totalcorrect)}, {v: (Math.round(((totalcorrect/total) + Number.EPSILON) * 100)), f: String((Math.round(((totalcorrect/total) + Number.EPSILON) * 100)) + '%')}]
+                ]);
+
+                var difficulty_table_data = new google.visualization.DataTable();
+                difficulty_table_data.addColumn('string', 'Difficulty');
+                difficulty_table_data.addColumn('number', 'No. of Questions Asked');
+                difficulty_table_data.addColumn('number', 'No. of Questions Correct');
+                difficulty_table_data.addColumn('number', '% of Questions Correct');
+                difficulty_table_data.addRows([
+                ['Level 1+',  {v: level1, f: String(level1)}, {v: level1correct, f: String(level1correct)}, {v: (Math.round(((level1correct/level1) + Number.EPSILON) * 100)), f: String((Math.round(((level1correct/level1) + Number.EPSILON) * 100)) + '%')}],
+                ['Level 2+',   {v: level2,   f: String(level2)},  {v: level2correct, f: String(level2correct)}, {v: (Math.round(((level2correct/level2) + Number.EPSILON) * 100)), f: String((Math.round(((level2correct/level2) + Number.EPSILON) * 100)) + '%')}],
+                ['Level 3+', {v: level3, f: String(level3)}, {v: level3correct, f: String(level3correct)}, {v: (Math.round(((level3correct/level3) + Number.EPSILON) * 100)), f: String((Math.round(((level3correct/level3) + Number.EPSILON) * 100)) + '%')}],
+                ['Level 4+',   {v: level4,  f: String(level4)},  {v: level4correct,  f: String(level4correct)}, {v: (Math.round(((level4correct/level4) + Number.EPSILON) * 100)), f: String((Math.round(((level4correct/level4) + Number.EPSILON) * 100)) + '%')}],
+                ['Level 5+',   {v: level5,  f: String(level5)},  {v: level5correct,  f: String(level5correct)}, {v: (Math.round(((level5correct/level5) + Number.EPSILON) * 100)), f: String((Math.round(((level5correct/level5) + Number.EPSILON) * 100)) + '%')}],
+                ['Total',   {v: total,  f: String(total)},  {v: totalcorrect,  f: String(totalcorrect)}, {v: (Math.round(((totalcorrect/total) + Number.EPSILON) * 100)), f: String((Math.round(((totalcorrect/total) + Number.EPSILON) * 100)) + '%')}],
+                ]);
+
+            var skillset_table = new google.visualization.Table(document.getElementById('skillset_table_div'));
+
+            skillset_table.draw(skillset_table_data, {showRowNumber: false, width: '100%', height: '100%'});
+
+            var difficulty_table = new google.visualization.Table(document.getElementById('difficulty_table_div'));
+
+            difficulty_table.draw(difficulty_table_data, {showRowNumber: false, width: '100%', height: '100%'});
+            }
         })
         .catch((err) => {
-            console.error('There has been a problem with your fetch operation:');
+            console.error('There has been a problem with your fetch operation:' + err);
         })
-
-        
         // document.getElementById("demoo2").outerHTML= obj2.Items[0]['Option B']['S'];
         // document.getElementById("demoo3").outerHTML = obj2.Items[0]['Option C']['S'];
         // document.getElementById("demoo4").outerHTML = obj2.Items[0]['Option D']['S'];
