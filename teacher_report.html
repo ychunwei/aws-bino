@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Teacher's Report</title>
-    <link rel="stylesheet" href="teacher_report.css">
+    <title>Report</title>
+    <link rel="stylesheet" href="teacher_report_2.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 </head>
@@ -17,16 +17,16 @@
 
         <div id="BINO" class="page-header">BINO</div>
 
-        <!-- <svg id="profile" height="140" width="1000">
-            <ellipse cx="1000" cy="80" rx="40" ry="40">
-        </svg> -->
+        <img src="teacher_avatar.jpg" alt="Avatar" id="avatar" style="width:60px">
+
+        <p id="avatar_text">Hubert Sim<br>Teacher</p>
 
          <div id = "sidenav">
              <div id="overview_button">
                 <svg id="icon" width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                 </svg>
-                <div id = "overview_text" x="50" y="35" fill="black">Overview</div>
+                <div id="overview_text" x="50" y="35" fill="black">Overview</div>
              </div>
             
             <svg width = "300" height = "600">
@@ -46,448 +46,144 @@
             </svg>
         </div>
     </div>
-
-    
-
     <div id="main_section" class="col-md-6 offset-md-3">
         <div id="quiz_content">
             <div id = "quiz_text">Chemistry (C1003)</div>
             <div id = "quiz_text2">Summary Report</div>
             <div id = "quiz_options">
-                <h4>General Overview</h4>
-                <h4>Number of Students who attempted Quiz: 20/24</h4>
-                <h4 id = "score">Average Score: 6.3/10</h4>
-                <h4 id = "skillrating">Average Skill Rating: 3.05/5</h4>
+                <h3>General Overview</h3>
+                <h4 id = "score">Average Score: 10.0/15</h4>
+                <h4 id = "skillrating">Average Skill Rating: 3.05</h4>
                 <hr>
-                <h3>Breakdown of Questions Attempted by Skillset</h3>
+                <h3>Breakdown of Qns Attempted by Skillset</h3>
                 <div id="skillsetpiechart"></div>
                 <div id="skillset_table_div"></div>
                 <hr>
-                <h3>Top Performers</h3>
+                <h3>Breakdown of Qns Attempted by Difficulty Level</h3>
+                <div id="difficultypiechart"></div>
                 <div id="difficulty_table_div"></div>
                 <hr>
-                <h3>Review of Individual Questions</h3>
-                <p id = "demo" class = "question">Q1</p>
-                <p id = "skillset1" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty1" class = "difficultystyle">Difficulty</p>
-                <div id = 'q1o1'>Option A</div>
-                <div id = 'q1o2'>Option B</div>
-                <div id = 'q1o3'>Option C</div>
-                <div id = 'q1o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo11" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan1">Explanation</p>
-                </div>
+                <h3 id="scores">Individual Scores</h3>
+                <div id="table_div"></div>
                 <hr>
-                <p id = "demo2" class = "question">Q2</p>
-                <p id = "skillset2" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty2" class = "difficultystyle">Difficulty</p>
-                <div id = "q2o1">Option A</div>
-                <div id = 'q2o2'>Option B</div>
-                <div id = 'q2o3'>Option C</div>
-                <div id = 'q2o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo21" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan2">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo3" class = "question">Q3</p>
-                <p id = "skillset3" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty3" class = "difficultystyle">Difficulty</p>
-                <div id = 'q3o1'>Option A</div>
-                <div id = 'q3o2'>Option B</div>
-                <div id = 'q3o3'>Option C</div>
-                <div id = 'q3o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo31" class="alert-heading">Incorrect</h4>
-                    <p>_ students chose option A</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan3">Explanation</p>
-                  </div>
-                <hr>
-                <p id = "demo4" class = "question">Q4</p>
-                <p id = "skillset4" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty4" class = "difficultystyle">Difficulty</p>
-                <div id = 'q4o1'>Option A</div>
-                <div id = 'q4o2'>Option B</div>
-                <div id = 'q4o3'>Option C</div>
-                <div id = 'q4o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo41" class="alert-heading">Correct</h4>
-                    <p>_ students chose option A</p>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <hr>
-                    <p class="mb-0" id = "explan4">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo5" class = "question">Q5</p>
-                <p id = "skillset5" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty5" class = "difficultystyle">Difficulty</p>
-                <div id = 'q5o1'>Option A</div>
-                <div id = 'q5o2'>Option B</div>
-                <div id = 'q5o3'>Option C</div>
-                <div id = 'q5o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo51" class="alert-heading">Correct</h4>
-                    <p>_ students chose option A</p>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan5">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo6" class = "question">Q6</p>
-                <p id = "skillset6" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty6" class = "difficultystyle">Difficulty</p>
-                <div id = 'q6o1'>Option A</div>
-                <div id = 'q6o2'>Option B</div>
-                <div id = 'q6o3'>Option C</div>
-                <div id = 'q6o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo61" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan6">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo7" class = "question">Q7</p>
-                <p id = "skillset7" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty7" class = "difficultystyle">Difficulty</p>
-                <div id = 'q7o1'>Option A</div>
-                <div id = 'q7o2'>Option B</div>
-                <div id = 'q7o3'>Option C</div>
-                <div id = 'q7o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo71" class="alert-heading">Correct</h4>
-                    <p>_ students chose option A</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan7">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo8" class = "question">Q8</p>
-                <p id = "skillset8" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty8" class = "difficultystyle">Difficulty</p>
-                <div id = 'q8o1'>Option A</div>
-                <div id = 'q8o2'>Option B</div>
-                <div id = 'q8o3'>Option C</div>
-                <div id = 'q8o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo81" class="alert-heading">Correct</h4>
-                    <p>_ students chose option A</p>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <hr>
-                    <p class="mb-0" id = "explan8">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo9" class = "question">Q9</p>
-                <p id = "skillset9" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty9" class = "difficultystyle">Difficulty</p>
-                <div id = 'q9o1'>Option A</div>
-                <div id = 'q9o2'>Option B</div>
-                <div id = 'q9o3'>Option C</div>
-                <div id = 'q9o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo91" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan9">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo10" class = "question">Q10</p>
-                <p id = "skillset10" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty10" class = "difficultystyle">Difficulty</p>
-                <div id = 'q10o1'>Option A</div>
-                <div id = 'q10o2'>Option B</div>
-                <div id = 'q10o3'>Option C</div>
-                <div id = 'q10o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo101" class="alert-heading">Correct</h4>
-                    <p>_ students chose option A</p>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan10">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo011" class = "question">Q11</p>
-                <p id = "skillset11" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty11" class = "difficultystyle">Difficulty</p>
-                <div id = 'q11o1'>Option A</div>
-                <div id = 'q11o2'>Option B</div>
-                <div id = 'q11o3'>Option C</div>
-                <div id = 'q11o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo111" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan11">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo12" class = "question">Q12</p>
-                <p id = "skillset12" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty12" class = "difficultystyle">Difficulty</p>
-                <div id = 'q12o1'>Option A</div>
-                <div id = 'q12o2'>Option B</div>
-                <div id = 'q12o3'>Option C</div>
-                <div id = 'q12o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo121" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan12">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo13" class = "question">Q13</p>
-                <p id = "skillset13" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty13" class = "difficultystyle">Difficulty</p>
-                <div id = 'q13o1'>Option A</div>
-                <div id = 'q13o2'>Option B</div>
-                <div id = 'q13o3'>Option C</div>
-                <div id = 'q13o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo131" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan13">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo14" class = "question">Q14</p>
-                <p id = "skillset14" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty14" class = "difficultystyle">Difficulty</p>
-                <div id = 'q14o1'>Option A</div>
-                <div id = 'q14o2'>Option B</div>
-                <div id = 'q14o3'>Option C</div>
-                <div id = 'q14o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo141" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan14">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo15" class = "question">Q15</p>
-                <p id = "skillset15" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty15" class = "difficultystyle">Difficulty</p>
-                <div id = 'q15o1'>Option A</div>
-                <div id = 'q15o2'>Option B</div>
-                <div id = 'q15o3'>Option C</div>
-                <div id = 'q15o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo151" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan15">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo16" class = "question">Q16</p>
-                <p id = "skillset16" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty16" class = "difficultystyle">Difficulty</p>
-                <div id = 'q16o1'>Option A</div>
-                <div id = 'q16o2'>Option B</div>
-                <div id = 'q16o3'>Option C</div>
-                <div id = 'q16o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo161" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan16">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo17" class = "question">Q17</p>
-                <p id = "skillset17" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty17" class = "difficultystyle">Difficulty</p>
-                <div id = 'q17o1'>Option A</div>
-                <div id = 'q17o2'>Option B</div>
-                <div id = 'q17o3'>Option C</div>
-                <div id = 'q17o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo171" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan17">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo18" class = "question">Q18</p>
-                <p id = "skillset18" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty18" class = "difficultystyle">Difficulty</p>
-                <div id = 'q18o1'>Option A</div>
-                <div id = 'q18o2'>Option B</div>
-                <div id = 'q18o3'>Option C</div>
-                <div id = 'q18o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo181" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan18">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo19" class = "question">Q19</p>
-                <p id = "skillset19" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty19" class = "difficultystyle">Difficulty</p>
-                <div id = 'q19o1'>Option A</div>
-                <div id = 'q19o2'>Option B</div>
-                <div id = 'q19o3'>Option C</div>
-                <div id = 'q19o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo191" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan19">Explanation</p>
-                </div>
-                <hr>
-                <p id = "demo20" class = "question">Q20</p>
-                <p id = "skillset20" class = "skillsetstyle">Skillset</p>
-                <p id = "difficulty20" class = "difficultystyle">Difficulty</p>
-                <div id = 'q20o1'>Option A</div>
-                <div id = 'q20o2'>Option B</div>
-                <div id = 'q20o3'>Option C</div>
-                <div id = 'q20o4' class = "lastoption">Option D</div>
-                <div class="alert alert-primary" role="alert">
-                    <h4 id = "demoo201" class="alert-heading">Correct</h4>
-                    <p>_ students chose option B</p>
-                    <p>_ students chose option C</p>
-                    <p>_ students chose option D</p>
-                    <hr>
-                    <p class="mb-0" id = "explan20">Explanation</p>
-                </div>
-                <hr style="width:600px;">
+                <a href="file:///Users/daqingzhang/Desktop/Davis/aws-bino/Student-Performance.html" id="button1" class="btn btn-primary">Page 2</a>
             </div>
                 <hr style="width:600px;">
             </div>
-            
         </div>
-        
-
     </div>
 
     <script type="text/javascript">
-        window.onscroll = function() {myFunction()};
-        
-        var header = document.getElementById("topBar");
-        var sticky = header.offsetTop;
-        
-        function myFunction() {
-          if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-          } else {
-            header.classList.remove("sticky");
-          }
-        }
 
-        // Load google charts
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+	// Load google charts
+	google.charts.load('current', {'packages':['corechart']});
+	google.charts.setOnLoadCallback(drawChart);
 
-        // Draw the chart and set the chart values
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-            ['Skillset', 'Number of Questions'],
-            ['Recall', 4],
-            ['Evaluation', 1],
-            ['Inference', 3],
-            ['Application', 2]
-        ]);
-            var difficultydata = google.visualization.arrayToDataTable([
-            ['Difficulty Level', 'Number of Questions'],
-            ['Level 1', 2],
-            ['Level 2', 3],
-            ['Level 3', 3],
-            ['Level 4', 1],
-            ['Level 5', 1]
-        ]);
+	// Draw the chart and set the chart values
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+		['Skillset', 'Average Number of Questions'],
+		['Recall', 7],
+		['Evaluation', 1],
+		['Inference', 5],
+		['Application', 2]
+	]);
+		var difficultydata = google.visualization.arrayToDataTable([
+		['Difficulty Level', 'Average Number of Questions'],
+		['Level 1+', 2],
+		['Level 2+', 4],
+		['Level 3+', 5],
+		['Level 4+', 2],
+		['Level 5', 1]
+	]);
 
-        // Optional; add a title and set the width and height of the chart
-        var options = {title: 'Question Distribution', 'width':550, 'height':400, is3D: true,};
+	// Optional; add a title and set the width and height of the chart
+	var options = {title: 'Question Distribution', 'width':550, 'height':400, is3D: true,};
 
-        var options2 = {title: 'Question Distribution', 'width':550, 'height':400, is3D: true,};
+	var options2 = {title: 'Question Distribution', 'width':550, 'height':400, is3D: true,};
 
-        // Display the chart inside the <div> element with id="skillsetpiechart"
-        var skillsetchart = new google.visualization.PieChart(document.getElementById('skillsetpiechart'));
-        skillsetchart.draw(data, options);
+	// Display the chart inside the <div> element with id="skillsetpiechart"
+	var skillsetchart = new google.visualization.PieChart(document.getElementById('skillsetpiechart'));
+	skillsetchart.draw(data, options);
 
-        // Display the chart inside the <div> element with id="difficultypiechart"
-        var difficultychart = new google.visualization.PieChart(document.getElementById('difficultypiechart'));
-        difficultychart.draw(difficultydata, options2);
-        }
+	// Display the chart inside the <div> element with id="difficultypiechart"
+	var difficultychart = new google.visualization.PieChart(document.getElementById('difficultypiechart'));
+	difficultychart.draw(difficultydata, options2);
+	}
 
-        google.charts.load('current', {'packages':['table']});
-        google.charts.setOnLoadCallback(drawTable);
+	google.charts.load('current', {'packages':['table']});
+	google.charts.setOnLoadCallback(drawTable);
+	console.log("working");
 
-        function drawTable() {
-            var skillset_table_data = new google.visualization.DataTable();
-            skillset_table_data.addColumn('string', 'Skillset');
-            skillset_table_data.addColumn('number', 'No. of Questions Asked');
-            skillset_table_data.addColumn('number', 'Average No. of Questions Correct');
-            skillset_table_data.addRows([
-            ['Recall',  {v: 4, f: '4'}, {v: 3.20, f: '3.20'}],
-            ['Evaluation',   {v:1,   f: '1'},  {v: 0.45, f: '0.45'}],
-            ['Inference', {v: 3, f: '3'}, {v: 1.78, f: '1.78'}],
-            ['Application',   {v: 2,  f: '2'},  {v: 0.87,  f: '0.87'}],
-            ['Total',   {v: 10,  f: '10'},  {v: 6.30,  f: '6.30'}]
+	function drawTable() {
+		var skillset_table_data = new google.visualization.DataTable();
+		skillset_table_data.addColumn('string', 'Skillset');
+		skillset_table_data.addColumn('number', 'Average No. of Qns Asked');
+		skillset_table_data.addColumn('number', 'Average No. of Qns Correct');
+		skillset_table_data.addColumn('number', '% of Qns Correct');
+		skillset_table_data.addRows([
+		['Recall',  {v: 7, f: '7'}, {v: 5.20, f: '5.20'}, {v: 74.3, f: '74.3%'}],
+		['Evaluation',   {v:1,   f: '1'},  {v: 0.45, f: '0.45'}, {v: 45.0, f: '45.0%'}],
+		['Inference', {v: 5, f: '5'}, {v: 3.48, f: '3.48'}, {v: 69.6, f: '69.6%'}],
+		['Application',   {v: 2,  f: '2'},  {v: 0.87,  f: '0.87'}, {v: 43.5, f: '43.5%'}],
+		['Total',   {v: 15,  f: '15'},  {v: 10.0,  f: '10.0'}, {v: 66.7, f: '66.7%'}]
+		]);
+		
+		var difficulty_table_data = new google.visualization.DataTable();
+		difficulty_table_data.addColumn('string', 'Difficulty Level');
+		difficulty_table_data.addColumn('number', 'Average No. of Qns Asked');
+		difficulty_table_data.addColumn('number', 'Average No. of Qns Correct');
+		difficulty_table_data.addColumn('number', '% of Qns Correct');
+		difficulty_table_data.addRows([
+		['Level 1+', {v: 2, f: '2'}, {v: 1.8, f: '1.8'}, {v: 90, f: '90.0%'}],
+		['Level 2+', {v: 4, f: '4'}, {v: 3.3, f: '3.3'}, {v: 82.5, f: '82.5%'}],
+		['Level 3+', {v: 5, f: '5'}, {v: 3.6, f: '3.6'}, {v: 72, f: '72.0%'}],
+		['Level 4+', {v: 2,  f: '2'}, {v: 1.0, f: '1.0'}, {v: 50, f: '50.0%'}],
+		['Level 5', {v: 1,  f: '1'}, {v: 0.3, f: '0.3'}, {v: 30, f: '30.0%'}],
+		['Total',   {v: 15,  f: '15'},  {v: 10.0,  f: '10.0'}, {v: 66.7, f: '66.7%'}]
+		]);
+
+        var table_data = new google.visualization.DataTable();
+            table_data.addColumn('string', 'Name');
+            table_data.addColumn('number', 'No. of Questions Correct');
+            table_data.addColumn('number', 'Skill Rating');
+            table_data.addColumn('number', '% of Questions Correct');
+            table_data.addRows([
+            ['Mark', {v: 8, f: '8'}, {v: 2.82, f: '2.82'}, {v: 53.3, f: '53.3%'}],
+            ['May', {v:7, f: '7'}, {v: 2.58, f: '2.58'}, {v: 46.7, f: '46.7%'}],
+            ['Sherie', {v: 8, f: '8'}, {v: 2.85, f: '2.85'}, {v: 53.3, f: '53.3%'}],
+            ['Tom', {v: 10,  f: '10'}, {v: 3.70, f: '3.70'}, {v: 66.7, f: '66.7%'}],
+            ['Nathaniel', {v: 15,  f: '15'}, {v: 4.43, f: '4.43'}, {v: 100, f: '100%'}],
+            ['Luke', {v: 15,  f: '15'}, {v: 4.33, f: '4.33'}, {v: 100, f: '100%'}],
+            ['Benjamin', {v: 15,  f: '15'}, {v: 4.25, f: '4.25'}, {v: 100, f: '100%'}],
+            ['Bryan', {v: 15,  f: '15'}, {v: 4.21, f: '4.21'}, {v: 100, f: '100%'}],
+            ['Joshua', {v: 9,  f: '9'}, {v: 3.45, f: '3.45'}, {v: 60, f: '60.0%'}],
+            ['Jonathan', {v: 8,  f: '8'}, {v: 2.95, f: '2.95'}, {v: 53.3, f: '53.3%'}],
+            ['Jane', {v: 5,  f: '5'}, {v: 1.96, f: '1.96'}, {v: 33.3, f: '33.3%'}],
+            ['Raphael', {v: 12, f: '12'}, {v: 3.98, f: '3.98'}, {v: 80, f: '80%'}],
+            ['Russell', {v: 7, f: '7'}, {v: 2.67, f: '2.68'}, {v: 46.7, f: '46.7%'}],
+            ['Chris', {v: 6, f: '6'}, {v: 2.34, f: '2.38'}, {v: 40.0, f: '40.0%'}],
+            ['James', {v: 10,  f: '10'}, {v: 3.67, f: '3.67'}, {v: 66.7, f: '66.7%'}],
+            ['Nick', {v: 10,  f: '10'}, {v: 3.64, f: '3.64'}, {v: 66.7, f: '66.7%'}],
+            ['Molly', {v: 9,  f: '9'}, {v: 3.42, f: '3.42'}, {v: 60, f: '60.0%'}],
+            ['David', {v: 9,  f: '9'}, {v: 3.38, f: '3.38'}, {v: 60, f: '60.0%'}],
+            ['Richard', {v: 15,  f: '15'}, {v: 4.18, f: '4.18'}, {v: 100, f: '100%'}],
+            ['Javier', {v: 7,  f: '7'}, {v: 2.51, f: '2.51'}, {v: 46.7, f: '46.7%'}]
             ]);
 
-            var difficulty_table_data = new google.visualization.DataTable();
-            difficulty_table_data.addColumn('string', 'Name');
-            difficulty_table_data.addColumn('number', 'No. of Questions Correct');
-            difficulty_table_data.addColumn('number', '% of Questions Correct');
-            difficulty_table_data.addRows([
-            ['Mark', {v: 8, f: '8'}, {v: 80, f: '80%'}],
-            ['May', {v:7, f: '7'}, {v: 70, f: '70%'}],
-            ['Sherie', {v: 8, f: '8'}, {v: 80, f: '80%'}],
-            ['Tom', {v: 10,  f: '10'}, {v: 100, f: '100%'}],
-            ['Nathaniel', {v: 10,  f: '10'}, {v: 100, f: '100%'}],
-            ['Luke', {v: 10,  f: '10'}, {v: 100, f: '100%'}],
-            ['Benjamin', {v: 10,  f: '10'}, {v: 100, f: '100%'}],
-            ['Bryan', {v: 10,  f: '10'}, {v: 100, f: '100%'}],
-            ['Joshua', {v: 9,  f: '9'}, {v: 90, f: '90%'}],
-            ['Jonathan', {v: 8,  f: '8'}, {v: 80, f: '80%'}],
-            ['Jane', {v: 5,  f: '5'}, {v: 50, f: '50%'}],
-            ]);
+	var skillset_table = new google.visualization.Table(document.getElementById('skillset_table_div'));
 
-        var skillset_table = new google.visualization.Table(document.getElementById('skillset_table_div'));
+	skillset_table.draw(skillset_table_data, {showRowNumber: false, width: '100%', height: '100%'});
+	
+	var difficulty_table = new google.visualization.Table(document.getElementById('difficulty_table_div'));
 
-        skillset_table.draw(skillset_table_data, {showRowNumber: false, width: '100%', height: '100%'});
+	difficulty_table.draw(difficulty_table_data, {showRowNumber: false, width: '100%', height: '100%'});
 
-        var difficulty_table = new google.visualization.Table(document.getElementById('difficulty_table_div'));
+    var table = new google.visualization.Table(document.getElementById('table_div'));
 
-        difficulty_table.draw(difficulty_table_data, {showRowNumber: false, sortColumn: 2, sortAscending: false, width: '100%', height: '100%'});
-      }
+    table.draw(table_data, {showRowNumber: false, sortColumn: 2, sortAscending: false, width: '100%', height: '100%'});
+
+  }
 
         var array = []
         window.onload
@@ -543,45 +239,45 @@
             document.getElementById("demo20").innerHTML = "Q20. " + array[19]['Question']['S'];
             
             //Number of students who got the question correct
-            document.getElementById('demoo11').innerHTML = array[0]['Students_Correct']['S'] + " / " + array[0]['Students_Attempted']['S'] + " students chose the correct answer, " + array[0]['Answer']['S']
+            document.getElementById('demoo11').innerHTML = array[0]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[0]['Answer']['S']
 
-            document.getElementById('demoo21').innerHTML = array[1]['Students_Correct']['S'] + " / " + array[1]['Students_Attempted']['S'] + " students chose the correct answer, " + array[1]['Answer']['S']
+            document.getElementById('demoo21').innerHTML = array[1]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[1]['Answer']['S']
 
-            document.getElementById('demoo31').innerHTML = array[2]['Students_Correct']['S'] + " / " + array[2]['Students_Attempted']['S'] + " students chose the correct answer, " + array[2]['Answer']['S']
+            document.getElementById('demoo31').innerHTML = array[2]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[2]['Answer']['S']
 
-            document.getElementById('demoo41').innerHTML = array[3]['Students_Correct']['S'] + " / " + array[3]['Students_Attempted']['S'] + " students chose the correct answer, " + array[3]['Answer']['S']
+            document.getElementById('demoo41').innerHTML = array[3]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[3]['Answer']['S']
 
-            document.getElementById('demoo51').innerHTML = array[4]['Students_Correct']['S'] + " / " + array[4]['Students_Attempted']['S'] + " students chose the correct answer, " + array[4]['Answer']['S']
+            document.getElementById('demoo51').innerHTML = array[4]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[4]['Answer']['S']
 
-            document.getElementById('demoo61').innerHTML = array[5]['Students_Correct']['S'] + " / " + array[5]['Students_Attempted']['S'] + " students chose the correct answer, " + array[5]['Answer']['S']
+            document.getElementById('demoo61').innerHTML = array[5]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[5]['Answer']['S']
 
-            document.getElementById('demoo71').innerHTML = array[6]['Students_Correct']['S'] + " / " + array[6]['Students_Attempted']['S'] + " students chose the correct answer, " + array[6]['Answer']['S']
+            document.getElementById('demoo71').innerHTML = array[6]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[6]['Answer']['S']
 
-            document.getElementById('demoo81').innerHTML = array[7]['Students_Correct']['S'] + " / " + array[7]['Students_Attempted']['S'] + " students chose the correct answer, " + array[7]['Answer']['S']
+            document.getElementById('demoo81').innerHTML = array[7]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[7]['Answer']['S']
 
-            document.getElementById('demoo91').innerHTML = array[8]['Students_Correct']['S'] + " / " + array[8]['Students_Attempted']['S'] + " students chose the correct answer, " + array[8]['Answer']['S']
+            document.getElementById('demoo91').innerHTML = array[8]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[8]['Answer']['S']
 
-            document.getElementById('demoo101').innerHTML = array[9]['Students_Correct']['S'] + " / " + array[9]['Students_Attempted']['S'] + " students chose the correct answer, " + array[9]['Answer']['S']
+            document.getElementById('demoo101').innerHTML = array[9]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[9]['Answer']['S']
 
-            document.getElementById('demoo111').innerHTML = array[10]['Students_Correct']['S'] + " / " + array[10]['Students_Attempted']['S'] + " students chose the correct answer, " + array[10]['Answer']['S']
+            document.getElementById('demoo111').innerHTML = array[10]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[10]['Answer']['S']
 
-            document.getElementById('demoo121').innerHTML = array[11]['Students_Correct']['S'] + " / " + array[11]['Students_Attempted']['S'] + " students chose the correct answer, " + array[11]['Answer']['S']
+            document.getElementById('demoo121').innerHTML = array[11]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[11]['Answer']['S']
 
-            document.getElementById('demoo131').innerHTML = array[12]['Students_Correct']['S'] + " / " + array[12]['Students_Attempted']['S'] + " students chose the correct answer, " + array[12]['Answer']['S']
+            document.getElementById('demoo131').innerHTML = array[12]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[12]['Answer']['S']
 
-            document.getElementById('demoo141').innerHTML = array[13]['Students_Correct']['S'] + " / " + array[13]['Students_Attempted']['S'] + " students chose the correct answer, " + array[13]['Answer']['S']
+            document.getElementById('demoo141').innerHTML = array[13]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[13]['Answer']['S']
 
-            document.getElementById('demoo151').innerHTML = array[14]['Students_Correct']['S'] + " / " + array[14]['Students_Attempted']['S'] + " students chose the correct answer, " + array[14]['Answer']['S']
+            document.getElementById('demoo151').innerHTML = array[14]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[14]['Answer']['S']
 
-            document.getElementById('demoo161').innerHTML = array[15]['Students_Correct']['S'] + " / " + array[15]['Students_Attempted']['S'] + " students chose the correct answer, " + array[15]['Answer']['S']
+            document.getElementById('demoo161').innerHTML = array[15]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[15]['Answer']['S']
 
-            document.getElementById('demoo171').innerHTML = array[16]['Students_Correct']['S'] + " / " + array[16]['Students_Attempted']['S'] + " students chose the correct answer, " + array[16]['Answer']['S']
+            document.getElementById('demoo171').innerHTML = array[16]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[16]['Answer']['S']
 
-            document.getElementById('demoo181').innerHTML = array[17]['Students_Correct']['S'] + " / " + array[17]['Students_Attempted']['S'] + " students chose the correct answer, " + array[17]['Answer']['S']
+            document.getElementById('demoo181').innerHTML = array[17]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[17]['Answer']['S']
 
-            document.getElementById('demoo191').innerHTML = array[18]['Students_Correct']['S'] + " / " + array[18]['Students_Attempted']['S'] + " students chose the correct answer, " + array[18]['Answer']['S']
+            document.getElementById('demoo191').innerHTML = array[18]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[18]['Answer']['S']
 
-            document.getElementById('demoo201').innerHTML = array[19]['Students_Correct']['S'] + " / " + array[19]['Students_Attempted']['S'] + " students chose the correct answer, " + array[19]['Answer']['S']
+            document.getElementById('demoo201').innerHTML = array[19]['Students_Correct']['S'] + " / " + " 20 students chose the correct answer, " + array[19]['Answer']['S']
 
             //Question Skillset
             document.getElementById("skillset1").innerHTML = array[0]['Skillset']['S'];
