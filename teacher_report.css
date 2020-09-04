@@ -1,183 +1,2978 @@
-html, body {
-    width: 100%;
+.mediaViewInfo {
+    --web-view-name: Student Performance;
+    --web-view-id: Student_Performance;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+}
+:root {
+    --web-view-ids: Student_Performance;
+}
+* {
     margin: 0;
-    background: rgba(247,247,247,1);
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
 }
+#Student_Performance {
+    position: absolute;
+    width: 1920px;
+    height: 4183px;
+    background-color: rgba(247,247,247,1);
+    overflow: hidden;
+    --web-view-name: Student Performance;
+    --web-view-id: Student_Performance;
+    --web-scale-on-resize: true;
+    --web-enable-deep-linking: true;
+}
+@keyframes fadein {
 
-#topBar {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}
+#Rectangle_7 {
+    fill: rgba(255,255,255,1);
+}
+.Rectangle_7 {
+    filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.051));
+    position: absolute;
+    overflow: visible;
+    width: 1388px;
+    height: 2215px;
+    left: 450px;
+    top: 1882px;
+}
+#Repeat_Grid_1 {
+    position: absolute;
+    width: 932px;
+    height: 1917px;
+    left: 521.5px;
+    top: 2007px;
+    overflow: hidden;
+}
+#Repeat_Grid_1_0 {
+    position: absolute;
+    width: 795px;
+    height: 396px;
+    left: 68.5px;
+    top: 39px;
+    overflow: visible;
+}
+#Component_3__12 {
+    position: absolute;
+    width: 795px;
+    height: 396px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#Lorem_ipsum_dolor_sit_amet_con {
+    left: 0px;
+    top: 49px;
+    position: absolute;
+    overflow: visible;
+    width: 796px;
+    height: 121px;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#Ellipse_3 {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_3 {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 10px;
+    top: 191px;
+}
+#Ellipse_4 {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_4 {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 10px;
+    top: 249px;
+}
+#Ellipse_5 {
+    fill: rgba(112,195,0,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_5 {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 10px;
+    top: 304px;
+}
+#Ellipse_6 {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_6 {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 10px;
+    top: 367px;
+}
+#A {
+    left: 44px;
+    top: 184px;
+    position: absolute;
+    overflow: visible;
+    width: 21px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#B {
+    left: 44px;
+    top: 242px;
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#C {
+    left: 44px;
+    top: 297px;
+    position: absolute;
+    overflow: visible;
+    width: 23px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#D {
+    left: 44px;
+    top: 360px;
+    position: absolute;
+    overflow: visible;
+    width: 23px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#Question_1 {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 155px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1_1 {
+    position: absolute;
+    width: 932px;
+    height: 433.5px;
+    left: 0px;
+    top: 493.5px;
+    overflow: visible;
+}
+#Component_3__13 {
+    position: absolute;
+    width: 932px;
+    height: 433.5px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#Lorem_ipsum_dolor_sit_amet_con_ {
+    left: 68.5px;
+    top: 86.5px;
+    position: absolute;
+    overflow: visible;
+    width: 796px;
+    height: 121px;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#Ellipse_3_ {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_3_ {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 78.5px;
+    top: 228.5px;
+}
+#Ellipse_4_ {
+    fill: rgba(112,195,0,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_4_ {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 78.5px;
+    top: 286.5px;
+}
+#Ellipse_5_ {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_5_ {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 78.5px;
+    top: 341.5px;
+}
+#Ellipse_6_ {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_6_ {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 78.5px;
+    top: 404.5px;
+}
+#A_ {
+    left: 112.5px;
+    top: 221.5px;
+    position: absolute;
+    overflow: visible;
+    width: 21px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#B_ {
+    left: 112.5px;
+    top: 279.5px;
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#C_ {
+    left: 112.5px;
+    top: 336.5px;
+    position: absolute;
+    overflow: visible;
+    width: 23px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#D_ba {
+    left: 112.5px;
+    top: 397.5px;
+    position: absolute;
+    overflow: visible;
+    width: 23px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#Line_10 {
+    fill: transparent;
+    stroke: rgba(196,196,196,1);
+    stroke-width: 3px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Line_10 {
+    overflow: visible;
+    position: absolute;
+    width: 932px;
+    height: 3px;
+    left: 0px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Question_2 {
+    left: 68.5px;
+    top: 37.5px;
+    position: absolute;
+    overflow: visible;
+    width: 155px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1_2 {
+    position: absolute;
+    width: 932px;
+    height: 433.5px;
+    left: 0px;
+    top: 985.5px;
+    overflow: visible;
+}
+#Component_3__14 {
+    position: absolute;
+    width: 932px;
+    height: 433.5px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#Lorem_ipsum_dolor_sit_amet_con_bf {
+    left: 68.5px;
+    top: 86.5px;
+    position: absolute;
+    overflow: visible;
+    width: 796px;
+    height: 121px;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#Ellipse_3_bg {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_3_bg {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 78.5px;
+    top: 228.5px;
+}
+#Ellipse_4_bh {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_4_bh {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 78.5px;
+    top: 286.5px;
+}
+#Ellipse_5_bi {
+    fill: rgba(112,195,0,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_5_bi {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 78.5px;
+    top: 341.5px;
+}
+#Ellipse_6_bj {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_6_bj {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 78.5px;
+    top: 404.5px;
+}
+#A_bk {
+    left: 112.5px;
+    top: 221.5px;
+    position: absolute;
+    overflow: visible;
+    width: 21px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#B_bl {
+    left: 112.5px;
+    top: 279.5px;
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#C_bm {
+    left: 112.5px;
+    top: 336.5px;
+    position: absolute;
+    overflow: visible;
+    width: 23px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#D_bn {
+    left: 112.5px;
+    top: 397.5px;
+    position: absolute;
+    overflow: visible;
+    width: 23px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#Line_10_bo {
+    fill: transparent;
+    stroke: rgba(196,196,196,1);
+    stroke-width: 3px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Line_10_bo {
+    overflow: visible;
+    position: absolute;
+    width: 932px;
+    height: 3px;
+    left: 0px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Question_3 {
+    left: 68.5px;
+    top: 37.5px;
+    position: absolute;
+    overflow: visible;
+    width: 155px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#Repeat_Grid_1_3 {
+    position: absolute;
+    width: 932px;
+    height: 433.5px;
+    left: 0px;
+    top: 1477.5px;
+    overflow: visible;
+}
+#Component_3__15 {
+    position: absolute;
+    width: 932px;
+    height: 433.5px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#Lorem_ipsum_dolor_sit_amet_con_bs {
+    left: 68.5px;
+    top: 86.5px;
+    position: absolute;
+    overflow: visible;
+    width: 796px;
+    height: 121px;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#Ellipse_3_bt {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_3_bt {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 78.5px;
+    top: 228.5px;
+}
+#Ellipse_4_bu {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_4_bu {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 78.5px;
+    top: 286.5px;
+}
+#Ellipse_5_bv {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Ellipse_5_bv {
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    height: 22px;
+    left: 78.5px;
+    top: 341.5px;
+}
+#Path_37 {
+    fill: rgba(112,195,0,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Path_37 {
+    overflow: visible;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 78.5px;
+    top: 404.5px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#A_bx {
+    left: 112.5px;
+    top: 221.5px;
+    position: absolute;
+    overflow: visible;
+    width: 21px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#B_by {
+    left: 112.5px;
+    top: 279.5px;
+    position: absolute;
+    overflow: visible;
+    width: 22px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#C_bz {
+    left: 112.5px;
+    top: 336.5px;
+    position: absolute;
+    overflow: visible;
+    width: 23px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#D_b {
+    left: 112.5px;
+    top: 397.5px;
+    position: absolute;
+    overflow: visible;
+    width: 23px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#Line_10_b {
+    fill: transparent;
+    stroke: rgba(196,196,196,1);
+    stroke-width: 3px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Line_10_b {
+    overflow: visible;
+    position: absolute;
+    width: 932px;
+    height: 3px;
+    left: 0px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Question_4 {
+    left: 68.5px;
+    top: 37.5px;
+    position: absolute;
+    overflow: visible;
+    width: 155px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+#Questions_Breakdown {
+    left: 521px;
+    top: 1934px;
+    position: absolute;
+    overflow: visible;
+    width: 370px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    color: rgba(0,0,0,1);
+}
+#Group_27 {
+    position: absolute;
+    width: 186.656px;
+    height: 50.254px;
+    left: 1282.814px;
+    top: 2525.9px;
+    overflow: visible;
+}
+#Path_38 {
+    fill: rgba(39,111,191,1);
+}
+.Path_38 {
+    overflow: visible;
+    position: absolute;
+    width: 186.656px;
+    height: 50.254px;
+    left: 0px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Application {
+    left: 20.627px;
+    top: 8.974px;
+    position: absolute;
+    overflow: visible;
+    width: 141px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+#Group_29 {
+    position: absolute;
+    width: 186.656px;
+    height: 50.254px;
+    left: 1282.484px;
+    top: 2024px;
+    overflow: visible;
+}
+#Path_38_b {
+    fill: rgba(24,48,89,1);
+}
+.Path_38_b {
+    overflow: visible;
+    position: absolute;
+    width: 186.656px;
+    height: 50.254px;
+    left: 0px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Inference {
+    left: 33.19px;
+    top: 8.974px;
+    position: absolute;
+    overflow: visible;
+    width: 121px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 27px;
+    color: rgba(255,255,255,1);
+}
+#Group_31 {
+    position: absolute;
+    width: 186.656px;
+    height: 50.254px;
+    left: 1279.814px;
+    top: 3010.9px;
+    overflow: visible;
+}
+#Path_38_cb {
+    fill: rgba(39,111,191,1);
+}
+.Path_38_cb {
+    overflow: visible;
+    position: absolute;
+    width: 186.656px;
+    height: 50.254px;
+    left: 0px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Application_cc {
+    left: 20.627px;
+    top: 8.974px;
+    position: absolute;
+    overflow: visible;
+    width: 141px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+#Group_32 {
+    position: absolute;
+    width: 186.656px;
+    height: 50.254px;
+    left: 1282.484px;
+    top: 3011px;
+    overflow: visible;
+}
+#Path_38_ce {
+    fill: rgba(24,48,89,1);
+}
+.Path_38_ce {
+    overflow: visible;
+    position: absolute;
+    width: 186.656px;
+    height: 50.254px;
+    left: 0px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Inference_cf {
+    left: 33.19px;
+    top: 8.974px;
+    position: absolute;
+    overflow: visible;
+    width: 121px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 27px;
+    color: rgba(255,255,255,1);
+}
+#Group_34 {
+    position: absolute;
+    width: 186.656px;
+    height: 50.254px;
+    left: 1279.814px;
+    top: 3512.9px;
+    overflow: visible;
+}
+#Path_38_ch {
+    fill: rgba(39,111,191,1);
+}
+.Path_38_ch {
+    overflow: visible;
+    position: absolute;
+    width: 186.656px;
+    height: 50.254px;
+    left: 0px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Application_ci {
+    left: 20.627px;
+    top: 8.974px;
+    position: absolute;
+    overflow: visible;
+    width: 141px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+#Group_35 {
+    position: absolute;
+    width: 149.244px;
+    height: 50.254px;
+    left: 1282.484px;
+    top: 3513px;
+    overflow: visible;
+}
+#Path_38_ck {
+    fill: rgba(253,125,43,1);
+}
+.Path_38_ck {
+    overflow: visible;
+    position: absolute;
+    width: 149.244px;
+    height: 50.254px;
+    left: 0px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Recall {
+    left: 34.484px;
+    top: 8.974px;
+    position: absolute;
+    overflow: visible;
+    width: 81px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 27px;
+    color: rgba(255,255,255,1);
+}
+#Rectangle_7_cm {
+    fill: rgba(255,255,255,1);
+}
+.Rectangle_7_cm {
+    filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.051));
+    position: absolute;
+    overflow: visible;
+    width: 1388px;
+    height: 1731px;
+    left: 449px;
+    top: 181px;
+}
+#Alkanes_Quiz_-_Class_Performan {
+    left: 519px;
+    top: 290px;
+    position: absolute;
+    overflow: visible;
+    width: 794px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgba(83,83,83,1);
+}
+#Alkanes {
+    left: 519px;
+    top: 230px;
+    position: absolute;
+    overflow: visible;
+    width: 191px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    color: rgba(255,125,44,1);
+}
+#Component_14__1 {
+    position: absolute;
+    width: 1173px;
+    height: 474px;
+    left: 512px;
+    top: 1292px;
+    overflow: visible;
+}
+#Component_13__1 {
+    position: absolute;
+    width: 1173px;
+    height: 474px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#Component_12__1 {
+    position: absolute;
+    width: 1151px;
+    height: 403px;
+    left: 22px;
+    top: 71px;
+    overflow: visible;
+}
+#Line_1 {
+    fill: transparent;
+    stroke: rgba(83,83,83,0.251);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Line_1 {
+    overflow: visible;
+    position: absolute;
+    width: 2px;
+    height: 164.068px;
+    left: 251.883px;
+    top: 48.111px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Line_2 {
+    opacity: 0.25;
+    fill: transparent;
+    stroke: rgba(112,112,112,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Line_2 {
+    overflow: visible;
+    position: absolute;
+    width: 2.157px;
+    height: 149.51px;
+    left: 11.5px;
+    top: 152.992px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Line_3 {
+    opacity: 0.25;
+    fill: transparent;
+    stroke: rgba(112,112,112,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Line_3 {
+    overflow: visible;
+    position: absolute;
+    width: 2px;
+    height: 107.939px;
+    left: 530.191px;
+    top: 224.667px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Path_42 {
+    opacity: 0.25;
+    fill: transparent;
+    stroke: rgba(112,112,112,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Path_42 {
+    overflow: visible;
+    position: absolute;
+    width: 2px;
+    height: 164.068px;
+    left: 798.171px;
+    top: 13.471px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Line_6 {
+    opacity: 0.25;
+    fill: transparent;
+    stroke: rgba(112,112,112,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Line_6 {
+    overflow: visible;
+    position: absolute;
+    width: 2px;
+    height: 164.068px;
+    left: 1140.463px;
+    top: 120.521px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Path_20 {
+    fill: transparent;
+    stroke: rgba(255,125,44,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Path_20 {
+    filter: drop-shadow(0px 3px 6px rgba(255, 125, 44, 0.502));
+    overflow: visible;
+    position: absolute;
+    width: 1149.764px;
+    height: 229.071px;
+    left: 9.101px;
+    top: 95.651px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Ellipse_2 {
+    fill: rgba(255,125,44,1);
+}
+.Ellipse_2 {
+    filter: drop-shadow(0px 3px 6px rgba(255, 125, 44, 0.502));
+    position: absolute;
+    overflow: visible;
+    width: 40px;
+    height: 41px;
+    left: 0px;
+    top: 225px;
+}
+#Ellipse_3_cz {
+    fill: rgba(255,125,44,1);
+}
+.Ellipse_3_cz {
+    filter: drop-shadow(0px 12px 24px rgba(255, 125, 44, 0.502));
+    position: absolute;
+    overflow: visible;
+    width: 94.451px;
+    height: 94.451px;
+    left: 242.098px;
+    top: 120.841px;
+}
+#Ellipse_4_c {
+    fill: rgba(255,125,44,1);
+}
+.Ellipse_4_c {
+    filter: drop-shadow(0px 3px 6px rgba(255, 125, 44, 0.502));
+    position: absolute;
+    overflow: visible;
+    width: 40.451px;
+    height: 40.451px;
+    left: 519.092px;
+    top: 290.972px;
+}
+#Ellipse_5_c {
+    fill: rgba(255,125,44,1);
+}
+.Ellipse_5_c {
+    filter: drop-shadow(0px 3px 6px rgba(255, 125, 44, 0.502));
+    position: absolute;
+    overflow: visible;
+    width: 40.451px;
+    height: 40.451px;
+    left: 787.078px;
+    top: 84.218px;
+}
+#Ellipse_7 {
+    fill: rgba(255,125,44,1);
+}
+.Ellipse_7 {
+    filter: drop-shadow(0px 3px 6px rgba(255, 125, 44, 0.502));
+    position: absolute;
+    overflow: visible;
+    width: 40px;
+    height: 40px;
+    left: 1129px;
+    top: 192px;
+}
+#ID6_Questions {
+    left: 264.847px;
+    top: 70.525px;
+    position: absolute;
+    overflow: visible;
+    width: 139px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    color: rgba(255,125,44,1);
+}
+#ID8_Questions {
+    left: 809.938px;
+    top: 52.691px;
+    position: absolute;
+    overflow: visible;
+    width: 150px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    color: rgba(255,125,44,1);
+}
+#Statistics {
+    left: 9px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 112px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgba(255,125,44,1);
+}
+#ID100_Questions {
+    opacity: 0.7;
+    left: 9px;
+    top: 29px;
+    position: absolute;
+    overflow: visible;
+    width: 133px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(255,125,44,1);
+}
+#Rectangle_12 {
+    fill: rgba(255,125,44,1);
+}
+.Rectangle_12 {
+    filter: drop-shadow(0px 3px 6px rgba(255, 125, 44, 0.502));
+    position: absolute;
+    overflow: visible;
+    width: 193px;
+    height: 72px;
+    left: 965px;
+    top: 349px;
+}
+#Expand {
+    left: 1005px;
+    top: 360px;
+    position: absolute;
+    overflow: visible;
+    width: 96px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    color: rgba(255,255,255,1);
+}
+#Difficulty_Spread {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 246px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    color: rgba(0,0,0,1);
+}
+#Path_21 {
+    fill: rgba(0,0,0,0);
+    stroke: rgba(255,125,44,1);
+    stroke-width: 2px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Path_21 {
+    overflow: visible;
+    position: absolute;
+    width: 1142.346px;
+    height: 2px;
+    left: 30.654px;
+    top: 402.006px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Tier_1 {
+    left: 31px;
+    top: 381px;
+    position: absolute;
+    overflow: visible;
+    width: 39px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: rgba(255,125,44,1);
+}
+#Tier_5 {
+    left: 1123px;
+    top: 380px;
+    position: absolute;
+    overflow: visible;
+    width: 39px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: rgba(255,125,44,1);
+}
+#weakest_skillsets {
+    position: absolute;
+    width: 545px;
+    height: 330.294px;
+    left: 1148px;
+    top: 818px;
+    overflow: visible;
+}
+#Top_Performers________________ {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 406px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    color: rgba(0,0,0,1);
+}
+#Group_39 {
+    position: absolute;
+    width: 533px;
+    height: 176.294px;
+    left: 12px;
+    top: 154px;
+    overflow: visible;
+}
+#Jeff {
+    left: 0px;
+    top: 76px;
+    position: absolute;
+    overflow: visible;
+    width: 40px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    color: rgba(0,0,0,1);
+}
+#Ruthuan {
+    left: 0px;
+    top: 151px;
+    position: absolute;
+    overflow: visible;
+    width: 79px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(0,0,0,1);
+}
+#Cornelius {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 106px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+}
+#Rectangle_48 {
+    fill: rgba(24,48,89,1);
+}
+.Rectangle_48 {
+    position: absolute;
+    overflow: visible;
+    width: 350px;
+    height: 22px;
+    left: 121px;
+    top: 79px;
+}
+#Rectangle_49 {
+    fill: rgba(39,111,191,1);
+}
+.Rectangle_49 {
+    position: absolute;
+    overflow: visible;
+    width: 350px;
+    height: 22px;
+    left: 121px;
+    top: 2px;
+}
+#Path_22 {
+    fill: rgba(253,125,43,1);
+}
+.Path_22 {
+    overflow: visible;
+    position: absolute;
+    width: 350px;
+    height: 22px;
+    left: 121px;
+    top: 154.771px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#ID91 {
+    left: 484px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 50px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    color: rgba(0,0,0,1);
+}
+#ID82 {
+    left: 484px;
+    top: 76px;
+    position: absolute;
+    overflow: visible;
+    width: 50px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    color: rgba(0,0,0,1);
+}
+#ID80 {
+    left: 484px;
+    top: 149px;
+    position: absolute;
+    overflow: visible;
+    width: 50px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    color: rgba(0,0,0,1);
+}
+#Group_38 {
+    position: absolute;
+    width: 522px;
+    height: 391.081px;
+    left: 519px;
+    top: 818px;
+    overflow: visible;
+}
+#Weakest_Skillsets_dq {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 260px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    color: rgba(0,0,0,1);
+}
+#ID20_Students {
+    left: 172px;
+    top: 225px;
+    position: absolute;
+    overflow: visible;
+    width: 193px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    color: rgba(0,0,0,1);
+}
+#Ring_Chart0 {
+    position: absolute;
+    width: 281.211px;
+    height: 281.208px;
+    left: 129.461px;
+    top: 109.872px;
+    overflow: visible;
+}
+#Path_5 {
+    fill: rgba(39,111,191,1);
+}
+.Path_5 {
+    overflow: visible;
+    position: absolute;
+    width: 140.608px;
+    height: 272.711px;
+    left: 140.603px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Path_6 {
+    fill: rgba(39,111,191,1);
+}
+.Path_6 {
+    overflow: visible;
+    position: absolute;
+    width: 169.846px;
+    height: 84.345px;
+    left: 18.844px;
+    top: 196.863px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Path_7 {
+    fill: rgba(178,223,138,1);
+}
+.Path_7 {
+    overflow: visible;
+    position: absolute;
+    width: 24.301px;
+    height: 14.03px;
+    left: 18.843px;
+    top: 196.863px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Path_8 {
+    fill: rgba(24,48,89,1);
+}
+.Path_8 {
+    overflow: visible;
+    position: absolute;
+    width: 68.266px;
+    height: 178px;
+    left: 0px;
+    top: 32.893px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Path_9 {
+    fill: rgba(255,125,44,1);
+}
+.Path_9 {
+    overflow: visible;
+    position: absolute;
+    width: 90.373px;
+    height: 54.388px;
+    left: 50.229px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Inference_22 {
+    left: 22px;
+    top: 217px;
+    position: absolute;
+    overflow: visible;
+    width: 87px;
+    white-space: nowrap;
+    text-align: right;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(24,48,89,1);
+}
+#Recall_8 {
+    left: 159px;
+    top: 76px;
+    position: absolute;
+    overflow: visible;
+    width: 52px;
+    white-space: nowrap;
+    text-align: right;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: rgba(255,125,44,1);
+}
+#Application_70 {
+    left: 423px;
+    top: 250px;
+    position: absolute;
+    overflow: visible;
+    width: 100px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    color: rgba(39,111,191,1);
+}
+#Group_8 {
+    position: absolute;
+    width: 225px;
+    height: 75px;
+    left: 855px;
+    top: 653px;
+    overflow: visible;
+}
+#Rectangle_72 {
+    fill: rgba(112,195,0,1);
+}
+.Rectangle_72 {
+    filter: drop-shadow(0px 10px 10px rgba(112, 195, 0, 0.102));
+    position: absolute;
+    overflow: visible;
+    width: 255px;
+    height: 105px;
+    left: 0px;
+    top: 0px;
+}
+#ID20_Completed {
+    left: 25px;
+    top: 22px;
+    position: absolute;
+    overflow: visible;
+    width: 177px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    color: rgba(255,255,255,1);
+}
+#Group_36 {
+    position: absolute;
+    width: 224px;
+    height: 76px;
+    left: 1117px;
+    top: 652px;
+    overflow: visible;
+}
+#Rectangle_72_d {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_72_d {
+    filter: drop-shadow(0px 10px 10px rgba(253, 85, 92, 0.102));
+    position: absolute;
+    overflow: visible;
+    width: 254px;
+    height: 106px;
+    left: 0px;
+    top: 0px;
+}
+#ID2_Incomplete {
+    left: 31px;
+    top: 22px;
+    position: absolute;
+    overflow: visible;
+    width: 163px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27px;
+    color: rgba(255,255,255,1);
+}
+#Subtopic_Sidebar {
     position: fixed;
-    width: 100%;
-    height: 120px;
-    z-index: 100;
-    background: rgba(247,247,247,1);
+    width: 447px;
+    height: 727px;
+    left: -36px;
+    top: 230px;
+    overflow: visible;
 }
-
-#BINO {
+#Rectangle_67 {
+    fill: rgba(255,255,255,1);
+}
+.Rectangle_67 {
+    position: absolute;
+    overflow: visible;
+    width: 367px;
+    height: 495px;
+    left: 80px;
+    top: 90px;
+}
+#Alkanes_d {
+    left: 135px;
+    top: 112px;
+    position: absolute;
+    overflow: visible;
+    width: 129px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    color: rgba(255,125,44,1);
+}
+#Group_11 {
+    position: absolute;
+    width: 299.517px;
+    height: 449.5px;
+    left: 108.482px;
+    top: 169px;
+    overflow: visible;
+}
+#Rectangle_74 {
+    fill: rgba(255,125,44,1);
+}
+.Rectangle_74 {
+    position: absolute;
+    overflow: visible;
+    width: 288px;
+    height: 57px;
+    left: 11.518px;
+    top: 275px;
+}
+#Video_Lectures_ {
+    left: 26.518px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 215px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 29px;
+    color: rgba(0,0,0,1);
+}
+#Path_41 {
+    fill: rgba(0,0,0,0);
+    stroke: rgba(255,125,44,0.349);
+    stroke-width: 10px;
+    stroke-linejoin: miter;
+    stroke-linecap: round;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Path_41 {
+    overflow: visible;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    left: 0px;
+    top: 449.5px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Group_10 {
+    position: absolute;
+    width: 255px;
+    height: 29px;
+    left: 26.518px;
+    top: 289px;
+    overflow: visible;
+}
+#Student_Performance_ef {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 256px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgba(255,255,255,1);
+}
+#Group_5 {
+    position: absolute;
+    width: 121px;
+    height: 34px;
+    left: 57.518px;
+    top: 56px;
+    overflow: visible;
+}
+#Lecture_1 {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 122px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 29px;
+    color: rgba(83,83,83,1);
+}
+#Group_6 {
+    position: absolute;
+    width: 121px;
+    height: 34px;
+    left: 57.518px;
+    top: 108px;
+    overflow: visible;
+}
+#Lecture_2 {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 122px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 29px;
+    color: rgba(83,83,83,1);
+}
+#Group_7 {
+    position: absolute;
+    width: 121px;
+    height: 34px;
+    left: 57.518px;
+    top: 162px;
+    overflow: visible;
+}
+#Lecture_3 {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    overflow: visible;
+    width: 122px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 29px;
+    color: rgba(83,83,83,1);
+}
+#Additional_Readings {
+    left: 26.518px;
+    top: 355px;
+    position: absolute;
+    overflow: visible;
+    width: 240px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgba(0,0,0,1);
+}
+#Quiz_Editor {
+    left: 26.518px;
+    top: 227px;
+    position: absolute;
+    overflow: visible;
+    width: 133px;
+    white-space: nowrap;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: Quiz_Editor.html;
+    cursor: pointer;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgba(0,0,0,1);
+}
+#Alkenes {
+    left: 142px;
+    top: 619px;
+    position: absolute;
+    overflow: visible;
+    width: 129px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    color: rgba(83,83,83,1);
+}
+#Aldehydes {
+    left: 142px;
+    top: 685px;
+    position: absolute;
+    overflow: visible;
+    width: 171px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    color: rgba(83,83,83,1);
+}
+#Group_18 {
+    position: absolute;
+    width: 447px;
+    height: 76px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: Course_Main.html;
+    cursor: pointer;
+}
+#Rectangle_67_er {
+    fill: rgba(255,255,255,1);
+}
+.Rectangle_67_er {
+    position: absolute;
+    overflow: visible;
+    width: 447px;
+    height: 76px;
+    left: 0px;
+    top: 0px;
+}
+#Overview {
+    left: 115px;
+    top: 15px;
+    position: absolute;
+    overflow: visible;
+    width: 156px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    color: rgba(0,0,0,1);
+}
+#Path_31 {
+    fill: transparent;
+    stroke: rgba(0,0,0,1);
+    stroke-width: 3px;
+    stroke-linejoin: round;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Path_31 {
+    overflow: visible;
+    position: absolute;
+    width: 12.912px;
+    height: 23.851px;
+    left: 82.986px;
+    top: 27.06px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Class_20S77____22_Students {
+    left: 519px;
+    top: 342px;
+    position: absolute;
+    overflow: visible;
+    width: 429px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 34px;
+    color: rgba(83,83,83,0.749);
+}
+#Group_8_ev {
+    position: absolute;
+    width: 249px;
+    height: 83px;
+    left: 862px;
+    top: 415px;
+    overflow: visible;
+}
+#Rectangle_72_ew {
+    fill: rgba(255,125,44,1);
+}
+.Rectangle_72_ew {
+    filter: drop-shadow(0px 10px 20px rgba(255, 125, 44, 0.2));
+    position: absolute;
+    overflow: visible;
+    width: 309px;
+    height: 143px;
+    left: 0px;
+    top: 0px;
+}
+#Print_Report {
     left: 50px;
-    top: 20px;
+    top: 25px;
+    position: absolute;
+    overflow: visible;
+    width: 147px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+#Group_37 {
+    position: absolute;
+    width: 312px;
+    height: 83px;
+    left: 519px;
+    top: 415px;
+    overflow: visible;
+}
+#Rectangle_72_ez {
+    fill: rgba(255,255,255,1);
+    stroke: rgba(255,125,44,1);
+    stroke-width: 3px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Rectangle_72_ez {
+    filter: drop-shadow(0px 10px 20px rgba(255, 125, 44, 0.2));
+    position: absolute;
+    overflow: visible;
+    width: 372px;
+    height: 143px;
+    left: 0px;
+    top: 0px;
+}
+#Export_Data_as_Excel {
+    left: 31px;
+    top: 26px;
+    position: absolute;
+    overflow: visible;
+    width: 251px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    color: rgba(255,125,44,1);
+}
+#Path_33 {
+    fill: rgba(0,0,0,0);
+    stroke: rgba(196,196,196,1);
+    stroke-width: 3px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Path_33 {
+    overflow: visible;
+    position: absolute;
+    width: 1px;
+    height: 1251.021px;
+    transform: matrix(1,0,0,1,1097.9111,621.6177) rotate(90deg);
+    transform-origin: center;
+    left: 0px;
+    top: 0px;
+}
+#Path_33_e {
+    fill: rgba(0,0,0,0);
+    stroke: rgba(196,196,196,1);
+    stroke-width: 3px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Path_33_e {
+    overflow: visible;
+    position: absolute;
+    width: 1px;
+    height: 1251.021px;
+    transform: matrix(1,0,0,1,1097.9111,-66.3823) rotate(90deg);
+    transform-origin: center;
+    left: 0px;
+    top: 0px;
+}
+#Class_Quiz_Progress {
+    left: 950px;
+    top: 594px;
+    position: absolute;
+    overflow: visible;
+    width: 299px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    color: rgba(0,0,0,1);
+}
+#Path_43 {
+    fill: rgba(0,0,0,0);
+    stroke: rgba(196,196,196,1);
+    stroke-width: 3px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Path_43 {
+    overflow: visible;
+    position: absolute;
+    width: 1px;
+    height: 1251.021px;
+    transform: matrix(1,0,0,1,1097.9111,147.6177) rotate(90deg);
+    transform-origin: center;
+    left: 0px;
+    top: 0px;
+}
+#Rectangle_77 {
+    fill: rgba(112,195,0,1);
+}
+.Rectangle_77 {
+    position: absolute;
+    overflow: visible;
+    width: 34px;
+    height: 26px;
+    left: 679px;
+    top: 2348px;
+}
+#ID8 {
+    left: 721px;
+    top: 2348px;
+    position: absolute;
+    overflow: visible;
+    width: 35px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(112,195,0,1);
+}
+#Rectangle_78 {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_78 {
+    position: absolute;
+    overflow: visible;
+    width: 27px;
+    height: 27px;
+    left: 679px;
+    top: 2235px;
+}
+#Rectangle_79 {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_79 {
+    position: absolute;
+    overflow: visible;
+    width: 82px;
+    height: 27px;
+    left: 679px;
+    top: 2293px;
+}
+#Rectangle_80 {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_80 {
+    position: absolute;
+    overflow: visible;
+    width: 199px;
+    height: 26px;
+    left: 679px;
+    top: 2408px;
+}
+#ID5 {
+    left: 713px;
+    top: 2235px;
+    position: absolute;
+    overflow: visible;
+    width: 35px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(253,85,92,1);
+}
+#ID60 {
+    left: 885px;
+    top: 2408px;
+    position: absolute;
+    overflow: visible;
+    width: 47px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(253,85,92,1);
+}
+#ID27 {
+    left: 769px;
+    top: 2294px;
+    position: absolute;
+    overflow: visible;
+    width: 47px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(253,85,92,1);
+}
+#Group_40 {
+    position: absolute;
+    width: 198px;
+    height: 125px;
+    left: 1491px;
+    top: 2024px;
+    overflow: visible;
+}
+#Rectangle_75 {
+    fill: rgba(212,77,92,1);
+}
+.Rectangle_75 {
+    position: absolute;
+    overflow: visible;
+    width: 198px;
+    height: 125px;
+    left: 0px;
+    top: 0px;
+}
+#Intermediate {
+    left: 20.177px;
+    top: 11.974px;
+    position: absolute;
+    overflow: visible;
+    width: 159px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+#ID23__3__ {
+    left: 56px;
+    top: 51px;
+    position: absolute;
+    overflow: visible;
+    width: 93px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    color: rgba(255,255,255,1);
+}
+#Over-rated {
+    left: 38px;
+    top: 82px;
+    position: absolute;
+    overflow: visible;
+    width: 129px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+#Group_41 {
+    position: absolute;
+    width: 198px;
+    height: 125px;
+    left: 1491px;
+    top: 2526px;
+    overflow: visible;
+}
+#Rectangle_75_fj {
+    fill: rgba(119,51,68,1);
+}
+.Rectangle_75_fj {
+    position: absolute;
+    overflow: visible;
+    width: 198px;
+    height: 125px;
+    left: 0px;
+    top: 0px;
+}
+#Easy {
+    left: 69.177px;
+    top: 8.974px;
+    position: absolute;
+    overflow: visible;
+    width: 61px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+#ID12__1__ {
+    left: 56px;
+    top: 48px;
+    position: absolute;
+    overflow: visible;
+    width: 93px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    color: rgba(255,255,255,1);
+}
+#Good_Est {
+    left: 39px;
+    top: 85px;
+    position: absolute;
+    overflow: visible;
+    width: 121px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+#Rectangle_81 {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_81 {
+    position: absolute;
+    overflow: visible;
+    width: 34px;
+    height: 26px;
+    left: 679px;
+    top: 2844px;
+}
+#ID8_fo {
+    left: 721px;
+    top: 2844px;
+    position: absolute;
+    overflow: visible;
+    width: 35px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(253,85,92,1);
+}
+#Rectangle_82 {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_82 {
+    position: absolute;
+    overflow: visible;
+    width: 27px;
+    height: 27px;
+    left: 679px;
+    top: 2728px;
+}
+#Rectangle_83 {
+    fill: rgba(112,195,0,1);
+}
+.Rectangle_83 {
+    position: absolute;
+    overflow: visible;
+    width: 82px;
+    height: 27px;
+    left: 679px;
+    top: 2786px;
+}
+#Rectangle_84 {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_84 {
+    position: absolute;
+    overflow: visible;
+    width: 199px;
+    height: 26px;
+    left: 679px;
+    top: 2901px;
+}
+#ID5_fs {
+    left: 713px;
+    top: 2728px;
+    position: absolute;
+    overflow: visible;
+    width: 35px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(253,85,92,1);
+}
+#ID60_ft {
+    left: 885px;
+    top: 2901px;
+    position: absolute;
+    overflow: visible;
+    width: 47px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(253,85,92,1);
+}
+#ID27_fu {
+    left: 769px;
+    top: 2787px;
+    position: absolute;
+    overflow: visible;
+    width: 47px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(112,195,0,1);
+}
+#Rectangle_85 {
+    fill: rgba(112,195,0,1);
+}
+.Rectangle_85 {
+    position: absolute;
+    overflow: visible;
+    width: 199px;
+    height: 26px;
+    left: 679px;
+    top: 3337px;
+}
+#ID60_fw {
+    left: 890px;
+    top: 3337px;
+    position: absolute;
+    overflow: visible;
+    width: 47px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(112,195,0,1);
+}
+#Rectangle_86 {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_86 {
+    position: absolute;
+    overflow: visible;
+    width: 27px;
+    height: 27px;
+    left: 679px;
+    top: 3221px;
+}
+#Rectangle_87 {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_87 {
+    position: absolute;
+    overflow: visible;
+    width: 82px;
+    height: 27px;
+    left: 679px;
+    top: 3279px;
+}
+#Rectangle_88 {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_88 {
+    position: absolute;
+    overflow: visible;
+    width: 51px;
+    height: 26px;
+    left: 679px;
+    top: 3394px;
+}
+#ID5_f {
+    left: 713px;
+    top: 3221px;
+    position: absolute;
+    overflow: visible;
+    width: 35px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(253,85,92,1);
+}
+#ID8_f {
+    left: 745px;
+    top: 3394px;
+    position: absolute;
+    overflow: visible;
+    width: 35px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(253,85,92,1);
+}
+#ID27_f {
+    left: 769px;
+    top: 3280px;
+    position: absolute;
+    overflow: visible;
+    width: 47px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(253,85,92,1);
+}
+#Rectangle_89 {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_89 {
+    position: absolute;
+    overflow: visible;
+    width: 199px;
+    height: 26px;
+    left: 679px;
+    top: 3830px;
+}
+#ID60_f {
+    left: 890px;
+    top: 3830px;
+    position: absolute;
+    overflow: visible;
+    width: 47px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(253,85,92,1);
+}
+#Rectangle_90 {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_90 {
+    position: absolute;
+    overflow: visible;
+    width: 27px;
+    height: 27px;
+    left: 679px;
+    top: 3714px;
+}
+#Rectangle_91 {
+    fill: rgba(253,85,92,1);
+}
+.Rectangle_91 {
+    position: absolute;
+    overflow: visible;
+    width: 82px;
+    height: 27px;
+    left: 679px;
+    top: 3772px;
+}
+#Rectangle_92 {
+    fill: rgba(112,195,0,1);
+}
+.Rectangle_92 {
+    position: absolute;
+    overflow: visible;
+    width: 51px;
+    height: 26px;
+    left: 679px;
+    top: 3887px;
+}
+#ID5_ga {
+    left: 713px;
+    top: 3714px;
+    position: absolute;
+    overflow: visible;
+    width: 35px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(253,85,92,1);
+}
+#ID8_ga {
+    left: 745px;
+    top: 3887px;
+    position: absolute;
+    overflow: visible;
+    width: 35px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(112,195,0,1);
+}
+#ID27_ga {
+    left: 769px;
+    top: 3773px;
+    position: absolute;
+    overflow: visible;
+    width: 47px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgba(253,85,92,1);
+}
+#Group_42 {
+    position: absolute;
+    width: 198px;
+    height: 125px;
+    left: 1491px;
+    top: 3011px;
+    overflow: visible;
+}
+#Rectangle_75_gc {
+    fill: rgba(223,178,161,1);
+}
+.Rectangle_75_gc {
+    position: absolute;
+    overflow: visible;
+    width: 198px;
+    height: 125px;
+    left: 0px;
+    top: 0px;
+}
+#Hard {
+    left: 69.177px;
+    top: 8.974px;
+    position: absolute;
+    overflow: visible;
+    width: 61px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+#ID45__4__ {
+    left: 56px;
+    top: 48px;
+    position: absolute;
+    overflow: visible;
+    width: 93px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    color: rgba(255,255,255,1);
+}
+#Under-rated {
+    left: 27px;
+    top: 85px;
+    position: absolute;
+    overflow: visible;
+    width: 145px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+#Group_43 {
+    position: absolute;
+    width: 198px;
+    height: 125px;
+    left: 1491px;
+    top: 3513px;
+    overflow: visible;
+}
+#Rectangle_75_gh {
+    fill: rgba(119,51,68,1);
+}
+.Rectangle_75_gh {
+    position: absolute;
+    overflow: visible;
+    width: 198px;
+    height: 125px;
+    left: 0px;
+    top: 0px;
+}
+#Hard_gi {
+    left: 69.177px;
+    top: 8.974px;
+    position: absolute;
+    overflow: visible;
+    width: 61px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+#_12__4__ {
+    left: 53px;
+    top: 48px;
+    position: absolute;
+    overflow: visible;
+    width: 99px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    color: rgba(255,255,255,1);
+}
+#Over-rated_gk {
+    left: 35px;
+    top: 85px;
+    position: absolute;
+    overflow: visible;
+    width: 129px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    color: rgba(255,255,255,1);
+}
+#Top_Bar {
+    position: fixed;
+    width: 1920px;
+    height: 140px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+#Path_39 {
+    fill: rgba(247,247,247,1);
+}
+.Path_39 {
+    overflow: visible;
+    position: absolute;
+    width: 1920px;
+    height: 140px;
+    left: 0px;
+    top: 0px;
+    transform: matrix(1,0,0,1,0,0);
+}
+#Ellipse_1 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 1786px;
+    top: 46px;
+    overflow: visible;
+}
+#BINO {
+    left: 72px;
+    top: 50px;
     position: absolute;
     overflow: visible;
     width: 127px;
     white-space: nowrap;
-    --web-animation: fadein 0.3s ease-out;
-    --web-action-type: page;    
-    --web-action-target: Dashboard.html;
-    cursor: pointer;
     text-align: left;
     font-family: Helvetica Neue;
     font-style: normal;
     font-weight: bold;
     font-size: 50px;
     color: rgba(0,0,0,1);
-    margin-left: 40px;
 }
-
-#Search {
-    background-color: white;
-    border-radius: 25px;
-    width: 300px;
-    position: relative;
-    height: 50px;
-    top: calc(50% - 25px);
-    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.102));
-}
-/* NAVBAR STUFF */
-
-#main_section{
+#Hubert_Sim {
+    left: 1600px;
+    top: 51px;
     position: absolute;
-    height: 12000px;
-    top: 120px;
-    width: 800px;
-    background-color: white;
-    border-radius: 25px;
-    /* left: calc(50% - 400px); */
-}
-
-#profile {
-
-    
-}
-
-#icon {
-    float: left;
-    position: relative;
-    top: 7px;
-    left: 60px;
-}
-
-#overview_text{
-    font-family: Helvetica Neue;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 25px;
-    margin-left: 90px;
-    color: rgba(0,0,0,1);
-}
-
-#overview_button {
-    width: 300px;
-    height: 40px;
-    margin-left: -50px;
-    background-color: white;
-    border-radius: 25px;
-    margin-bottom: 10px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-}
-
-#sidenav {
-    height: 40px;
-    position: absolute;
-    margin-top: 70px;
-    left: 50px;
-
-}
-
-.sidenavweek {
-    text-align: left;
-    font-family: Helvetica Neue;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 25px;
-}
-
-.sidenavweek2 {
-    text-align: left;
-    font-family: Helvetica Neue;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    fill: black;
-}
-
-#quiz_card {
-    fill: rgba(255,255,255,1);
-    position: relative;
     overflow: visible;
-    top: 0;
-    width: 100%;
-    /* left: calc(50% - 300px); */
+    width: 172px;
     white-space: nowrap;
+    text-align: right;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 33px;
+    color: rgba(112,112,112,1);
 }
-
-#quiz_content {
+#Teacher_Hwa_Chong_Institution {
+    left: 1521px;
+    top: 90px;
     position: absolute;
-    width: 600px;
-    left: calc(50% - 300px);
+    overflow: visible;
+    width: 251px;
+    white-space: nowrap;
+    text-align: right;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: rgba(112,112,112,1);
 }
-
-#quiz_options {
+#Group_1 {
+    mix-blend-mode: normal;
     position: absolute;
-    top: 170px;
+    width: 764px;
+    height: 72px;
+    left: 578px;
+    top: 45px;
+    overflow: visible;
 }
-
-#quiz_text {
+#Rectangle_8 {
+    fill: rgba(255,255,255,1);
+}
+.Rectangle_8 {
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.102));
+    position: absolute;
+    overflow: visible;
+    width: 794px;
+    height: 102px;
+    left: 0px;
+    top: 0px;
+}
+#Search {
+    left: 337px;
+    top: 20px;
+    position: absolute;
+    overflow: visible;
+    width: 91px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    color: rgba(112,112,112,1);
+}
+#Ellipse_2_gu {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 1786px;
+    top: 46px;
+    overflow: visible;
+}
+#Teacher {
+    left: 253px;
+    top: 56px;
+    position: absolute;
+    overflow: visible;
+    width: 152px;
+    white-space: nowrap;
     text-align: left;
     font-family: Helvetica Neue;
     font-style: normal;
     font-weight: bold;
-    margin-top: 30px;
     font-size: 40px;
-    color: orange;
-}
-
-#quiz_text2 {
-    text-align: left;
-    white-space: nowrap;
-    font-family: Helvetica Neue;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
     color: rgba(0,0,0,1);
 }
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
+#Line_7 {
+    fill: transparent;
+    stroke: rgba(0,0,0,1);
+    stroke-width: 5px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
 }
-
-.lastoption {
-    margin-bottom: 20px;
-}
-
-.skillsetstyle {
-    font-style: italic;
-    font-size: 12px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    color: slateblue;
-
-}
-
-.difficultystyle {
-    font-style: italic;
-    font-size: 12px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    color: slateblue;
-}
-
-.question {
-    margin-bottom: 3px;
+.Line_7 {
+    overflow: visible;
+    position: absolute;
+    width: 5px;
+    height: 55.292px;
+    left: 225.5px;
+    top: 52.515px;
+    transform: matrix(1,0,0,1,0,0);
 }
