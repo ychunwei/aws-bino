@@ -35,7 +35,7 @@ exports.computeHiddenScore = (currentLower, currentUpper, currentAvg, difficulty
 
   for (index in difficulty_state_pair){
     difference = Math.abs(difficulty_state_pair[index][1] - currentAvg)
-    sqr_diff = difference ** 2
+    sqr_diff = (difference + 1.25)** 2
     qn_tracker.push(difficulty_state_pair[index]) // append to global var for the updateQnScores
     qn_id_tracker.push(difficulty_state_pair[index][0]) // push qnIDs
     // swap jic
@@ -70,6 +70,23 @@ exports.computeHiddenScore = (currentLower, currentUpper, currentAvg, difficulty
   // Update the average only at the end 
   currentAvg = (currentUpper + currentLower) / 2;
 
+  // OUT OF BOUNDS CONDITIONS
+  if (currentUpper > 5){
+    currentUpper = 5.0
+    if ((currentUpper - currentLower) < 0.5){
+      currentAvg = 4.75
+      currentLower = 4.50
+    }
+  }
+  if (currentLower < 1){
+    currentLower = 1.0
+    if ((currentUpper - currentLower) < 0.5){
+      currentAvg = 1.25
+      currentUpper = 1.50
+    }
+  }
+
+  // WINDOW CONSTRAINTS
   if ((currentUpper - currentLower) < 0.5){
     currentUpper = currentAvg + 0.25
     currentLower = currentAvg - 0.25
