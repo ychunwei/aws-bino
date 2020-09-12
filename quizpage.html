@@ -255,8 +255,8 @@
             currentUpper = obj.currentUpper
 
             current = currentAverage
-            console.log(previous)
-            console.log(current)
+            // console.log(previous)
+            // console.log(current)
             //SNOWBALL EFFECT
             snowball(previous,current)
 
@@ -271,11 +271,17 @@
               }
             }
         }
-        console.log(filteredArray[0]['Qns_ID']['S'])
-        console.log(filteredArray[1]['Qns_ID']['S'])
-        console.log(filteredArray[2]['Qns_ID']['S'])
-        console.log(filteredArray[3]['Qns_ID']['S'])
-        console.log(filteredArray[4]['Qns_ID']['S'])
+        
+        console.log("currentLower: " + currentLower)
+        console.log("currentAverage: " + currentAverage)
+        console.log("currentUpper: " + currentUpper)
+
+        console.log('Questions for this subsection (ID | Difficulty):')
+        console.log(filteredArray[0]['Qns_ID']['S'] + " | " + filteredArray[0]['Difficulty']['S'])
+        console.log(filteredArray[1]['Qns_ID']['S'] + " | " + filteredArray[1]['Difficulty']['S'])
+        console.log(filteredArray[2]['Qns_ID']['S'] + " | " + filteredArray[2]['Difficulty']['S'])
+        console.log(filteredArray[3]['Qns_ID']['S'] + " | " + filteredArray[3]['Difficulty']['S'])
+        console.log(filteredArray[4]['Qns_ID']['S'] + " | " + filteredArray[4]['Difficulty']['S'])
         
         document.getElementById("demo").innerHTML = filteredArray[0]['Question']['S']    
         document.getElementById("demo1").innerHTML = filteredArray[1]['Question']['S']
@@ -319,7 +325,8 @@
         
         function storeAns() {
           previous = currentAverage
-          console.log("previous is recorded with" + currentAverage)
+          // console.log("previous is recorded with" + currentAverage)
+          
 
         
           scroll(0,0)
@@ -383,7 +390,7 @@
             jsonObj.currentAverage = currentAverage
             jsonObj.qnpairs = [val1,val2,val3,val4,val5]
             var jsonString= JSON.stringify(jsonObj)
-            console.log(jsonString)
+            // console.log(jsonString)
 
             fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/checkans', {
             method: 'POST',
@@ -397,8 +404,8 @@
             })
             .then((data) => {
               isFinalCalc++
-              console.log(isFinalCalc)
-              console.log(data)
+              // console.log(isFinalCalc)
+              // console.log(data)
 
               var ele = document.getElementsByName("exampleRadios");
               for(var i=0;i<ele.length;i++)
@@ -433,7 +440,7 @@
 
       function snowball(previous,current) {
         if (current - previous > 0.45 && current > previous) {
-          console.log("WOW")
+          console.log("+1 POSITIVE SNOWBALL EFFECT")
           
           snowballCounterIncrease++
           if (snowballCounterIncrease > 1) {
@@ -443,7 +450,7 @@
         }
 
         else if (current - previous < -0.45 && current < previous ) {
-          console.log("BOO")
+          console.log("+1 NEGATIVE SNOWBALL EFFECT")
           
           snowballCounterDecrease++
           if (snowballCounterDecrease > 1) {

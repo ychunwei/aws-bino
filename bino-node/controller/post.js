@@ -18,7 +18,7 @@ exports.getPosts = async (req, res) => {
         
         ExpressionAttributeValues: {
             ":v_diff1":{S: "1.5"},
-            ":v_diff2":{S:"3.5"},
+            ":v_diff2":{S:"4"},
         },
          FilterExpression: 
             "Difficulty between :v_diff1 and :v_diff2",
@@ -49,11 +49,22 @@ exports.getPosts = async (req, res) => {
 exports.getResponseAndState = async (req, res) => {
     var qn_tracker = calculator.returnQnTracker();
     // calculator.clearQnTracker();
+    // calculator.clearQnIDTracker();
     // current lower, upper and avg will be passed over from the final quiz section
     res.json({
         data: qn_tracker
     });
 }
+
+exports.getClear = async (req, res) => {
+    calculator.clearQnTracker();
+    calculator.clearQnIDTracker();
+
+    res.json({
+        data: "TEST"
+    });
+}
+
 
 exports.getScore = async (req, res) => {
     // DO API call from DB, then return
@@ -207,14 +218,16 @@ exports.getScore = async (req, res) => {
             });
         }
 
+        var expanded_lower = lowerbound - 1
+        var expanded_upper = upperbound + 1
         // another DB query for the range
         var params = {
             TableName: "BINO_Chemistry",
             
             ExpressionAttributeValues: {
                 
-                ":v_diff1":{S: String(lowerbound)},
-                ":v_diff2":{S: String(upperbound)},
+                ":v_diff1":{S: String(expanded_lower)},
+                ":v_diff2":{S: String(expanded_upper)},
             },
              FilterExpression: 
                 "Difficulty between :v_diff1 and :v_diff2",
