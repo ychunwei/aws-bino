@@ -69,10 +69,10 @@ html, body {
 #avatar_text{
     font-family: Helvetica Neue;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 20px;
     float: right;
-    margin-right: 15px;
+    margin-right: 5px;
     margin-top: -20px;
     color: rgba(0,0,0,1);
 }
@@ -175,3 +175,12 @@ html, body {
     right: 200px;
     bottom: 20px;
   }
+
+.temp {
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    color: red;
+}
