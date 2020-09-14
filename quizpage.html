@@ -51,10 +51,11 @@
         <div id="quiz_content" class="container">
           
             <div id = "quiz_text">Alkanes (C1003)</div>
-            <div id = "quiz_text2">15 Questions | 30 Minutes</div>
+            <div id = "quiz_text2">25 Questions | 30 Minutes</div>
             <hr>
             <div id = "quiz_options">
               <p id="demo"></p>
+              <div class="temp" id="answer">Answer</div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="A">
                     <label class="form-check-label" for="exampleRadios1" id="demoo1">
@@ -85,6 +86,7 @@
             
             <div id = "quiz_options">
                 <p id="demo1"></p>
+                <div class="temp" id="answer1">Answer</div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="exampleRadios1" id="exampleRadios11" value="A">
                     <label class="form-check-label" for="exampleRadios11" id="demoo11">
@@ -115,6 +117,7 @@
 
             <div id = "quiz_options">
               <p id="demo2"></p>
+              <div class="temp" id="answer2">Answer</div>
               <div class="form-check">
                   <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios12" value="A">
                   <label class="form-check-label" for="exampleRadios12" id="demoo12">
@@ -145,6 +148,7 @@
 
             <div id = "quiz_options">
               <p id="demo3"></p>
+              <div class="temp" id="answer3">Answer</div>
               <div class="form-check">
                   <input class="form-check-input" type="radio" name="exampleRadios3" id="exampleRadios13" value="A">
                   <label class="form-check-label" for="exampleRadios13" id="demoo13">
@@ -175,6 +179,7 @@
 
             <div id = "quiz_options">
               <p id="demo4"></p>
+              <div class="temp" id="answer4">Answer</div>
               <div class="form-check">
                   <input class="form-check-input" type="radio" name="exampleRadios4" id="exampleRadios14" value="A">
                   <label class="form-check-label" for="exampleRadios14" id="demoo14">
@@ -207,7 +212,6 @@
     <div>
     
 <!-- JAVASCRIPT STUFF -->
-
     <script>
         var jsonObj = new Object()
         var isFinalCalc = 0
@@ -217,6 +221,8 @@
         var snowballCounterDecrease = 0
         var snowballCounterIncrease = 0
         var previous
+        var array = []
+        
 
         fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/ini')
         .then((response) => {
@@ -233,56 +239,114 @@
 
         
       function displayQuestion(questionsToBe) {
+        var filteredArray = []
         const jsonStr = JSON.stringify(questionsToBe)
         const obj = JSON.parse(jsonStr)
-        if (isFinalCalc == 4) {
-            localStorage.setItem("currentAverage", obj.currentAverage);
+
+        if (isFinalCalc <= 5) {
+          const obj2 = JSON.parse(obj.data)
+          // console.log(obj.id_of_qn)
+          var list = obj.id_of_qn
+          var list1 = []
+  
+          // var list = [JSON.stringify(obj.id_of_qn)]
+          // console.log("list in ini" + list)
+          // var list2 = list[0]
+          // console.log(list2)
+          
+          array = obj2.Items
+
+          if (isFinalCalc > 1) {
+            list1 = Object.values(list)
+            // console.log(typeof list1)
+            currentAverage = obj.currentAverage
+            currentLower = obj.currentLower
+            currentUpper = obj.currentUpper
+          }
+            var count = 0
+            var countLow = 0
+            var countHigh = 0
+
+            // console.log(array.length)
+            for (let i=0; i < array.length; i++) {
+              if (Number(array[i]['Difficulty']['S']) > currentUpper && !list1.includes(array[i]['Qns_ID']['S'])) {
+                count++
+                if (count > 1) {
+                  //console.log("pushed")
+                  list1.push(array[i]['Qns_ID']['S'])
+                }
+              }
+
+              else if (currentLower < Number(array[i]['Difficulty']['S']) && Number(array[i]['Difficulty']['S']) < currentAverage && !list1.includes(array[i]['Qns_ID']['S'])) {
+                // console.log("counthigh" +countHigh)
+                // console.log(array[i]['Qns_ID']['S'])
+                countHigh++
+                if (countHigh > 2) {
+                  list1.push(array[i]['Qns_ID']['S'])
+                }
+              }
+
+              else if (currentAverage < Number(array[i]['Difficulty']['S']) && Number(array[i]['Difficulty']['S']) < currentUpper && !list1.includes(array[i]['Qns_ID']['S'])) {
+                // console.log("countlow" + countLow)
+                // console.log(array[i]['Qns_ID']['S'])
+                countLow++
+                if (countLow > 3) {
+                  list1.push(array[i]['Qns_ID']['S'])
+                }
+              }
+            }
+
+            // console.log(list1)
+            // console.log(array)
+            for (let i=0; i < array.length; i++) {
+              if (!list1.includes(array[i]['Qns_ID']['S'])) {
+                  // console.log("pushed!" + array[i]['Qns_ID']['S'])
+                  filteredArray.push(array[i])
+                }
+            }
+            // console.log(filteredArray)
+          
+        }
+
+        // if (isFinalCalc != 1) {
+        //     //SNOWBALL EFFECT
+        //     //snowball(previous,currentAverage)
+
+        //   // if (isFinalCalc => 3) {
+        //   //   if (k => 0.8) {
+        //   //     currentUpper = currentUpper*(1 + k * 0.1)
+        //   //   }
+        //   // }
+        // }
+
+        console.log("<---SUBSECTION--->")
+        
+        console.log("currentLower: " + currentLower)
+        console.log("currentAverage: " + ((currentUpper + currentLower) / 2).toFixed(3))
+        console.log("currentUpper: " + currentUpper)
+      
+
+        if (isFinalCalc == 6) {
+            localStorage.setItem("currentAverage", ((currentUpper + currentLower) / 2).toFixed(3))
             window.location.replace('./performance_report.html')
             return
           }
 
-        var list = [JSON.stringify(obj.id_of_qn)]
+        //console.log(array)
 
-        if (isFinalCalc <= 3) {
-        const obj2 = JSON.parse(obj.data)
-        var array = obj2.Items
-        var filteredArray = array
-        
-        var current
-        if (isFinalCalc > 1) {
-            currentAverage = obj.currentAverage
-            currentLower = obj.currentLower
-            currentUpper = obj.currentUpper
+        // console.log('Questions for this subsection (ID | Difficulty | Answer):')
+        // console.log(filteredArray[0]['Qns_ID']['S'] + " | " + filteredArray[0]['Difficulty']['S'] + " | " + filteredArray[0]['Answer']['S'])
+        // console.log(filteredArray[1]['Qns_ID']['S'] + " | " + filteredArray[1]['Difficulty']['S'] + " | " + filteredArray[1]['Answer']['S'])
+        // console.log(filteredArray[2]['Qns_ID']['S'] + " | " + filteredArray[2]['Difficulty']['S'] + " | " + filteredArray[2]['Answer']['S'])
+        // console.log(filteredArray[3]['Qns_ID']['S'] + " | " + filteredArray[3]['Difficulty']['S'] + " | " + filteredArray[3]['Answer']['S'])
+        // console.log(filteredArray[4]['Qns_ID']['S'] + " | " + filteredArray[4]['Difficulty']['S'] + " | " + filteredArray[4]['Answer']['S'])
+        document.getElementById("answer").innerHTML = filteredArray[0]['Difficulty']['S'] + " | " + filteredArray[0]['Answer']['S']
+        document.getElementById("answer1").innerHTML = filteredArray[1]['Difficulty']['S'] + " | " + filteredArray[1]['Answer']['S']
+        document.getElementById("answer2").innerHTML = filteredArray[2]['Difficulty']['S'] + " | " + filteredArray[2]['Answer']['S']
+        document.getElementById("answer3").innerHTML = filteredArray[3]['Difficulty']['S'] + " | " + filteredArray[3]['Answer']['S']
+        document.getElementById("answer4").innerHTML = filteredArray[4]['Difficulty']['S'] + " | " + filteredArray[4]['Answer']['S']
 
-            current = currentAverage
-            // console.log(previous)
-            // console.log(current)
-            //SNOWBALL EFFECT
-            snowball(previous,current)
 
-            
-
-            filteredArray = []
-            
-            for (let i=0; i < array.length; i++) {
-              if (!list[0].includes(array[i]['Qns_ID']['S'])) {
-                // console.log("you doing good")
-                filteredArray.push(array[i])
-              }
-            }
-        }
-        
-        console.log("currentLower: " + currentLower)
-        console.log("currentAverage: " + currentAverage)
-        console.log("currentUpper: " + currentUpper)
-
-        console.log('Questions for this subsection (ID | Difficulty):')
-        console.log(filteredArray[0]['Qns_ID']['S'] + " | " + filteredArray[0]['Difficulty']['S'])
-        console.log(filteredArray[1]['Qns_ID']['S'] + " | " + filteredArray[1]['Difficulty']['S'])
-        console.log(filteredArray[2]['Qns_ID']['S'] + " | " + filteredArray[2]['Difficulty']['S'])
-        console.log(filteredArray[3]['Qns_ID']['S'] + " | " + filteredArray[3]['Difficulty']['S'])
-        console.log(filteredArray[4]['Qns_ID']['S'] + " | " + filteredArray[4]['Difficulty']['S'])
-        
         document.getElementById("demo").innerHTML = filteredArray[0]['Question']['S']    
         document.getElementById("demo1").innerHTML = filteredArray[1]['Question']['S']
         document.getElementById("demo2").innerHTML = filteredArray[2]['Question']['S']
@@ -319,17 +383,15 @@
         document.getElementById('demoo34').innerHTML = filteredArray[4]['Option_C']['S']
         document.getElementById('demoo44').innerHTML = filteredArray[4]['Option_D']['S']
 
-        }
-
         document.getElementById("nextbutton").addEventListener("click", storeAns, false);
         
         function storeAns() {
+          
           previous = currentAverage
           // console.log("previous is recorded with" + currentAverage)
-          
-
         
           scroll(0,0)
+
           var val1,
           element = document.querySelector('input[name="exampleRadios"]:checked');
           if (element != null) {
@@ -377,17 +439,21 @@
 
             jsonObj.isFinal = false
 
-            if (isFinalCalc == 2) {
-              document.getElementById('nextbutton').outerHTML = "<button id='nextbutton' onclick='document.location=\'performance_report.html\'' type='button' class='btn btn-primary'>Submit</button>";
+            if (isFinalCalc == 4) {
+              document.getElementById('nextbutton').outerHTML = "<button id='nextbutton' type='button' class='btn btn-primary'>Submit</button>";
             }
 
-            if (isFinalCalc == 3) {
+            if (isFinalCalc == 5) {
               jsonObj.isFinal = true
             }
 
+            jsonObj.isFinalCalc = isFinalCalc
+            // console.log(isFinalCalc)
             jsonObj.currentLower  = currentLower
             jsonObj.currentUpper = currentUpper
             jsonObj.currentAverage = currentAverage
+
+            // console.log(jsonObj)
             jsonObj.qnpairs = [val1,val2,val3,val4,val5]
             var jsonString= JSON.stringify(jsonObj)
             // console.log(jsonString)
@@ -433,7 +499,7 @@
             .catch(err => {
               console.log(err)
             })
-            
+
             document.getElementById("nextbutton").removeEventListener("click",storeAns)
         }
       }
@@ -444,7 +510,9 @@
           
           snowballCounterIncrease++
           if (snowballCounterIncrease > 1) {
-            currentAverage = currentAverage + 0.5
+            console.log("BOOOOOOOSTED")
+            currentUpper = currentUpper + 0.5
+            currentLower = currentLower + 0.5
             //gives you bonus marks
           }
         }
