@@ -184,3 +184,22 @@ html, body {
     font-size: 15px;
     color: red;
 }
+
+.progress {
+    position: relative;
+    top: 120px;
+    left: 750px;
+    -webkit-transform-origin: 0 100%;
+    -webkit-transform: rotate(90deg);
+    -moz-transform-origin: 0 100%;
+    -moz-transform: rotate(90deg);
+    -ms-transform-origin: 0 100%;
+    -ms-transform: rotate(90deg);
+    transform-origin: 0 100%;
+    transform: rotate(90deg);  
+
+}
+
+.progress-bar {
+    background-color: orange;
+}
