@@ -24,7 +24,7 @@ exports.getPosts = async (req, res) => {
             "Difficulty between :v_diff1 and :v_diff2",
           
         ProjectionExpression: 
-            "Skillset, Difficulty, Topic, Question, Option_A, Option_B, Option_C, Option_D, Qns_ID",
+            "Skillset, Difficulty, Topic, Question, Option_A, Option_B, Option_C, Option_D, Qns_ID, Answer",
         
     };
 
@@ -59,6 +59,7 @@ exports.getResponseAndState = async (req, res) => {
 exports.getClear = async (req, res) => {
     calculator.clearQnTracker();
     calculator.clearQnIDTracker();
+    calculator.clearRightAndWrong();
 
     res.json({
         data: "TEST"
@@ -81,6 +82,7 @@ exports.getScore = async (req, res) => {
     var averageScore = obj.currentAverage
     var questions = obj.qnpairs // [id, difficulty, skillset, user_response]
     var isFinal = obj.isFinal 
+    var subsection_num = obj.isFinalCalc // 1 indexed  - on the 3rd subsection snowball effect will show
 
     var qnsarray = []
     var question_type_array = []
@@ -172,6 +174,8 @@ exports.getScore = async (req, res) => {
         var qns_with_state = calculator.checkAnswers(questions, qn_ans) 
         // return 2d array of [Qns_ID, difficulty, skillset, state(0 = wrong, 1 = correct), user_response] 
         console.log(qns_with_state)
+        var percentage = calculator.calculateCurrentPercentage()
+
         // takes in array of [Difficulty, State] (2D)
         var arr_computation
         arr_computation = calculator.computeHiddenScore(lowerbound,upperbound,averageScore,qns_with_state);
@@ -218,8 +222,13 @@ exports.getScore = async (req, res) => {
             });
         }
 
-        var expanded_lower = lowerbound - 1
+        if (subsection_num >= 2 && percentage >= 0.8){
+            upperbound = upperbound * (1 + percentage * 0.1)
+        }
+
+        var expanded_lower = lowerbound // removed lower range
         var expanded_upper = upperbound + 1
+        
         // another DB query for the range
         var params = {
             TableName: "BINO_Chemistry",
@@ -233,8 +242,7 @@ exports.getScore = async (req, res) => {
                 "Difficulty between :v_diff1 and :v_diff2",
               
             ProjectionExpression: 
-                "Skillset, Difficulty, Topic, Question, Option_A, Option_B, Option_C, Option_D, Qns_ID",
-            
+                "Skillset, Difficulty, Topic, Question, Option_A, Option_B, Option_C, Option_D, Qns_ID, Answer",
         };
     
         
@@ -248,12 +256,16 @@ exports.getScore = async (req, res) => {
 
             else if(!isFinal){
                 var qn_ids = calculator.returnQnIDTracker();
+                console.log("IS THIS HERE?")
+                console.log("COUNT:" + qn_ids.length)
+                
                 res.json({
                     currentLower: lowerbound, 
                     currentUpper: upperbound,
                     currentAverage: averageScore,
                     data: JSON.stringify(data2),
-                    id_of_qn: qn_ids
+                    id_of_qn: qn_ids,
+                    percentage: percentage
                 });
             }
             else{
@@ -263,6 +275,7 @@ exports.getScore = async (req, res) => {
                     currentLower: lowerbound, 
                     currentUpper: upperbound,
                     currentAverage: averageScore,
+                    percentage: percentage
                 });
             }
         });

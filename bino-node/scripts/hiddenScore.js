@@ -1,6 +1,8 @@
 // var question_dic = {}
 var qn_tracker = []; // global variable to store the qns
 var qn_id_tracker = [];
+var current_correct = 0;
+var current_wrong = 0;
 
 exports.sayHi = () => {
     console.log("HI")
@@ -11,15 +13,24 @@ exports.checkAnswers = (questions, qn_ans) => {
       if (questions[iqns][3] == qn_ans[questions[iqns][0]]){
           console.log("correct")
           questions[iqns].push(questions[iqns][3])
+          current_correct += 1
           questions[iqns][3] = 1           
       }
       else{
           console.log("wrong" + iqns)
+          current_wrong += 1
           questions[iqns].push(questions[iqns][3])
           questions[iqns][3] = 0           
       }
   }
   return questions
+}
+
+exports.calculateCurrentPercentage = () => {
+  var sum = current_correct + current_wrong
+  var percentage = current_correct / sum 
+  var trunc_perc = parseFloat(percentage.toFixed(3))
+  return trunc_perc
 }
 
 // Requires: current lower, upper window; returns updated
@@ -137,4 +148,9 @@ exports.returnQnIDTracker = () => {
 
 exports.clearQnIDTracker = () => {
   qn_id_tracker = [];
+}
+
+exports.clearRightAndWrong = () => {
+  current_correct = 0
+  current_wrong = 0
 }
