@@ -221,9 +221,12 @@ exports.getScore = async (req, res) => {
                 }
             });
         }
+        var snowball = false;
 
+        // FLAG
         if (subsection_num >= 2 && percentage >= 0.8){
-            upperbound = upperbound * (1 + percentage * 0.1)
+            upperbound = upperbound * (1 + percentage * 0.1);
+            snowball = true;
         }
 
         var expanded_lower = lowerbound // removed lower range
@@ -265,7 +268,8 @@ exports.getScore = async (req, res) => {
                     currentAverage: averageScore,
                     data: JSON.stringify(data2),
                     id_of_qn: qn_ids,
-                    percentage: percentage
+                    percentage: percentage,
+                    isSnowball: snowball
                 });
             }
             else{
