@@ -46,9 +46,13 @@
     </div>
 
     
+
     
     <div id="main_section" class="col-6 offset-3">
         <div id="quiz_content" class="container">
+          <div class="progress" style="height: 10px">
+            <div id="progressbarr" class="progress-bar bg-warning" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
           
             <div id = "quiz_text">Alkanes (C1003)</div>
             <div id = "quiz_text2">25 Questions | 30 Minutes</div>
@@ -218,10 +222,11 @@
         var currentLower = 1.5
         var currentUpper = 3.5
         var currentAverage = (currentLower+currentUpper)/2
-        var snowballCounterDecrease = 0
-        var snowballCounterIncrease = 0
-        var previous
+        // var snowballCounterDecrease = 0
+        // var snowballCounterIncrease = 0
+        // var previous
         var array = []
+        var questionNumber = 1
         
 
         fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/ini')
@@ -239,6 +244,7 @@
 
         
       function displayQuestion(questionsToBe) {
+        
         var filteredArray = []
         const jsonStr = JSON.stringify(questionsToBe)
         const obj = JSON.parse(jsonStr)
@@ -253,7 +259,11 @@
           // console.log("list in ini" + list)
           // var list2 = list[0]
           // console.log(list2)
-          
+
+          if (obj.isSnowball == true) {
+            console.log("BOOOSTED!!")
+          }
+
           array = obj2.Items
 
           if (isFinalCalc > 1) {
@@ -262,6 +272,11 @@
             currentAverage = obj.currentAverage
             currentLower = obj.currentLower
             currentUpper = obj.currentUpper
+          }
+
+          if (obj.currentAverage < 1.9) {
+            localStorage.setItem("currentAverage", ((currentUpper + currentLower) / 2).toFixed(3))
+            window.open('./performance_report.html')
           }
             var count = 0
             var countLow = 0
@@ -328,7 +343,7 @@
 
         if (isFinalCalc == 6) {
             localStorage.setItem("currentAverage", ((currentUpper + currentLower) / 2).toFixed(3))
-            window.location.replace('./performance_report.html')
+            window.open('./performance_report.html')
             return
           }
 
@@ -346,12 +361,12 @@
         document.getElementById("answer3").innerHTML = filteredArray[3]['Difficulty']['S'] + " | " + filteredArray[3]['Answer']['S']
         document.getElementById("answer4").innerHTML = filteredArray[4]['Difficulty']['S'] + " | " + filteredArray[4]['Answer']['S']
 
-
-        document.getElementById("demo").innerHTML = filteredArray[0]['Question']['S']    
-        document.getElementById("demo1").innerHTML = filteredArray[1]['Question']['S']
-        document.getElementById("demo2").innerHTML = filteredArray[2]['Question']['S']
-        document.getElementById("demo3").innerHTML = filteredArray[3]['Question']['S']
-        document.getElementById("demo4").innerHTML = filteredArray[4]['Question']['S']
+        
+        document.getElementById("demo").innerHTML = `Q${questionNumber++}. `+ filteredArray[0]['Question']['S']
+        document.getElementById("demo1").innerHTML = `Q${questionNumber++}. `+ filteredArray[1]['Question']['S']
+        document.getElementById("demo2").innerHTML = `Q${questionNumber++}. `+ filteredArray[2]['Question']['S']
+        document.getElementById("demo3").innerHTML = `Q${questionNumber++}. `+ filteredArray[3]['Question']['S']
+        document.getElementById("demo4").innerHTML = `Q${questionNumber++}. `+ filteredArray[4]['Question']['S']
 
         
         document.getElementById('demoo1').innerHTML = filteredArray[0]['Option_A']['S']
@@ -386,11 +401,9 @@
         document.getElementById("nextbutton").addEventListener("click", storeAns, false);
         
         function storeAns() {
-          
-          previous = currentAverage
-          // console.log("previous is recorded with" + currentAverage)
-        
+
           scroll(0,0)
+
 
           var val1,
           element = document.querySelector('input[name="exampleRadios"]:checked');
@@ -493,7 +506,10 @@
               for(var i=0;i<ele4.length;i++)
                   ele4[i].checked = false;
 
+              document.getElementById("progressbarr").outerHTML = `<div id='progressbarr' class='progress-bar bg-warning' role='progressbar' style='width:${questionNumber * 4}%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100'></div>`
+
               displayQuestion(data)
+
 
             })
             .catch(err => {
