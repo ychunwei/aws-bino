@@ -82,13 +82,13 @@ exports.computeHiddenScore = (currentLower, currentUpper, currentAvg, difficulty
   currentAvg = (currentUpper + currentLower) / 2;
 
   // OUT OF BOUNDS CONDITIONS
-  if (currentUpper > 5){
-    currentUpper = 5.0
-    if ((currentUpper - currentLower) < 0.5){
-      currentAvg = 4.75
-      currentLower = 4.50
-    }
-  }
+  // if (currentUpper > 5){
+  //   currentUpper = 5.0
+  //   if ((currentUpper - currentLower) < 0.5){
+  //     currentAvg = 4.75
+  //     currentLower = 4.50
+  //   }
+  // }
   if (currentLower < 1){
     currentLower = 1.0
     if ((currentUpper - currentLower) < 0.5){

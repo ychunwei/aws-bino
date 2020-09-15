@@ -230,7 +230,7 @@ exports.getScore = async (req, res) => {
         }
 
         var expanded_lower = lowerbound // removed lower range
-        var expanded_upper = upperbound + 1
+        var expanded_upper = upperbound + 1 
         
         // another DB query for the range
         var params = {
