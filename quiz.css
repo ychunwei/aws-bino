@@ -147,7 +147,7 @@ html, body {
     font-style: normal;
     font-weight: bold;
     margin-top: 20px;
-    font-size: 35px;
+    font-size: 40px;
     color: orange;
 }
 
@@ -157,8 +157,12 @@ html, body {
     font-family: Helvetica Neue;
     font-style: normal;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 30px;
     color: rgba(0,0,0,1);
+}
+
+#sidebarquiz {
+    font-weight: bold;
 }
 
 #nextbutton {
@@ -186,17 +190,19 @@ html, body {
 }
 
 .progress {
+    margin-top: 10px;
     position: relative;
-    top: 120px;
-    left: 750px;
-    -webkit-transform-origin: 0 100%;
+    /* top: 120px; */
+    left: auto;
+    width: auto;
+    /* -webkit-transform-origin: 0 100%;
     -webkit-transform: rotate(90deg);
     -moz-transform-origin: 0 100%;
     -moz-transform: rotate(90deg);
     -ms-transform-origin: 0 100%;
     -ms-transform: rotate(90deg);
     transform-origin: 0 100%;
-    transform: rotate(90deg);  
+    transform: rotate(90deg);   */
 
 }
 

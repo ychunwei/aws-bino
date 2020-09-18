@@ -68,10 +68,10 @@ html, body {
 #avatar_text{
     font-family: Helvetica Neue;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 20px;
     float: right;
-    margin-right: 15px;
+    margin-right: 5px;
     margin-top: -20px;
     color: rgba(0,0,0,1);
 }
@@ -80,7 +80,7 @@ html, body {
     width: 300px;
     height: 40px;
     margin-left: -50px;
-    background-color: white;
+    background: white;
     border-radius: 25px;
     margin-bottom: 10px;
     border-top-left-radius: 0px;
@@ -92,7 +92,6 @@ html, body {
     position: absolute;
     margin-top: 100px;
     left: 50px;
-
 }
 
 .sidenavweek {
@@ -112,6 +111,10 @@ html, body {
     fill: black;
 }
 
+#sidebarquiz {
+    font-weight: bold;
+}
+
 #quiz_card {
     fill: rgba(255,255,255,1);
     position: absolute;
@@ -124,15 +127,32 @@ html, body {
 #quiz_content {
     position: absolute;
     height: auto;
+    width: 750px;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
     border-radius: 25px;
     margin-bottom: 30px;
-    top: 150px;
+    top: 130px;
+    left: -75px;
     padding-right: 30px;
     padding-left: 30px;
     /* left: calc(50% - 300px); */
+}
+
+#links {
+    position: fixed;
+    height: auto;
+    margin-left: 25px;
+    margin-right: 25px;
+    background-color: white;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    top: 130px;
+    left: 67.5%;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
 }
 
 #quiz_options {
@@ -146,7 +166,7 @@ html, body {
     font-style: normal;
     font-weight: bold;
     margin-top: 20px;
-    font-size: 35px;
+    font-size: 40px;
     color: orange;
 }
 
@@ -156,7 +176,7 @@ html, body {
     font-family: Helvetica Neue;
     font-style: normal;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 30px;
     color: rgba(0,0,0,1);
 }
 
@@ -195,6 +215,66 @@ html, body {
     color: slateblue;
 }
 
+.question_number {
+    width: 155px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: rgba(112,112,112,1);
+}
+
 .question {
+    text-align: left;
+    font-family: Helvetica Neue;
     margin-bottom: 3px;
+}
+
+#links_heading {
+    margin-top: 15px;
+}
+
+#link1 {
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+#link2 {
+    display: inline-block;
+    margin-bottom: 15px;
+    left: 60%;
+}
+
+#summary {
+    text-align: justify;
+}
+
+#ytvideo {
+    display: block;
+    margin: auto;
+    padding-bottom: 15px;
+}
+
+#skill_rating {
+    margin-top: 10px;
+    width: max-content;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#overview {
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: -15px;
+}
+
+#no_of_questions {
+    color: rgba(108, 122, 137, 1);
+    font-weight: normal;
+	font-size: 27px;
 }
