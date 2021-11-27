@@ -21,8 +21,8 @@
 
         <p id="avatar_text">Raphael Low<br>Student</p>
 
-         <div id = "sidenav">
-             <div id="overview_button">
+        <div id = "sidenav">
+            <div id="overview_button">
                 <svg id="icon" width="25px" height="25px" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                 </svg>
@@ -31,14 +31,14 @@
             
             <svg width = "300" height = "600">
                 <g>
-                    <rect rx="25" ry="25" width = "250" height = "260" fill="white"></rect>
+                    <rect id = "rect" rx="25" ry="25" width = "250" height = "260" fill="white"></rect>
                     <text class="sidenavweek" x="40" y="35" fill="Orange">Week 0</text>
-                    <line x1="50" y1="50" x2="50" y2="240" stroke-linecap="round" d="M5 40 l215 0" style="stroke:rgba(249, 220, 215, 1); stroke-width:3" />
-                    <line x1="50" y1="50" x2="50" y2="200" stroke-linecap="round" d="M5 40 l215 0" style="stroke:orange; stroke-width:3" />
+                    <line x1="50" y1="50" x2="50" y2="235" stroke-linecap="round" d="M5 40 l215 0" style="stroke:rgba(249, 220, 215, 1); stroke-width:4" />
+                    <line x1="50" y1="50" x2="50" y2="200" stroke-linecap="round" d="M5 40 l215 0" style="stroke:orange; stroke-width:4" />
                     <text class="sidenavweek2" x="70" y="85">Lecture 1</text>
                     <text class="sidenavweek2" x="70" y="135">Lecture 2</text>
                     <text class="sidenavweek2" x="70" y="185">Lecture 3</text>
-                    <text class="sidenavweek2" x="70" y="235">Quiz</text>
+                    <text id="sidebarquiz" class="sidenavweek2" x="70" y="235">Quiz</text>
                     <text class="sidenavweek" x="40" y="300" fill = "Grey">Week 1</text>
                     <text class="sidenavweek" x="40" y="350" fill = "Grey">Week 2</text>
                     <text class="sidenavweek" x="40" y="400" fill = "Grey">Week 3</text>
@@ -47,31 +47,41 @@
         </div>
     </div>
 
-    <div id="main_section" class="col-md-6 offset-md-3">
-        <div id="quiz_content">
+    <div id = "main_section" class="col-md-6 offset-md-3">
+        <div id = "quiz_content">
             <div id = "quiz_text">Alkanes (C1003)</div>
             <div id = "quiz_text2">Performance Report</div>
-            <hr>
+            <div id = "no_of_questions">25 Questions</div>
+
             <div id = "quiz_options">
-                <h3>General Overview</h3>
-                <h4 id = "score">Score</h4>
-                <h4 id = "skillrating">Skill Rating</h4>
-                <h5 id = "goodjob">Great Job!</h5>
-                <hr>
-                <h3>Breakdown of Questions Attempted by Skillset</h3>
-                <div id="skillsetpiechart"></div>
-                <div id="skillset_table_div"></div>
-                <hr>
-                <h3>Breakdown of Questions Attempted by Difficulty</h3>
-                <div id="difficultypiechart"></div>
-                <div id="difficulty_table_div"></div>
-                <hr>
-                <h3>Breakdown of Individual Questions</h3>
-                <div id = "individual_questions"></div>
+                <div id = "overview">
+                    <h3 id = "skill_rating">Skill Rating</h3>
+                    <h3 id = "score">Score</h3>
+                    <h4 id = "goodjob">Great Job!</h4>
+                </div>
+
+            <h3 style="font-weight: bold">Skillsets Tested</h3>
+            <div id="skillsetpiechart"></div>
+            <div id="skillset_table_div"></div>
+            <hr>
+            <h3 style="font-weight: bold">Difficulty Spread</h3>
+            <div id="difficultypiechart"></div>
+            <div id="difficulty_table_div"></div>
+            <hr>
+            <h3 style="font-weight: bold">Breakdown of Individual Questions</h3>
+            <div id = "individual_questions"></div>
             </div>
         </div>
-            
     </div>
+
+    <div id="links">
+        <h3 id="links_heading">Adaptive Links & Resources</h3>
+        <hr>
+        <p id = "summary">Summary</p>
+        <a id = "link1" class="btn btn-primary" target="_blank">Chemguide Alkanes Link</a>
+        <a id = "link2" class="btn btn-primary" target="_blank">Chemguide Alkenes Link</a>
+        <iframe id="ytvideo" width="430" height="305" frameborder="0" allowfullscreen></iframe>
+   </div>
 
 <!-- JAVASCRIPT CODE -->
 
@@ -80,15 +90,41 @@
         var input = [];
 
         var skillrating = Number(localStorage.getItem("currentAverage"));
+        document.getElementById("skill_rating").innerHTML = "Skill Rating: " + skillrating;
+
+        var colourcode;
 
         if (skillrating >= 4.0) {
             document.getElementById("goodjob").innerHTML = "Great Job!"
+            document.getElementById("overview").style.background = "LightGreen";
+            document.getElementById("summary").innerHTML = "Congratulations! Your skill rating is above 4, which means you have a good grasp of this topic. Here are some additional recommended resources for you. Do note that these resources are are beyond the syllabus; they are meant to stretch your intellectual capacity. Have fun exploring!";
+            document.getElementById("link1").href = "https://www.chemguide.co.uk/mechanisms/frmenu.html#top";
+            document.getElementById("link2").href = "https://www.chemguide.co.uk/mechanisms/eladdmenu.html#top";
+            document.getElementById("ytvideo").src = "https://www.youtube.com/embed/IOViLLuDMTs";
+
         } else if (skillrating >= 3.0 && skillrating < 4.0) {
             document.getElementById("goodjob").innerHTML = "You did well!"
+            document.getElementById("overview").style.background = "Turquoise";
+            document.getElementById("summary").innerHTML = "Well done! Here are some additional recommended resources for you to view. Do note that these resources are beyond the syllabus. Happy exploring!";
+            document.getElementById("link1").href = "https://www.chemguide.co.uk/basicorg/bondmenu.html#top";
+            document.getElementById("link2").href = "https://www.chemguide.co.uk/organicprops/haloalkanemenu.html#top";
+            document.getElementById("ytvideo").src = "https://www.youtube.com/embed/ryHnC0wqTTo";
+
         } else if (skillrating >= 2.25 && skillrating < 3.0) {
             document.getElementById("goodjob").innerHTML = "You need to buck up!"
+            document.getElementById("overview").style.background = "LightSalmon";
+            document.getElementById("summary").innerHTML = "Currently, your skill rating is on the lower end, but don't worry. Below are some additional recommended resources to shore up your fundamental understanding of the topic. Do note that lecture notes and recordings are still more relevant, so revisit it if unsure!";
+            document.getElementById("link1").href = "https://www.chemguide.co.uk/organicprops/alkanemenu.html#top";
+            document.getElementById("link2").href = "https://www.chemguide.co.uk/organicprops/alkenemenu.html#top";
+            document.getElementById("ytvideo").src = "https://www.youtube.com/embed/ryHnC0wqTTo";
         } else {
             document.getElementById("goodjob").innerHTML = "Revise your fundamentals and try again!"
+            document.getElementById("overview").style.background = "Coral";
+            document.getElementById("summary").innerHTML = "Read up on the lecture notes and revisit the areas you are struggling at. Clarify with your tutor if you have any doubts. All the best!"
+            document.getElementById("link1").innerHTML = "Homepage";
+            document.getElementById("link1").href = "http://elasticbeanstalk-us-east-1-426858499614.s3-website-us-east-1.amazonaws.com/Course_Main.html";
+            var element = document.getElementById("link2");
+            element.parentNode.removeChild(element);
         }
 
         fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/report')
@@ -103,7 +139,7 @@
             
         })
         .catch(err => {
-            console.log('Fetch error:' + err);
+            console.log('Fetch error: ' + err);
         });
 
         fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/quiz')
@@ -235,6 +271,7 @@
 
                         if (input[i][2] == "Recall") {
                             recall += 1;
+                            document.getElementById(skillset).style.color = "OrangeRed";
                             if (input[i][3] == 1) {
                                 recallcorrect += 1;
                                 document.getElementById(heading).innerHTML = "Correct";
@@ -242,6 +279,7 @@
                             }
                         } else if (input[i][2] == "Evaluation") {
                             evaluation += 1;
+                            document.getElementById(skillset).style.color = "DarkTurquoise";
                             if (input[i][3] == 1) {
                                 evaluationcorrect += 1;
                                 document.getElementById(heading).innerHTML = "Correct";
@@ -249,6 +287,7 @@
                             }
                         } else if (input[i][2] == "Inference") {
                             inference += 1;
+                            document.getElementById(skillset).style.color = "ForestGreen";
                             if (input[i][3] == 1) {
                                 inferencecorrect += 1;
                                 document.getElementById(heading).innerHTML = "Correct";
@@ -256,6 +295,7 @@
                             }
                         } else if (input[i][2] == "Application") {
                             application += 1;
+                            document.getElementById(skillset).style.color = "DarkSlateGrey";
                             if (input[i][3] == 1) {
                                 applicationcorrect += 1;
                                 document.getElementById(heading).innerHTML = "Correct";
@@ -265,30 +305,35 @@
 
                         if (input[i][1] >= 1 && input[i][1] < 2) {
                             level1 += 1;
+                            document.getElementById(difficulty).style.color = "Crimson";
                             if (input[i][3] == 1) {
                                 score += 1;
                                 level1correct += 1;
                             }
                         } else if (input[i][1] >= 2 && input[i][1] < 3) {
                             level2 += 1;
+                            document.getElementById(difficulty).style.color = "Magenta";
                             if (input[i][3] == 1) {
                                 score += 1;
                                 level2correct += 1;
                             }
                         } else if (input[i][1] >= 3 && input[i][1] < 4) {
                             level3 += 1;
+                            document.getElementById(difficulty).style.color = "DarkOrchid";
                             if (input[i][3] == 1) {
                                 score += 1;
                                 level3correct += 1;
                             }
                         } else if (input[i][1] >= 4 && input[i][1] < 5) {
                             level4 += 1;
+                            document.getElementById(difficulty).style.color = "DeepSkyBlue";
                             if (input[i][3] == 1) {
                                 score += 1;
                                 level4correct += 1;
                             }
                         } else if (input[i][1] == 5) {
                             level5 += 1;
+                            document.getElementById(difficulty).style.color = "Gold";
                             if (input[i][3] == 1) {
                                 score += 1;
                                 level5correct += 1;
@@ -306,8 +351,7 @@
             var percentagecorrect = totalcorrect/total;
             
             document.getElementById("score").innerHTML = "Score: " + totalcorrect + "/" + total;
-
-            document.getElementById("skillrating").innerHTML = "Skill Rating: " + localStorage.getItem("currentAverage") + "/5";
+            document.getElementById("no_of_questions").innerHTML = total + " Questions";
 
             // Load google charts
             google.charts.load('current', {'packages':['corechart']});
@@ -428,7 +472,7 @@
                 ['Level 2+',   {v: level2,   f: String(level2)},  {v: level2correct, f: String(level2correct)}, {v: (Math.round(((level2correct/level2) + Number.EPSILON) * 100)), f: level2correctstr}],
                 ['Level 3+', {v: level3, f: String(level3)}, {v: level3correct, f: String(level3correct)}, {v: (Math.round(((level3correct/level3) + Number.EPSILON) * 100)), f: level3correctstr}],
                 ['Level 4+',   {v: level4,  f: String(level4)},  {v: level4correct,  f: String(level4correct)}, {v: (Math.round(((level4correct/level4) + Number.EPSILON) * 100)), f: level4correctstr}],
-                ['Level 5+',   {v: level5,  f: String(level5)},  {v: level5correct,  f: String(level5correct)}, {v: (Math.round(((level5correct/level5) + Number.EPSILON) * 100)), f: level5correctstr}],
+                ['Level 5',   {v: level5,  f: String(level5)},  {v: level5correct,  f: String(level5correct)}, {v: (Math.round(((level5correct/level5) + Number.EPSILON) * 100)), f: level5correctstr}],
                 ['Total',   {v: total,  f: String(total)},  {v: totalcorrect,  f: String(totalcorrect)}, {v: (Math.round(((totalcorrect/total) + Number.EPSILON) * 100)), f: String((Math.round(((totalcorrect/total) + Number.EPSILON) * 100)) + '%')}],
                 ]);
 
@@ -444,7 +488,7 @@
         .catch((err) => {
             console.error('There has been a problem with your fetch operation:' + err);
     })
-
+    
     fetch('http://awsbino-env-2.eba-vh6jpy5i.us-east-1.elasticbeanstalk.com/clear');
     </script>
 

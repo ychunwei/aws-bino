@@ -31,12 +31,12 @@
                 <g>
                     <rect rx="25" ry="25" width = "250" height = "260" fill="white"></rect>
                     <text class="sidenavweek" x="40" y="35" fill="Orange">Week 0</text>
-                    <line x1="50" y1="50" x2="50" y2="240" stroke-linecap="round" d="M5 40 l215 0" style="stroke:rgba(249, 220, 215, 1); stroke-width:3" />
-                    <line x1="50" y1="50" x2="50" y2="200" stroke-linecap="round" d="M5 40 l215 0" style="stroke:orange; stroke-width:3" />
+                    <line x1="50" y1="50" x2="50" y2="235" stroke-linecap="round" d="M5 40 l215 0" style="stroke:rgba(249, 220, 215, 1); stroke-width:4" />
+                    <line x1="50" y1="50" x2="50" y2="200" stroke-linecap="round" d="M5 40 l215 0" style="stroke:orange; stroke-width:4" />
                     <text class="sidenavweek2" x="70" y="85">Lecture 1</text>
                     <text class="sidenavweek2" x="70" y="135">Lecture 2</text>
                     <text class="sidenavweek2" x="70" y="185">Lecture 3</text>
-                    <text class="sidenavweek2" x="70" y="235">Quiz</text>
+                    <text id="sidebarquiz" class="sidenavweek2" x="70" y="235">Quiz</text>
                     <text class="sidenavweek" x="40" y="300" fill = "Grey">Week 1</text>
                     <text class="sidenavweek" x="40" y="350" fill = "Grey">Week 2</text>
                     <text class="sidenavweek" x="40" y="400" fill = "Grey">Week 3</text>
@@ -50,12 +50,13 @@
     
     <div id="main_section" class="col-6 offset-3">
         <div id="quiz_content" class="container">
-          <div class="progress" style="height: 10px">
-            <div id="progressbarr" class="progress-bar bg-warning" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
+          
           
             <div id = "quiz_text">Alkanes (C1003)</div>
             <div id = "quiz_text2">25 Questions | 30 Minutes</div>
+            <div class="progress" style="height: 10px">
+              <div id="progressbarr" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
             <hr>
             <div id = "quiz_options">
               <p id="demo"></p>
@@ -249,6 +250,13 @@
         const jsonStr = JSON.stringify(questionsToBe)
         const obj = JSON.parse(jsonStr)
 
+        if (isFinalCalc > 1) {
+          currentAverage = obj.currentAverage
+          currentLower = obj.currentLower
+          currentUpper = obj.currentUpper
+        }
+        
+
         if (isFinalCalc <= 5) {
           const obj2 = JSON.parse(obj.data)
           // console.log(obj.id_of_qn)
@@ -269,9 +277,6 @@
           if (isFinalCalc > 1) {
             list1 = Object.values(list)
             // console.log(typeof list1)
-            currentAverage = obj.currentAverage
-            currentLower = obj.currentLower
-            currentUpper = obj.currentUpper
           }
 
           if (obj.currentAverage < 1.9) {
@@ -311,6 +316,8 @@
               }
             }
 
+            
+
             // console.log(list1)
             // console.log(array)
             for (let i=0; i < array.length; i++) {
@@ -319,6 +326,13 @@
                   filteredArray.push(array[i])
                 }
             }
+
+            if (filteredArray.length < 5) {
+              filteredArray.push(array[21])
+              filteredArray.push(array[16])
+              filteredArray.push(array[20])
+            }
+            // console.log(filteredArray.length)
             // console.log(filteredArray)
           
         }
@@ -337,12 +351,12 @@
         console.log("<---SUBSECTION--->")
         
         console.log("currentLower: " + currentLower)
-        console.log("currentAverage: " + ((currentUpper + currentLower) / 2).toFixed(3))
+        console.log("currentAverage: " + currentAverage)
         console.log("currentUpper: " + currentUpper)
       
 
         if (isFinalCalc == 6) {
-            localStorage.setItem("currentAverage", ((currentUpper + currentLower) / 2).toFixed(3))
+            localStorage.setItem("currentAverage", currentAverage)
             window.open('./performance_report.html')
             return
           }
